@@ -3,22 +3,30 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "author": {
-    "name": "EikE SousA",
-    "url": "https://github.com/belgattitude"
-  },
   "license": "MIT",
+  "main": "index.js",
   "homepage": "https://github.com/EikESousA/design",
+  "engines": {
+    "node": "18.16.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/EikESousA/design"
+  },
+  "author": {
+    "name": "EikE SousA",
+    "url": "https://github.com/belgattitude"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage --watchAll false",
+    "analyze-bar": "vite-bundle-visualizer",
+    "analyze-sun": "vite-bundle-visualizer --template sunburst",
+    "analyze-net": "vite-bundle-visualizer --template network"
   },
   "browserslist": {
     "production": [
