@@ -176,6 +176,7 @@ export function DatasProvider({ children }: IDatasProps) {
 
                 if (findFather) {
                   updatedLinks.push({
+                    id: uuidV4(),
                     start: `node-link-${findFather.id}#out`,
                     end: `node-link-${findSon.id}#in`,
                   });

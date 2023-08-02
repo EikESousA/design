@@ -94,4 +94,8 @@ export const Container = styled.div`
       }
     }
   }
+
+  &:hover button.flowchart-node-link.show {
+    visibility: visible;
+  }
 `;

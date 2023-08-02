@@ -10,13 +10,14 @@ import {
 
 interface IThemeContextData {
   mode_dark: boolean;
+  toogleTheme: (value: boolean) => void;
 }
-
-const ThemeContext = createContext<IThemeContextData>({} as IThemeContextData);
 
 interface IThemeProps {
   children: ReactNode;
 }
+
+const ThemeContext = createContext<IThemeContextData>({} as IThemeContextData);
 
 export function ThemeProvider({ children }: IThemeProps) {
   const [data, setData] = useState({

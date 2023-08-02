@@ -27,7 +27,7 @@ export default function NodeHeader({ node }: IProps) {
       <div></div>
       <p>{node.title}</p>
       <button type="button" onClick={() => removeNode(node.id)}>
-        <Icon icon="delete" />
+        <Icon.Root icon="delete" />
       </button>
     </Container>
   );

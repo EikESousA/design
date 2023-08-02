@@ -24,4 +24,6 @@ export const Container = styled.button`
   &.flowchart-node-link-out {
     bottom: calc((var(--font-size-xs) / 2) * -1);
   }
+
+  visibility: hidden;
 `;

@@ -12,7 +12,8 @@
     "prettier",
     "import",
     "eslint-plugin-import-helpers",
-    "react-hooks"
+    "react-hooks",
+    "jest"
   ],
   "extends": [
     "eslint:recommended",
@@ -22,7 +23,8 @@
     "plugin:react-hooks/recommended",
     "airbnb",
     "plugin:prettier/recommended",
-    "react-refresh"
+    "react-refresh",
+    "plugin:jest/recommended"
   ],
   "settings": {
     "import/parsers": {
@@ -125,6 +127,11 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }
