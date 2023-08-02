@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   & p.title {
@@ -43,7 +43,7 @@ export const Container = styled.div`
     border-radius: var(--border-radius-full);
     margin-right: var(--spacing-s1);
     transition: all var(--animation-fast) ease;
-    box-shadow: inset 0 0 0 0.125rem ${({ theme }) => theme.color.base};
+    box-shadow: inset 0 0 0 0.125rem var(--color-primary-base);
 
     -webkit-appearance: none;
     appearance: none;
@@ -54,16 +54,16 @@ export const Container = styled.div`
   }
 
   & ul li label input:checked {
-    box-shadow: inset 0 0 0 0.4375rem ${({ theme }) => theme.color.base};
+    box-shadow: inset 0 0 0 0.4375rem var(--color-primary-base);
   }
 
   & ul li label input:focus {
-    outline: max(2px, 0.15rem) solid ${({ theme }) => theme.color.base};
+    outline: max(2px, 0.15rem) solid var(--color-primary-base);
     outline-offset: max(2px, 0.15rem);
   }
 
   & ul li label.checked {
-    background-color: ${({ theme }) => `${theme.color.base}30`};
+    background-color: var(--color-primary-base);
   }
 
   & ul li label.disabled {

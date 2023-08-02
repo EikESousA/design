@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.button`
   position: relative;
@@ -17,7 +17,8 @@ export const Container = styled.button`
 
   opacity: var(--opacity-default);
 
-  transition: background-color var(--animation-slow) ease-out,
+  transition:
+    background-color var(--animation-slow) ease-out,
     outline-offset var(--animation-faster) ease-out,
     outline-color var(--animation-faster) ease-out,
     opacity var(--animation-slow) ease-out;
@@ -56,7 +57,7 @@ export const Container = styled.button`
   }
 
   &.primary {
-    background-color: ${({ theme }) => theme.color.base};
+    background-color: var(--color-primary-base);
 
     border: var(--border-width-thin) solid transparent;
 
@@ -69,27 +70,27 @@ export const Container = styled.button`
     }
 
     &:focus {
-      outline-color: ${({ theme }) => theme.color.base};
+      outline-color: var(--color-primary-base);
     }
 
     &:hover:not(&:disabled) {
-      background-color: ${({ theme }) => theme.color.dark};
+      background-color: var(--color-primary-dark);
     }
   }
 
   &.secondary {
     background-color: var(--color-gray-100);
 
-    border: var(--border-width-thin) solid ${({ theme }) => theme.color.base};
-    outline: var(--border-width-thin) solid ${({ theme }) => theme.color.base};
+    border: var(--border-width-thin) solid var(--color-primary-base);
+    outline: var(--border-width-thin) solid var(--color-primary-base);
     outline-offset: -1px;
 
     & p {
-      color: ${({ theme }) => theme.color.base};
+      color: var(--color-primary-base);
     }
 
     & p {
-      color: ${({ theme }) => theme.color.base};
+      color: var(--color-primary-base);
     }
 
     &:focus {
@@ -111,11 +112,11 @@ export const Container = styled.button`
     border: var(--border-width-thin) solid transparent;
 
     & p {
-      color: ${({ theme }) => theme.color.base};
+      color: var(--color-primary-base);
     }
 
     & svg {
-      color: ${({ theme }) => theme.color.base};
+      color: var(--color-primary-base);
     }
 
     &:focus {

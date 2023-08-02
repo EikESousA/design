@@ -2,6 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   html[data-theme='light'] {
+    --color-primary-lighter: #99cccc;
+    --color-primary-light: #4ca6a6;
+    --color-primary-base: #008080;
+    --color-primary-dark: #005959;
+    --color-primary-darker: #002626;
+
     --color-success-light: #94BFA2;
     --color-success-base: #2E8540;
     --color-success-dark: #266E35;

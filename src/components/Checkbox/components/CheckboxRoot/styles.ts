@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   & p.title {
@@ -66,7 +66,7 @@ export const Container = styled.div`
   }
 
   & input:before {
-    content: '';
+    content: "";
     width: 0.65rem;
     height: 0.65rem;
 
@@ -83,7 +83,7 @@ export const Container = styled.div`
   }
 
   & input:checked {
-    background-color: ${({ theme }) => theme.color.base};
+    background-color: var(--color-primary-base);
   }
 
   & input:checked:before {
@@ -91,7 +91,7 @@ export const Container = styled.div`
   }
 
   & input:focus {
-    outline: max(2px, 0.15rem) solid ${({ theme }) => theme.color.base};
+    outline: max(2px, 0.15rem) solid var(--color-primary-base);
     outline-offset: max(2px, 0.15rem);
   }
 

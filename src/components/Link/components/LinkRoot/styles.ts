@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.button`
   display: flex;
@@ -34,13 +34,13 @@ export const Container = styled.button`
     font-family: var(--font-family-default);
     font-weight: var(--font-weight-lighter);
 
-    color: ${({ theme }) => theme.color.base};
+    color: var(--color-primary-base);
 
     text-decoration: underline;
   }
 
   &:hover p {
-    color: ${({ theme }) => theme.color.dark};
+    color: var(--color-primary-dark);
   }
 
   &:disabled {
@@ -50,7 +50,7 @@ export const Container = styled.button`
   }
 
   &:focus {
-    outline: max(2px, 0.15rem) solid ${({ theme }) => theme.color.base};
+    outline: max(2px, 0.15rem) solid var(--color-primary-base);
     outline-offset: max(2px, 0.15rem);
   }
 `;

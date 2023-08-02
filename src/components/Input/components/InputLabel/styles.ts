@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.label`
   width: 100%;
@@ -38,7 +38,8 @@ export const Container = styled.label`
 
       color: var(--color-gray-800);
 
-      transition: top var(--animation-fast) ease-out,
+      transition:
+        top var(--animation-fast) ease-out,
         left var(--animation-fast) ease-out,
         font-size var(--animation-fast) ease-out,
         color var(--animation-fast) ease-out;
@@ -78,7 +79,7 @@ export const Container = styled.label`
         color: transparent;
 
         &:after {
-          content: '*';
+          content: "*";
           color: var(--color-warning-base);
         }
       }
@@ -144,7 +145,7 @@ export const Container = styled.label`
 
     &.focused,
     &.filled {
-      border-color: ${({ theme }) => theme.color.base};
+      border-color: var(--color-primary-base);
 
       & p.label {
         top: calc(var(--spacing-s3) * -1);
@@ -152,15 +153,15 @@ export const Container = styled.label`
 
         font-size: var(--font-size-xs);
 
-        color: ${({ theme }) => theme.color.base};
+        color: var(--color-primary-base);
       }
 
       & input {
-        border-color: ${({ theme }) => theme.color.base};
+        border-color: var(--color-primary-base);
       }
 
       & svg.icon {
-        color: ${({ theme }) => theme.color.base};
+        color: var(--color-primary-base);
       }
     }
   }
@@ -309,14 +310,14 @@ export const Container = styled.label`
 
     &.focused,
     &.filled {
-      border-color: ${({ theme }) => theme.color.base};
+      border-color: var(--color-primary-base);
 
       & p.label {
-        background-color: ${({ theme }) => theme.color.base};
+        background-color: var(--color-primary-base);
       }
 
       & svg.icon {
-        color: ${({ theme }) => theme.color.base};
+        color: var(--color-primary-base);
       }
     }
   }
@@ -342,7 +343,8 @@ export const Container = styled.label`
 
       color: var(--color-gray-800);
 
-      transition: top var(--animation-fast) ease-out,
+      transition:
+        top var(--animation-fast) ease-out,
         left var(--animation-fast) ease-out,
         font-size var(--a nimation-fast) ease-out,
         color var(--animation-fast) ease-out;
@@ -445,7 +447,7 @@ export const Container = styled.label`
 
     &.focused,
     &.filled {
-      border-color: ${({ theme }) => theme.color.base};
+      border-color: var(--color-primary-base);
 
       & p.label {
         top: 0;
@@ -453,17 +455,17 @@ export const Container = styled.label`
 
         font-size: var(--font-size-xxs);
 
-        color: ${({ theme }) => theme.color.base};
+        color: var(--color-primary-base);
       }
 
       & svg.icon {
         top: calc(var(--spacing-s3) + 2px);
 
-        color: ${({ theme }) => theme.color.base};
+        color: var(--color-primary-base);
       }
 
       & input {
-        border-color: ${({ theme }) => theme.color.base};
+        border-color: var(--color-primary-base);
       }
     }
   }
@@ -491,7 +493,7 @@ export const Container = styled.label`
 
     padding: var(--spacing-s2);
 
-    background-color: ${({ theme }) => theme.color.base};
+    background-color: var(--color-primary-base);
 
     border: var(--border-width-thin) solid transparent;
 
@@ -502,7 +504,8 @@ export const Container = styled.label`
 
     opacity: var(--opacity-default);
 
-    transition: background-color var(--animation-slow) ease-out,
+    transition:
+      background-color var(--animation-slow) ease-out,
       outline-offset var(--animation-faster) ease-out,
       outline-color var(--animation-faster) ease-out,
       opacity var(--animation-slow) ease-out;
@@ -543,7 +546,7 @@ export const Container = styled.label`
     }
 
     &:hover:not(&:disabled) {
-      background-color: ${({ theme }) => theme.color.dark};
+      background-color: var(--color-primary-dark);
     }
 
     & span.ripple {

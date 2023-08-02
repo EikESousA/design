@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   max-height: 100%;
@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   padding: 0 0.5rem;
 
-  background-color: ${({ theme }) => theme.page.fade};
+  background-color: var(--aliases-100);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.25rem;
 
@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 
   & thead {
-    background-color: ${({ theme }) => theme.page.fade};
+    background-color: var(--aliases-100);
 
     position: -webkit-sticky;
     position: sticky;
@@ -37,11 +37,11 @@ export const Container = styled.div`
     font-weight: bold;
     font-size: 0.875rem;
 
-    color: ${({ theme }) => theme.text.black};
+    color: var(--color-gray-900);
   }
 
   & tbody {
-    background-color: ${({ theme }) => theme.page.fade};
+    background-color: var(--aliases-100);
   }
 
   & tbody tr td {
@@ -54,7 +54,7 @@ export const Container = styled.div`
     font-weight: normal;
     font-size: 0.875rem;
 
-    color: ${({ theme }) => theme.text.black};
+    color: var(--color-gray-900);
 
     border-top: 1px solid rgba(0, 0, 0, 0.12);
     border-left: none;
@@ -86,7 +86,7 @@ export const Container = styled.div`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.primary};
+    background-color: var(--color-primary-base);
     border-radius: 3px;
     cursor: move;
   }
@@ -107,6 +107,6 @@ export const Pagination = styled.div`
   & div p {
     font-size: 1.1rem;
 
-    color: ${({ theme }) => theme.text.gray};
+    color: var(--color-gray-500);
   }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   border-radius: 50%;
@@ -41,8 +41,8 @@ export const Container = styled.div`
   }
 
   &.primary {
-    border-top-color: ${({ theme }) => theme.color.base};
-    border-bottom-color: ${({ theme }) => theme.color.base};
+    border-top-color: var(--color-primary-base);
+    border-bottom-color: var(--color-primary-base);
   }
 
   &.secondary {

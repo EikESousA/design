@@ -13,7 +13,7 @@ export const Container = styled.button`
 
   padding: var(--spacing-s2);
 
-  background-color: ${({ theme }) => theme.color.base};
+  background-color: var(--color-primary-base);
 
   border: var(--border-width-thin) solid transparent;
 
@@ -66,7 +66,7 @@ export const Container = styled.button`
   }
 
   &:hover:not(&:disabled) {
-    background-color: ${({ theme }) => theme.color.dark};
+    background-color: var(--color-primary-dark);
   }
 
   & span.ripple {

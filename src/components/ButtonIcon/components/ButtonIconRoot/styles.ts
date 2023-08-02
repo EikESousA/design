@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
@@ -22,7 +22,7 @@ export const Container = styled.div`
   }
 
   &.primary button {
-    background-color: ${({ theme }) => theme.color.base};
+    background-color: var(--color-primary-base);
 
     border: var(--border-width-thin) solid transparent;
 
@@ -31,19 +31,19 @@ export const Container = styled.div`
     }
 
     &:hover:not(&:disabled) {
-      background-color: ${({ theme }) => theme.color.dark};
+      background-color: var(--color-primary-dark);
     }
   }
 
   &.secondary button {
     background-color: var(--color-gray-100);
 
-    border: var(--border-width-thin) solid ${({ theme }) => theme.color.base};
-    outline: var(--border-width-thin) solid ${({ theme }) => theme.color.base};
+    border: var(--border-width-thin) solid var(--color-primary-base);
+    outline: var(--border-width-thin) solid var(--color-primary-base);
     outline-offset: -1px;
 
     & > svg {
-      color: ${({ theme }) => theme.color.base};
+      color: var(--color-primary-base);
     }
 
     &:hover:not(&:disabled) {
@@ -59,7 +59,7 @@ export const Container = styled.div`
     border: var(--border-width-thin) solid transparent;
 
     & > svg {
-      color: ${({ theme }) => theme.color.base};
+      color: var(--color-primary-base);
     }
 
     &:hover:not(&:disabled) {
@@ -102,7 +102,8 @@ export const Container = styled.div`
 
     opacity: var(--opacity-default);
 
-    transition: background-color var(--animation-slow) ease-out,
+    transition:
+      background-color var(--animation-slow) ease-out,
       outline-offset var(--animation-faster) ease-out,
       outline-color var(--animation-faster) ease-out,
       opacity var(--animation-slow) ease-out;

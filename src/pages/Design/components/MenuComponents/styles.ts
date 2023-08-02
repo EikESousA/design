@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.nav`
   width: 100%;
@@ -46,7 +46,8 @@ export const Container = styled.nav`
 
     border-radius: var(--border-radius-sm);
 
-    transition: background-color var(--animation-slow) ease-out,
+    transition:
+      background-color var(--animation-slow) ease-out,
       color var(--animation-faster) ease-out;
 
     -webkit-user-select: none;
@@ -74,7 +75,7 @@ export const Container = styled.nav`
   }
 
   & button.selected {
-    background-color: ${({ theme }) => theme.color.base};
+    background-color: var(--color-primary-base);
 
     & svg.success {
       color: var(--color-gray-900);
@@ -85,7 +86,7 @@ export const Container = styled.nav`
     }
 
     &:hover {
-      background-color: ${({ theme }) => theme.color.dark};
+      background-color: var(--color-primary-dark);
     }
   }
 

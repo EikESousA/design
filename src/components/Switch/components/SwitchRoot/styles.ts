@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.label`
   display: flex;
@@ -28,7 +28,7 @@ export const Container = styled.label`
 
   & div:before,
   &.div:after {
-    content: '';
+    content: "";
   }
 
   & div:before {
@@ -45,7 +45,8 @@ export const Container = styled.label`
 
     box-shadow: var(--box-shadow-base);
 
-    transition: left var(--animation-fast) ease-out,
+    transition:
+      left var(--animation-fast) ease-out,
       background-color var(--animation-fast) ease-out;
   }
 
@@ -60,7 +61,7 @@ export const Container = styled.label`
   }
 
   & input:checked + div {
-    background-color: ${({ theme }) => theme.color.base};
+    background-color: var(--color-primary-base);
   }
 
   & input:not(:checked) + div:before {
@@ -72,7 +73,7 @@ export const Container = styled.label`
   }
 
   &:focus {
-    outline: max(2px, 0.15rem) solid ${({ theme }) => theme.color.base};
+    outline: max(2px, 0.15rem) solid var(--color-primary-base);
     outline-offset: max(2px, 0.15rem);
   }
 
