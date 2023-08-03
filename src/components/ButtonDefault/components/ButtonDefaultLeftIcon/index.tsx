@@ -14,7 +14,7 @@ export default function ButtonDefaultLeftIcon({
     <Icon.Root
       icon={icon}
       className="left-icon"
-      datatestid={datatestid ? `${datatestid}-button-icon` : null}
+      datatestid={datatestid ? `${datatestid}-left-icon` : null}
     />
   );
 }

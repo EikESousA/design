@@ -11,6 +11,12 @@ const jestConfig: JestConfigWithTsJest = {
   },
   clearMocks: true,
   coverageProvider: "v8",
+  collectCoverage: false,
+  collectCoverageFrom: [
+    "src/pages/**/*.tsx",
+    "src/components/**/*.tsx",
+    "src/hooks/**/*.tsx",
+  ],
 };
 
 export default jestConfig;

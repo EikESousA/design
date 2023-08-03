@@ -6,13 +6,13 @@ interface IRadioRootProps {
   setChecked: (value: any) => void;
   title?: string | null;
   disabled?: boolean;
-  options: IOptionsDTO[];
+  options: IRadioOptionsDTO[];
   msgEmpty?: string;
   horizontal?: boolean;
-  datatestid?: null;
+  datatestid?: string;
 }
 
-interface IOptionsDTO {
+export interface IRadioOptionsDTO {
   label: string;
   value: string;
   disabled?: boolean;
@@ -27,7 +27,7 @@ export default function RadioRoot({
   options = [],
   msgEmpty = "Não possui dados para selecionar!",
   horizontal = false,
-  datatestid = null,
+  datatestid,
 }: IRadioRootProps) {
   return (
     <Container data-testid={datatestid}>

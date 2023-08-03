@@ -1,16 +1,16 @@
 import { Container } from "./styles";
 
 interface ICheckboxRootProps {
-  name?: string;
+  name: string;
   checked: ICheckboxOptionsDTO[];
   setChecked: (value: ICheckboxOptionsDTO[]) => void;
-  title?: string | null;
+  title?: string;
   disabled?: boolean;
   options: ICheckboxOptionsDTO[];
   msgEmpty?: string;
   horizontal?: boolean;
   required?: number;
-  datatestid?: null;
+  datatestid?: string;
 }
 
 export interface ICheckboxOptionsDTO {
@@ -20,16 +20,16 @@ export interface ICheckboxOptionsDTO {
 }
 
 export default function CheckboxRoot({
-  name = "checkbox-name",
-  options = [],
-  checked = [],
-  setChecked = () => {},
-  title = null,
+  name,
+  options,
+  checked,
+  setChecked,
+  title,
   disabled = false,
   msgEmpty = "Não possui dados para selecionar!",
   horizontal = false,
   required = 0,
-  datatestid = null,
+  datatestid,
 }: ICheckboxRootProps) {
   function handleCheck(option: ICheckboxOptionsDTO) {
     const selectedIndex = checked.findIndex(

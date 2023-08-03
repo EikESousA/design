@@ -1,9 +1,10 @@
+import { IInputVariantDTO } from "../InputRoot";
 import { Container } from "./styles";
 
 interface IInputLabelProps {
-  variant: "primary" | "secondary" | "tertiary";
+  variant?: IInputVariantDTO;
   label: string;
-  placeholder: string;
+  placeholder?: string;
   required?: boolean;
   datatestid?: string;
 }

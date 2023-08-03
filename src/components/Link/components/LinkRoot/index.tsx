@@ -9,7 +9,7 @@ interface ILinkRootProps {
   disabled?: boolean;
   newTab?: boolean;
   full?: boolean;
-  datatestid?: null;
+  datatestid?: string;
 }
 
 export default function LinkRoot({
@@ -19,7 +19,7 @@ export default function LinkRoot({
   disabled = false,
   newTab = false,
   full = false,
-  datatestid = null,
+  datatestid,
 }: ILinkRootProps) {
   const navigate = useNavigate();
 

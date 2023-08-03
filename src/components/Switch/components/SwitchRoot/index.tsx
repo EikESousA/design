@@ -6,16 +6,16 @@ interface ISwitchRootProps {
   checked: boolean;
   setChecked: (value: boolean) => void;
   disabled?: boolean;
-  datatestid?: null;
+  datatestid?: string;
 }
 
 export default function SwitchRoot({
   id = "switch-example",
-  label = "",
+  label,
   checked = false,
   setChecked = () => {},
   disabled = false,
-  datatestid = null,
+  datatestid,
 }: ISwitchRootProps) {
   return (
     <Container

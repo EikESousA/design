@@ -4,9 +4,8 @@ import { Container } from "./styles";
 
 interface IInputRootProps {
   id?: string;
-  variant: IInputVariantDTO;
+  variant?: IInputVariantDTO;
   name: string;
-  label?: string;
   placeholder?: string;
   value: string;
   setValue: (value: string) => void;
