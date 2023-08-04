@@ -291,7 +291,7 @@ export default createGlobalStyle`
     background: none;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #4a4f6990;
+    background-color: var(--color-primary-darker);
     border-radius: 3px;
     cursor: move;
   }
