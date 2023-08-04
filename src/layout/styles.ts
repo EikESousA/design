@@ -7,12 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
 
-  background: var(--color-primary-darker);
-  background: linear-gradient(
-    180deg,
-    var(--color-primary-darker) 0%,
-    var(--color-primary-base) 100%
-  );
+  background-color: var(--color-primary-base);
 
   overflow: hidden;
 

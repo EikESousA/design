@@ -217,12 +217,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
     scroll-behavior: smooth;
 
-    background: var(--color-primary-darker);
-    background: linear-gradient(
-      180deg,
-      var(--color-primary-darker) 0%,
-      var(--color-primary-base) 100%
-    );
+    background-color: var(--color-primary-base);
     background-attachment: fixed;
   }
 
@@ -230,13 +225,7 @@ export default createGlobalStyle`
     height: 100%;
     width: 100%;
 
-    background: var(--color-primary-darker);
-    background: linear-gradient(
-      180deg,
-      var(--color-primary-darker) 0%,
-      var(--color-primary-base) 100%
-    );
-
+    background-color: var(--color-primary-base);
     background-attachment: fixed;
   }
 
