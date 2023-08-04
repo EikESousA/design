@@ -10,6 +10,13 @@ export const Container = styled.nav`
 
   background-color: var(--color-primary-base);
 
+  background: var(--color-primary-darker);
+  background: linear-gradient(
+    180deg,
+    var(--color-primary-darker) 0%,
+    var(--color-primary-base) 100%
+  );
+
   & header {
     width: 100%;
 

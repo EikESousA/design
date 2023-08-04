@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   html[data-theme='light'] {
-    --color-primary-lighter: #99cccc;
-    --color-primary-light: #4ca6a6;
-    --color-primary-base: #008080;
-    --color-primary-dark: #005959;
-    --color-primary-darker: #002626;
+    --color-primary-lighter: #77c38e;
+    --color-primary-light: #5cb777;
+    --color-primary-base: #4eb16c;
+    --color-primary-dark: #42965b;
+    --color-primary-darker: #367b4b;
 
     --color-success-light: #94BFA2;
     --color-success-base: #2E8540;
@@ -54,6 +54,12 @@ export default createGlobalStyle`
   }
 
   html[data-theme='dark'] {
+    --color-primary-lighter: #77c38e;
+    --color-primary-light: #5cb777;
+    --color-primary-base: #4eb16c;
+    --color-primary-dark: #42965b;
+    --color-primary-darker: #367b4b;
+
     --color-success-light: #94BFA2;
     --color-success-base: #2E8540;
     --color-success-dark: #266E35;
@@ -211,19 +217,27 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
     scroll-behavior: smooth;
 
-    background-color: #f5f7fa;
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--color-primary-darker);
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-darker) 0%,
+      var(--color-primary-base) 100%
+    );
     background-attachment: fixed;
   }
 
   body div#root {
-    background-color: #f5f7fa;
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-
-    background-attachment: fixed;
-
     height: 100%;
     width: 100%;
+
+    background: var(--color-primary-darker);
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-darker) 0%,
+      var(--color-primary-base) 100%
+    );
+
+    background-attachment: fixed;
   }
 
   body,

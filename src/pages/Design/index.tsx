@@ -61,29 +61,40 @@ export default function Design() {
       </Menu>
 
       <Fields className={openComponents ? "opened" : "closed"}>
-        {type === "components" && component === "Input" ? <FieldInput /> : null}
-        {type === "components" && component === "Checkbox" ? (
+        {type === "components" && (component === "Input" || !component) ? (
+          <FieldInput />
+        ) : null}
+        {type === "components" && (component === "Checkbox" || !component) ? (
           <FieldCheckbox />
         ) : null}
-        {type === "components" && component === "Switch" ? (
+        {type === "components" && (component === "Switch" || !component) ? (
           <FieldSwitch />
         ) : null}
-        {type === "components" && component === "Radio" ? <FieldRadio /> : null}
-        {type === "components" && component === "ButtonDefault" ? (
+        {type === "components" && (component === "Radio" || !component) ? (
+          <FieldRadio />
+        ) : null}
+        {type === "components" &&
+        (component === "ButtonDefault" || !component) ? (
           <FieldButtonDefault />
         ) : null}
-        {type === "components" && component === "ButtonIcon" ? (
+        {type === "components" && (component === "ButtonIcon" || !component) ? (
           <FieldButtonIcon />
         ) : null}
-        {type === "components" && component === "Link" ? <FieldLink /> : null}
-        {type === "components" && component === "Tooltip" ? (
+        {type === "components" && (component === "Link" || !component) ? (
+          <FieldLink />
+        ) : null}
+        {type === "components" && (component === "Tooltip" || !component) ? (
           <FieldTooltip />
         ) : null}
-        {type === "components" && component === "Loading" ? (
+        {type === "components" && (component === "Loading" || !component) ? (
           <FieldLoading />
         ) : null}
-        {type === "components" && component === "Icon" ? <FieldIcon /> : null}
-        {type === "components" && component === "Toast" ? <FieldToast /> : null}
+        {type === "components" && (component === "Icon" || !component) ? (
+          <FieldIcon />
+        ) : null}
+        {type === "components" && (component === "Toast" || !component) ? (
+          <FieldToast />
+        ) : null}
 
         {type === "theme" ? <FieldTheme /> : null}
         {type === "volume" ? <FieldVolume /> : null}

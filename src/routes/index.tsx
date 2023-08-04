@@ -8,7 +8,7 @@ export default function routes() {
     <Suspense fallback={<h1>Rendering...</h1>}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/design" element={<Design />} />
+        <Route path="/design/:type?/:component?" element={<Design />} />
         <Route path="/nodes" element={<Nodes />} />
 
         <Route path="*" element={<NotPage />} />
