@@ -1,4 +1,4 @@
-import { IMouseDTO } from "@/pages/Home/hooks/datas/dtos/IDatasDTO";
+import { IMouseDTO } from "@/pages/Nodes/hooks/datas/dtos/IDatasDTO";
 
 interface IProps {
   selectMouse: ({ x, y }: IMouseDTO) => void;

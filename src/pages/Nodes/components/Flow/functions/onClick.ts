@@ -2,7 +2,7 @@ import {
   IHandleLinkProps,
   ILinkSelectedDTO,
   IUpdateNodeLinkProps,
-} from "@/pages/Home/hooks/datas/dtos/IDatasDTO";
+} from "@/pages/Nodes/hooks/datas/dtos/IDatasDTO";
 import { MouseEvent } from "react";
 
 interface IProps {

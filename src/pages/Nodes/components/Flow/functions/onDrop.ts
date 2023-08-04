@@ -2,7 +2,7 @@ import {
   ICreateNodeProps,
   IMouseDTO,
   IUpdateNodePositionProps,
-} from "@/pages/Home/hooks/datas/dtos/IDatasDTO";
+} from "@/pages/Nodes/hooks/datas/dtos/IDatasDTO";
 import { DragEvent } from "react";
 
 interface IProps {

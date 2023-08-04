@@ -1,5 +1,5 @@
-import { INodeDTO } from "@/pages/Home/dtos/INode";
-import { IMouseDTO } from "@/pages/Home/hooks/datas/dtos/IDatasDTO";
+import { INodeDTO } from "@/pages/Nodes/dtos/INode";
+import { IMouseDTO } from "@/pages/Nodes/hooks/datas/dtos/IDatasDTO";
 
 interface IProps {
   node: INodeDTO;

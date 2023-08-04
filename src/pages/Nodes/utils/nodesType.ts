@@ -1,4 +1,4 @@
-import { IMenuDTO } from "@/pages/Home/dtos/IMenu";
+import { IMenuDTO } from "../dtos/IMenu";
 
 export default [
   {

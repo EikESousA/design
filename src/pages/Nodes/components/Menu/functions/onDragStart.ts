@@ -1,7 +1,7 @@
 import { DragEvent } from "react";
 
-import { IMenuDTO } from "@/pages/Home/dtos/IMenu";
-import { IMouseDTO } from "@/pages/Home/hooks/datas/dtos/IDatasDTO";
+import { IMouseDTO } from "@/pages/Nodes/hooks/datas/dtos/IDatasDTO";
+import { IMenuDTO } from "@/pages/Nodes/dtos/IMenu";
 
 interface IProps {
   event: DragEvent<HTMLDivElement>;
