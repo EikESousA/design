@@ -16,6 +16,7 @@ const jestConfig: JestConfigWithTsJest = {
     "src/pages/**/*.tsx",
     "src/components/**/*.tsx",
     "src/hooks/**/*.tsx",
+    "src/layout/**/*.tsx",
   ],
 };
 

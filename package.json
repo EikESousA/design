@@ -1,5 +1,5 @@
 {
-  "name": "design",
+  "name": "web-greenchat",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -15,7 +15,7 @@
   },
   "author": {
     "name": "EikE SousA",
-    "url": "https://github.com/belgattitude"
+    "url": "https://github.com/EikESousA"
   },
   "scripts": {
     "dev": "vite",

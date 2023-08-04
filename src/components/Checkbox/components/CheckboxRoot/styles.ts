@@ -70,7 +70,7 @@ export const Container = styled.div`
     width: 0.65rem;
     height: 0.65rem;
 
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    clippath: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     transform: scale(0);
     transform-origin: bottom left;
 

@@ -211,7 +211,7 @@ describe("<Input />", () => {
     );
 
     const component = screen.getByTestId("input-input");
-    console.log(component);
+
     fireEvent.change(component, { target: { value: "Test" } });
 
     expect(value).toEqual("Test");

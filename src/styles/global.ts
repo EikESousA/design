@@ -101,7 +101,8 @@ export default createGlobalStyle`
 
   html {
     --font-family-default: Roboto, sans-serif;
-    --font-family-reading: Spectral, sans-serif;
+    --font-family-title: Poppins, sans-serif;
+    --font-family-subtitle: Inter, sans-serif;
 
     --font-weight-lighter: lighter;
     --font-weight-regular: regular;
@@ -188,7 +189,7 @@ export default createGlobalStyle`
     @media screen and (max-width: 600px) {
       font-size: 67.75%;
     }
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 576px) {
       font-size: 74.25%;
     }
     @media screen and (min-width: 768px) {
@@ -205,12 +206,6 @@ export default createGlobalStyle`
   body {
     height: 100vh;
     width: 100vw;
-
-    padding: 10vh 10vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     text-rendering: optimizelegibility !important;
     -webkit-font-smoothing: antialiased !important;

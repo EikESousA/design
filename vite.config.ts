@@ -25,7 +25,7 @@ export default defineConfig(() => {
         gzipSize: true,
         template: "treemap",
         filename: "stats/rollup-stats.html",
-        title: "EikE Design - Visualizer Bundle",
+        title: "Web Greenchat- Visualizer Bundle",
       }) as PluginOption,
     ],
   };

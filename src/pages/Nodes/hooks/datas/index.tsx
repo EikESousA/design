@@ -239,11 +239,6 @@ export function DatasProvider({ children }: IDatasProps) {
     updateLinks();
   }, [updateLinks]);
 
-  console.log({
-    nodes,
-    links,
-  });
-
   return (
     <DatasContext.Provider value={context}>{children}</DatasContext.Provider>
   );

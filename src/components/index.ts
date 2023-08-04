@@ -9,6 +9,7 @@ import Icon from "./Icon";
 import Badge from "./Badge";
 import Loading from "./Loading";
 import Table from "./Table";
+import PageTitle from "./Page/Title";
 
 export {
   ButtonDefault,
@@ -22,4 +23,5 @@ export {
   Icon,
   Badge,
   Table,
+  PageTitle,
 };
