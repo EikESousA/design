@@ -9,8 +9,8 @@ import {
 } from "react";
 
 interface IThemeContextData {
-  mode_dark: boolean;
-  toogleTheme: (value: boolean) => void;
+  light: boolean;
+  toogleTheme: () => void;
 }
 
 interface IThemeProps {
@@ -21,35 +21,35 @@ const ThemeContext = createContext<IThemeContextData>({} as IThemeContextData);
 
 export function ThemeProvider({ children }: IThemeProps) {
   const [data, setData] = useState({
-    mode_dark: false,
+    light: true,
   });
 
-  const toogleTheme = useCallback((mode_dark: boolean) => {
-    setData({
-      mode_dark,
-    });
-
+  const toogleTheme = useCallback(() => {
     document.documentElement.setAttribute(
       "data-theme",
-      mode_dark ? "dark" : "light",
+      !data.light ? "dark" : "light",
     );
-  }, []);
+
+    setData({
+      light: !data.light,
+    });
+  }, [data]);
 
   useEffect(() => {
     if (window.matchMedia) {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.documentElement.setAttribute("data-theme", "dark");
-        toogleTheme(true);
+        setData({ light: false });
       } else {
         document.documentElement.setAttribute("data-theme", "light");
-        toogleTheme(false);
+        setData({ light: true });
       }
     }
-  }, [toogleTheme]);
+  }, []);
 
   const context = useMemo(() => {
     return {
-      mode_dark: data.mode_dark,
+      light: data.light,
       toogleTheme,
     };
   }, [data, toogleTheme]);

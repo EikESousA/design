@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  background-color: var(--color-white);
+  background-color: var(--aliases-200);
 
   border-top-left-radius: var(--border-radius-lg);
   border-bottom-left-radius: var(--border-radius-lg);
@@ -38,8 +38,12 @@ export const Container = styled.div`
 
       color: var(--color-primary-base);
     }
+  }
 
-    @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
+    border-radius: 0;
+
+    & > footer {
       display: none;
     }
   }

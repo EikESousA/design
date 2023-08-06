@@ -1,5 +1,4 @@
 import { IInputVariantDTO } from "../InputRoot";
-import { Container } from "./styles";
 
 interface IInputLabelProps {
   variant?: IInputVariantDTO;
@@ -18,17 +17,23 @@ export default function InputLabel({
 }: IInputLabelProps) {
   if (variant === "secondary" && label) {
     return (
-      <Container data-testid={datatestid ? `${datatestid}-label` : null}>
+      <p
+        className="label"
+        data-testid={datatestid ? `${datatestid}-label` : null}
+      >
         {label} {required ? <strong>*</strong> : null}
-      </Container>
+      </p>
     );
   }
 
   if (variant !== "secondary" && (label || placeholder)) {
     return (
-      <Container data-testid={datatestid ? `${datatestid}-label` : null}>
+      <p
+        className="label"
+        data-testid={datatestid ? `${datatestid}-label` : null}
+      >
         {label} {required ? <strong>*</strong> : null}
-      </Container>
+      </p>
     );
   }
 

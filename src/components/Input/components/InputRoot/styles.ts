@@ -147,7 +147,7 @@ export const Container = styled.label`
     &.filled {
       border-color: var(--color-primary-base);
 
-      & p.label {
+      & label {
         top: calc(var(--spacing-s3) * -1);
         left: var(--spacing-s2);
 

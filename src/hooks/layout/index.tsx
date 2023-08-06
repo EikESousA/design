@@ -11,6 +11,7 @@ import {
 interface ILayoutContextData {
   fold: boolean;
   toogleFold: () => void;
+  toogleFull: () => void;
 }
 
 interface ILayoutProps {
@@ -28,10 +29,22 @@ export default function LayoutProvider({ children }: ILayoutProps) {
     setFold((prev) => !prev);
   }, []);
 
+  const toogleFull = useCallback(() => {
+    if (document.fullscreenElement) {
+      document
+        .exitFullscreen()
+        .then(() => console.log("Document Exited from Full screen mode"))
+        .catch((err) => console.error(err));
+    } else {
+      document.documentElement.requestFullscreen();
+    }
+  }, []);
+
   const context = useMemo(() => {
     return {
       fold,
       toogleFold,
+      toogleFull,
     };
   }, [fold, toogleFold]);
 

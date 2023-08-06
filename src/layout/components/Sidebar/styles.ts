@@ -71,6 +71,8 @@ export const Container = styled.nav`
   & main button {
     width: 100%;
 
+    position: relative;
+
     padding: var(--spacing-s1) var(--spacing-s1) var(--spacing-s1)
       var(--spacing-s2);
 
@@ -91,11 +93,6 @@ export const Container = styled.nav`
     }
   }
 
-  & main button.submodule {
-    padding: var(--spacing-s2) var(--spacing-s1) var(--spacing-s2)
-      var(--spacing-s10);
-  }
-
   & main button div {
     flex: 1;
 
@@ -104,7 +101,7 @@ export const Container = styled.nav`
     align-items: center;
   }
 
-  & main button div section {
+  & main button div section.info {
     flex: 1;
 
     display: flex;
@@ -113,52 +110,34 @@ export const Container = styled.nav`
     gap: var(--spacing-s4);
   }
 
-  & main button div section svg {
+  & main button div section.info svg {
     height: 1.5rem;
     width: 1.5rem;
 
     fill: var(--color-white);
   }
 
-  & main button.submodule div section svg {
-    height: 1.5rem;
-    width: 1.5rem;
-  }
-
-  & main button div section p {
+  & main button div section.info p {
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-regular);
 
     color: var(--color-white);
   }
 
-  & main button.submodule div section p {
-    font-size: var(--font-size-sm);
-  }
-
-  & main button div span {
+  & main button div section.badge {
     padding: var(--spacing-s1) var(--spacing-s2);
 
-    font-size: var(--font-size-xxs);
-    font-weight: var(--font-weight-regular);
-
-    color: var(--color-primary-base);
     background-color: var(--color-white);
 
     border: 1px solid var(--color-white);
     border-radius: var(--border-radius-sm);
   }
 
-  & main button > svg {
-    height: 2rem;
-    width: 2rem;
+  & main button div section.badge span {
+    font-size: var(--font-size-xxs);
+    font-weight: var(--font-weight-regular);
 
-    fill: var(--color-white);
-  }
-
-  & main button > section {
-    height: 2rem;
-    width: 2rem;
+    color: var(--color-primary-base);
   }
 
   & footer {
@@ -262,6 +241,11 @@ export const Container = styled.nav`
     &:hover {
       background-color: #ffffff40;
     }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
 
   & footer section.buttons button svg {
@@ -272,7 +256,7 @@ export const Container = styled.nav`
   }
 
   &.unfold {
-    width: 20rem;
+    width: 16rem;
 
     & header img {
       width: 6rem;
@@ -296,28 +280,12 @@ export const Container = styled.nav`
       }
     }
 
-    & main button div section p {
+    & main button div section.info p {
       display: flex;
     }
 
-    & main button div span {
+    & main button div section.badge span {
       display: flex;
-    }
-
-    & main button > svg {
-      display: flex;
-    }
-
-    & main button > section {
-      display: flex;
-    }
-
-    & main button div {
-      justify-content: flex-start;
-    }
-
-    & main button div section {
-      justify-content: flex-start;
     }
 
     & footer button.user section img {
@@ -368,27 +336,28 @@ export const Container = styled.nav`
       align-items: center;
     }
 
-    & main button div section p {
-      display: none;
-    }
-
-    & main button div span {
-      display: none;
-    }
-
-    & main button > section {
-      display: none;
-    }
-
-    & main button div {
+    & main button div section.info {
       justify-content: center;
     }
 
-    & main button div section {
-      justify-content: center;
+    & main button div section.info p {
+      display: none;
     }
 
-    & main button > svg {
+    & main button div section.badge {
+      position: absolute;
+      top: 0.25rem;
+      right: 0.25rem;
+
+      width: var(--spacing-s2);
+      height: var(--spacing-s2);
+
+      padding: 0;
+
+      border-radius: 50%;
+    }
+
+    & main button div section.badge span {
       display: none;
     }
 

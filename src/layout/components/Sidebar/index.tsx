@@ -17,17 +17,7 @@ export default function Sidebar() {
   const [modules, setModules] = useState<IModuleDTO[]>(allModules);
 
   function handleModule(module: IModuleDTO) {
-    if (module.subModules.length > 0) {
-      const updatedModules = [...modules];
-
-      const findModule = updatedModules.find((item) => item.id === module.id);
-
-      if (findModule) {
-        findModule.open = !findModule.open;
-      }
-
-      setModules(updatedModules);
-    }
+    console.log(module, setModules);
   }
 
   return (
@@ -49,45 +39,18 @@ export default function Sidebar() {
               onClick={() => handleModule(module)}
             >
               <div>
-                <section>
+                <section className="info">
                   <Icon.Root icon={module.icon} />
                   <p>{module.name}</p>
                 </section>
+
                 {module.badge > 0 ? (
-                  <span>{module.badge > 9 ? "+9" : module.badge}</span>
+                  <section className="badge">
+                    <span>{module.badge > 9 ? "+9" : module.badge}</span>
+                  </section>
                 ) : null}
               </div>
-
-              {module.subModules.length > 0 ? (
-                <Icon.Root icon={module.open ? "arrowright" : "arrowdown"} />
-              ) : (
-                <section></section>
-              )}
             </button>
-            {module.open ? (
-              <>
-                {module.subModules.map((submodule) => (
-                  <button
-                    key={`sidebar-module-${module.id}-module-${submodule.id}`}
-                    className="submodule"
-                    type="button"
-                    onClick={() => handleModule(module)}
-                  >
-                    <div>
-                      <section>
-                        <Icon.Root icon={submodule.icon} />
-                        <p>{submodule.name}</p>
-                      </section>
-                      {submodule.badge > 0 ? (
-                        <span>
-                          {submodule.badge > 9 ? "+9" : submodule.badge}
-                        </span>
-                      ) : null}
-                    </div>
-                  </button>
-                ))}
-              </>
-            ) : null}
           </Fragment>
         ))}
       </main>
@@ -106,10 +69,10 @@ export default function Sidebar() {
           <button className="logout" type="button" onClick={() => {}}>
             <Icon.Root icon="logout" />
           </button>
-          <button className="bug" type="button" onClick={() => {}}>
+          <button className="bug" type="button" onClick={() => {}} disabled>
             <Icon.Root icon="bug" />
           </button>
-          <button className="suport" type="button" onClick={() => {}}>
+          <button className="suport" type="button" onClick={() => {}} disabled>
             <Icon.Root icon="suport" />
           </button>
         </section>

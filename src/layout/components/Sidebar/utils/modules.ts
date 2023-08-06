@@ -13,7 +13,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 0,
-    subModules: [],
   },
   {
     id: uuidv4(),
@@ -25,7 +24,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 1,
-    subModules: [],
   },
   {
     id: uuidv4(),
@@ -37,7 +35,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 0,
-    subModules: [],
   },
   {
     id: uuidv4(),
@@ -49,7 +46,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 0,
-    subModules: [],
   },
   {
     id: uuidv4(),
@@ -61,7 +57,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 0,
-    subModules: [],
   },
   {
     id: uuidv4(),
@@ -73,7 +68,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 0,
-    subModules: [],
   },
   {
     id: uuidv4(),
@@ -85,30 +79,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 10,
-    subModules: [
-      {
-        id: uuidv4(),
-        name: "Pedidos",
-        url: "/chatshop/request",
-        icon: "request",
-        global: false,
-        admin: false,
-        selected: false,
-        open: false,
-        badge: 0,
-      },
-      {
-        id: uuidv4(),
-        name: "Gerenciador",
-        url: "/chatshop/manager",
-        icon: "manager",
-        global: false,
-        admin: false,
-        selected: false,
-        open: false,
-        badge: 0,
-      },
-    ],
   },
   {
     id: uuidv4(),
@@ -120,7 +90,6 @@ const modules: IModuleDTO[] = [
     selected: false,
     open: false,
     badge: 0,
-    subModules: [],
   },
 ];
 
