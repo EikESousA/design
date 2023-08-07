@@ -10,8 +10,6 @@ export const Container = styled.nav`
 
   background-color: var(--color-primary-base);
 
-  background-color: var(--color-primary-base);
-
   & header {
     width: 100%;
 
@@ -384,6 +382,43 @@ export const Container = styled.nav`
   }
 
   @media screen and (max-width: 768px) {
-    display: none;
+    border-top-right-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+
+    animation: appearFromLeft var(--animation-slower) ease-out;
+
+    &.open {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      min-width: 16rem;
+      width: 50vw;
+      max-width: 100vw;
+
+      z-index: 2;
+    }
+
+    &.closed {
+      display: none;
+    }
+
+    & button.fold {
+      display: none;
+    }
+
+    @keyframes appearFromLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) {
   }
 `;

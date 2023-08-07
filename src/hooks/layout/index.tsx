@@ -12,8 +12,10 @@ import Layout from "@/layout";
 
 interface ILayoutContextData {
   fold: boolean;
+  open: boolean;
   toogleFold: () => void;
   toogleFull: () => void;
+  toogleOpen: (openUpdated?: boolean) => void;
 }
 
 interface ILayoutProps {
@@ -26,6 +28,7 @@ const LayoutContext = createContext<ILayoutContextData>(
 
 export default function LayoutProvider({ children }: ILayoutProps) {
   const [fold, setFold] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const toogleFold = useCallback(() => {
     setFold((prev) => !prev);
@@ -42,13 +45,23 @@ export default function LayoutProvider({ children }: ILayoutProps) {
     }
   }, []);
 
+  const toogleOpen = useCallback((openUpdated?: boolean) => {
+    if (openUpdated !== undefined) {
+      setOpen(openUpdated);
+    } else {
+      setOpen((prev) => !prev);
+    }
+  }, []);
+
   const context = useMemo(() => {
     return {
       fold,
+      open,
       toogleFold,
       toogleFull,
+      toogleOpen,
     };
-  }, [fold, toogleFold, toogleFull]);
+  }, [fold, open, toogleFold, toogleFull, toogleOpen]);
 
   return (
     <LayoutContext.Provider value={context}>

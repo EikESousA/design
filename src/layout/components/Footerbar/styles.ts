@@ -35,7 +35,7 @@ export const Container = styled.nav`
 
     & div {
       position: absolute;
-      top: -1rem;
+      top: -1.5rem;
 
       height: 4.5rem;
       width: 4.5rem;
@@ -48,6 +48,8 @@ export const Container = styled.nav`
 
       border: 6px solid var(--color-primary-base);
       border-radius: 50%;
+
+      cursor: auto;
     }
 
     & div svg {

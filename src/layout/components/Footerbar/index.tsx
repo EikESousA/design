@@ -15,7 +15,7 @@ interface IIconSelectedDTO {
 }
 
 export default function Footerbar() {
-  const { toogleFold } = useLayout();
+  const { toogleOpen } = useLayout();
   const location = useLocation();
 
   const [icon, setIcon] = useState<IIconSelectedDTO>({
@@ -36,7 +36,7 @@ export default function Footerbar() {
 
   return (
     <Container>
-      <button className="first" type="button" onClick={() => toogleFold()}>
+      <button className="first" type="button" onClick={() => toogleOpen()}>
         <Icon.Root icon="menu" />
       </button>
       <button type="button" onClick={() => {}}>
@@ -44,7 +44,6 @@ export default function Footerbar() {
       </button>
       <button className="middle" type="button" onClick={() => {}}>
         <div>
-          {}
           <Icon.Root icon={icon.icon} />
           <p>{icon.name}</p>
         </div>
