@@ -1,32 +1,36 @@
-import { useState, Fragment } from "react";
-
-import logoImg from "../../assets/logo.png";
-import userImg from "../../assets/img.png";
+import { useState, useEffect, Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Icon } from "@/components";
 import { useLayout } from "@/hooks/layout";
 
-import allModules from "./utils/modules";
+import allModules from "../utils/modules";
+import { companyLogo, userLogo } from "./assets";
 import { IModuleDTO } from "./dtos/ModuleDTO";
 
 import { Container } from "./styles";
 
 export default function Sidebar() {
   const { fold, toogleFold } = useLayout();
+  const navigate = useNavigate();
 
-  const [modules, setModules] = useState<IModuleDTO[]>(allModules);
+  const [modules, setModules] = useState<IModuleDTO[]>([]);
 
   function handleModule(module: IModuleDTO) {
-    console.log(module, setModules);
+    navigate(module.url);
   }
+
+  useEffect(() => {
+    setModules(allModules);
+  }, []);
 
   return (
     <Container className={fold ? "fold" : "unfold"}>
       <header>
-        <img src={logoImg} alt="Logo da empresa" />
+        <img src={companyLogo} alt="Logo da empresa" />
       </header>
 
-      <button className="fold" onClick={() => toogleFold()}>
+      <button type="button" className="fold" onClick={() => toogleFold()}>
         <Icon.Root icon={fold ? "menufold" : "menuunfold"} />
       </button>
 
@@ -58,7 +62,7 @@ export default function Sidebar() {
       <footer>
         <button className="user" type="button" onClick={() => {}}>
           <section>
-            <img src={userImg} alt="Imagem do usuario" />
+            <img src={userLogo} alt="Imagem do usuario" />
             <div>
               <p>Thiago Reis</p>
               <span>Administrador</span>

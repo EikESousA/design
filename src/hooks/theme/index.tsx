@@ -25,11 +25,6 @@ export function ThemeProvider({ children }: IThemeProps) {
   });
 
   const toogleTheme = useCallback(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      !data.light ? "dark" : "light",
-    );
-
     setData({
       light: !data.light,
     });
@@ -38,14 +33,22 @@ export function ThemeProvider({ children }: IThemeProps) {
   useEffect(() => {
     if (window.matchMedia) {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.documentElement.setAttribute("data-theme", "dark");
         setData({ light: false });
       } else {
-        document.documentElement.setAttribute("data-theme", "light");
         setData({ light: true });
       }
     }
   }, []);
+
+  useEffect(() => {
+    if (data && data.light) {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    if (data && !data.light) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  }, [data]);
 
   const context = useMemo(() => {
     return {

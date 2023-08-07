@@ -7,12 +7,60 @@ export const Container = styled.nav`
   justify-content: center;
   align-items: center;
 
-  background-color: var(--color-primary-base);
+  background-color: var(--aliases-200);
 
   & button {
     flex: 1;
+    height: 5rem;
 
-    padding: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem 0.75rem;
+
+    background-color: var(--color-primary-base);
+  }
+
+  & button.first {
+    border-top-left-radius: var(--border-radius-lg);
+  }
+
+  & button.last {
+    border-top-right-radius: var(--border-radius-lg);
+  }
+
+  & button.middle {
+    position: relative;
+
+    & div {
+      position: absolute;
+      top: -1rem;
+
+      height: 4.5rem;
+      width: 4.5rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: var(--aliases-200);
+
+      border: 6px solid var(--color-primary-base);
+      border-radius: 50%;
+    }
+
+    & div svg {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+
+    & div p {
+      position: absolute;
+      top: 3.75rem;
+
+      color: white;
+    }
   }
 
   & button svg {

@@ -1,6 +1,27 @@
+import Administration from "./Administration";
+import Campaigns from "./Campaigns";
+import ChatShop from "./ChatShop";
+import Contacts from "./Contacts";
+import Dashboard from "./Dashboard";
+import Design from "./Design";
+import GoogleCalendar from "./GoogleCalendar";
+import Home from "./Home";
 import Nodes from "./Nodes";
 import NotPage from "./NotPage";
-import Design from "./Design";
-import Home from "./Home";
+import Reports from "./Reports";
+import Tickets from "./Tickets";
 
-export { Design, Nodes, NotPage, Home };
+export {
+  Administration,
+  Campaigns,
+  ChatShop,
+  Contacts,
+  Dashboard,
+  Design,
+  GoogleCalendar,
+  Home,
+  Nodes,
+  NotPage,
+  Reports,
+  Tickets,
+};

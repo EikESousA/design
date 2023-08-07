@@ -1,4 +1,4 @@
-import Layout from "@/layout";
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {
   createContext,
   useCallback,
@@ -7,6 +7,8 @@ import {
   ReactNode,
   useMemo,
 } from "react";
+
+import Layout from "@/layout";
 
 interface ILayoutContextData {
   fold: boolean;
@@ -33,8 +35,8 @@ export default function LayoutProvider({ children }: ILayoutProps) {
     if (document.fullscreenElement) {
       document
         .exitFullscreen()
-        .then(() => console.log("Document Exited from Full screen mode"))
-        .catch((err) => console.error(err));
+        .then(() => {})
+        .catch(() => {});
     } else {
       document.documentElement.requestFullscreen();
     }
@@ -46,7 +48,7 @@ export default function LayoutProvider({ children }: ILayoutProps) {
       toogleFold,
       toogleFull,
     };
-  }, [fold, toogleFold]);
+  }, [fold, toogleFold, toogleFull]);
 
   return (
     <LayoutContext.Provider value={context}>

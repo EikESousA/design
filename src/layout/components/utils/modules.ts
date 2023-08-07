@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-import { IModuleDTO } from "../dtos/ModuleDTO";
+import { IModuleDTO } from "../Sidebar/dtos/ModuleDTO";
 
 const modules: IModuleDTO[] = [
   {
@@ -28,7 +28,7 @@ const modules: IModuleDTO[] = [
   {
     id: uuidv4(),
     name: "Contatos",
-    url: "/contact",
+    url: "/contacts",
     icon: "contact",
     global: false,
     admin: false,
@@ -39,7 +39,7 @@ const modules: IModuleDTO[] = [
   {
     id: uuidv4(),
     name: "Campanhas",
-    url: "/campaign",
+    url: "/campaigns",
     icon: "campaign",
     global: false,
     admin: false,
@@ -50,7 +50,7 @@ const modules: IModuleDTO[] = [
   {
     id: uuidv4(),
     name: "Relatórios",
-    url: "/report",
+    url: "/reports",
     icon: "report",
     global: false,
     admin: false,
@@ -61,7 +61,7 @@ const modules: IModuleDTO[] = [
   {
     id: uuidv4(),
     name: "Google Agenda",
-    url: "/googleagenda",
+    url: "/googlecalendar",
     icon: "calendar",
     global: false,
     admin: false,
@@ -83,7 +83,7 @@ const modules: IModuleDTO[] = [
   {
     id: uuidv4(),
     name: "Administração",
-    url: "/admin",
+    url: "/administration",
     icon: "config",
     global: false,
     admin: false,

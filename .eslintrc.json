@@ -12,18 +12,16 @@
     "prettier",
     "import",
     "eslint-plugin-import-helpers",
-    "react-hooks",
     "jest"
   ],
   "extends": [
     "eslint:recommended",
+    "airbnb",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "airbnb",
     "plugin:prettier/recommended",
-    "react-refresh",
     "plugin:jest/recommended"
   ],
   "settings": {
@@ -72,7 +70,6 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-unused-expressions": "error",
-    "react-refresh/only-export-components": "warn",
     "react/prop-types": "off",
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
@@ -102,7 +99,15 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        "groups": [
+          ["/^react/"],
+          "/styled-components/",
+          "module",
+          "/^@/",
+          ["parent", "sibling", "index"],
+          "/routes/",
+          "/styles/"
+        ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
