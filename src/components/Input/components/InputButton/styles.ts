@@ -4,14 +4,14 @@ export const Container = styled.button`
   position: relative;
   overflow: hidden;
 
-  min-height: var(--spacing-s8);
+  max-height: var(--spacing-s12);
 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-s2);
 
-  padding: var(--spacing-s2);
+  padding: var(--spacing-s2) var(--spacing-s4);
 
   background-color: var(--color-primary-base);
 
@@ -52,7 +52,7 @@ export const Container = styled.button`
     height: var(--font-size-lg);
     width: var(--font-size-lg);
 
-    color: var(--color-white);
+    fill: var(--color-white);
   }
 
   &:disabled {

@@ -1,11 +1,13 @@
+/* eslint-disable no-alert */
 import { useState } from "react";
 
 import { ButtonDefault, Switch, Radio, Input } from "@/components";
-import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 import {
   IButtonDefaultSizeDTO,
   IButtonDefaultVariantDTO,
 } from "@/components/ButtonDefault/components/ButtonDefaultRoot";
+
+import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 
 const optionsVariant = [
   {
@@ -62,7 +64,7 @@ export default function FieldButtonDefault() {
           disabled={disabled}
           full={full}
           loading={loading}
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
         >
           {leftIcon ? <ButtonDefault.LeftIcon icon="attachfile" /> : null}
           {rightIcon ? <ButtonDefault.RightIcon icon="delete" /> : null}
@@ -89,7 +91,7 @@ export default function FieldButtonDefault() {
         <section>
           <Radio.Root
             name="field-button-variant"
-            title={"Variante"}
+            title="Variante"
             options={optionsVariant}
             checked={variant}
             setChecked={(value) => setVariant(value)}
@@ -98,7 +100,7 @@ export default function FieldButtonDefault() {
         <section>
           <Radio.Root
             name="field-button-size"
-            title={"Tamanho"}
+            title="Tamanho"
             options={optionsSize}
             checked={size}
             setChecked={(value) => setSize(value)}

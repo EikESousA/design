@@ -1,5 +1,6 @@
+import * as router from "react-router-dom";
+
 import { render, screen, fireEvent } from "@testing-library/react";
-import * as router from "react-router";
 
 import { Link } from "@/components";
 

@@ -1,7 +1,9 @@
+/* eslint-disable no-alert */
 import { Icon } from "@/components";
-import { Container } from "./styles";
 import { useLayout } from "@/hooks/layout";
 import { useTheme } from "@/hooks/theme";
+
+import { Container } from "./styles";
 
 export default function Headerbar() {
   const { fold, toogleFull } = useLayout();
@@ -18,16 +20,16 @@ export default function Headerbar() {
         <p>Empresa 1</p>
       </section>
       <section>
-        <button type="button" onClick={() => {}}>
+        <button type="button" onClick={() => alert("Botao apertado")}>
           <Icon.Root icon="notification" />
         </button>
-        <button type="button" onClick={() => {}}>
+        <button type="button" onClick={() => alert("Botao apertado")}>
           <Icon.Root icon="call" />
         </button>
         <button type="button" onClick={() => toogleTheme()}>
           <Icon.Root icon={light ? "light" : "dark"} />
         </button>
-        <button type="button" onClick={() => {}}>
+        <button type="button" onClick={() => alert("Botao apertado")}>
           <Icon.Root icon="volumeup" />
         </button>
       </section>

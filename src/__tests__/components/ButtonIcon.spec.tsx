@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import { ButtonIcon } from "@/components";
@@ -21,7 +22,7 @@ describe("<ButtonIcon />", () => {
     render(
       <ButtonIcon.Root
         icon="delete"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         datatestid="button-icon"
       />,
     );
@@ -36,25 +37,25 @@ describe("<ButtonIcon />", () => {
       <>
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="primary"
           datatestid="button-icon-primary"
         />
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="secondary"
           datatestid="button-icon-secondary"
         />
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="tertiary"
           datatestid="button-icon-tertiary"
         />
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="danger"
           datatestid="button-icon-danger"
         />
@@ -84,19 +85,19 @@ describe("<ButtonIcon />", () => {
       <>
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           size="sm"
           datatestid="button-icon-sm"
         />
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           size="md"
           datatestid="button-icon-md"
         />
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           size="lg"
           datatestid="button-icon-lg"
         />
@@ -121,7 +122,7 @@ describe("<ButtonIcon />", () => {
     render(
       <ButtonIcon.Root
         icon="delete"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         full
         datatestid="button-icon"
       />,
@@ -137,7 +138,7 @@ describe("<ButtonIcon />", () => {
     render(
       <ButtonIcon.Root
         icon="delete"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         loading
         datatestid="button-icon"
       />,
@@ -156,7 +157,7 @@ describe("<ButtonIcon />", () => {
     render(
       <ButtonIcon.Root
         icon="delete"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         disabled
         datatestid="button-icon"
       />,
@@ -188,56 +189,26 @@ describe("<ButtonIcon />", () => {
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 
-  it("Renderiza com tipos", () => {
-    render(
-      <>
-        <ButtonIcon.Root
-          icon="delete"
-          onClick={() => {}}
-          type="button"
-          datatestid="button-icon-button"
-        />
-        <ButtonIcon.Root
-          icon="delete"
-          onClick={() => {}}
-          type="submit"
-          datatestid="button-icon-submit"
-        />
-      </>,
-    );
-
-    const component = screen.getByTestId("button-icon-button-button");
-    const submit = screen.getByTestId("button-icon-submit-button");
-
-    expect(component).toBeVisible();
-    expect(component).toHaveProperty("type", "button");
-    expect(submit).toBeVisible();
-    expect(submit).toHaveProperty("type", "submit");
-  });
-
   it("Renderiza com badge", () => {
     render(
       <>
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
-          type="button"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-icon-badge-0"
         >
           <ButtonIcon.Badge number={0} datatestid="badge-0" />
         </ButtonIcon.Root>
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
-          type="submit"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-icon-badge-1"
         >
           <ButtonIcon.Badge number={1} datatestid="badge-1" />
         </ButtonIcon.Root>
         <ButtonIcon.Root
           icon="delete"
-          onClick={() => {}}
-          type="submit"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-icon-badge-10"
         >
           <ButtonIcon.Badge number={10} datatestid="badge-10" />
@@ -264,7 +235,7 @@ describe("<ButtonIcon />", () => {
     render(
       <ButtonIcon.Root
         icon="delete"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         datatestid="button-icon"
         tooltip="tooltip"
       />,
@@ -278,6 +249,4 @@ describe("<ButtonIcon />", () => {
 
     expect(mockHandleOnMouseOut).toHaveBeenCalledTimes(1);
   });
-
-  it("Coverage 100%", async () => {});
 });

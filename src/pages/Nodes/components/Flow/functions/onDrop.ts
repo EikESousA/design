@@ -1,9 +1,10 @@
+import { DragEvent } from "react";
+
 import {
   ICreateNodeProps,
   IMouseDTO,
   IUpdateNodePositionProps,
 } from "@/pages/Nodes/hooks/datas/dtos/IDatasDTO";
-import { DragEvent } from "react";
 
 interface IProps {
   event: DragEvent<HTMLDivElement>;

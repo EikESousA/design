@@ -1,5 +1,7 @@
 import { Toast } from "..";
+
 import { IToastMessageDTO } from "../..";
+
 import { Container } from "./styles";
 
 interface IToastsProps {

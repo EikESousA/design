@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 import { Input, Switch, Checkbox } from "@/components";
-import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 import { ICheckboxOptionsDTO } from "@/components/Checkbox/components/CheckboxRoot";
+
+import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 
 const optionsDefault = [
   {

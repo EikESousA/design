@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import { Input } from "@/components";
@@ -5,7 +6,12 @@ import { Input } from "@/components";
 describe("<Input />", () => {
   it("Renderiza com label", () => {
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" />
       </Input.Root>,
     );
@@ -20,7 +26,7 @@ describe("<Input />", () => {
       <Input.Root
         name="input"
         value=""
-        setValue={() => {}}
+        setValue={() => alert("Botao apertado")}
         placeholder="placeholder"
         datatestid="input"
       >
@@ -46,7 +52,7 @@ describe("<Input />", () => {
         <Input.Root
           name="input"
           value=""
-          setValue={() => {}}
+          setValue={() => alert("Botao apertado")}
           variant="primary"
           datatestid="input-primary"
         >
@@ -59,7 +65,7 @@ describe("<Input />", () => {
         <Input.Root
           name="input"
           value=""
-          setValue={() => {}}
+          setValue={() => alert("Botao apertado")}
           variant="secondary"
           datatestid="input-secondary"
         >
@@ -72,7 +78,7 @@ describe("<Input />", () => {
         <Input.Root
           name="input"
           value=""
-          setValue={() => {}}
+          setValue={() => alert("Botao apertado")}
           variant="tertiary"
           datatestid="input-tertiary"
         >
@@ -104,7 +110,7 @@ describe("<Input />", () => {
       <Input.Root
         name="input"
         value=""
-        setValue={() => {}}
+        setValue={() => alert("Botao apertado")}
         full
         datatestid="input"
       >
@@ -123,7 +129,7 @@ describe("<Input />", () => {
       <Input.Root
         name="input"
         value=""
-        setValue={() => {}}
+        setValue={() => alert("Botao apertado")}
         disabled
         datatestid="input"
       >
@@ -142,7 +148,7 @@ describe("<Input />", () => {
       <Input.Root
         name="input"
         value=""
-        setValue={() => {}}
+        setValue={() => alert("Botao apertado")}
         required
         datatestid="input"
       >
@@ -161,7 +167,7 @@ describe("<Input />", () => {
       <Input.Root
         name="input"
         value=""
-        setValue={() => {}}
+        setValue={() => alert("Botao apertado")}
         error="error"
         datatestid="input"
       >
@@ -176,7 +182,12 @@ describe("<Input />", () => {
 
   it("Renderiza com icones", () => {
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" datatestid="input" />
         <Input.LeftIcon icon="send" datatestid="input" />
         <Input.RightIcon icon="delete" datatestid="input" />
@@ -219,9 +230,18 @@ describe("<Input />", () => {
 
   it("Renderiza botao com label", () => {
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" datatestid="input" />
-        <Input.Button onClick={() => {}} label="Button" datatestid="input" />
+        <Input.Button
+          onClick={() => alert("Botao apertado")}
+          label="Button"
+          datatestid="input"
+        />
       </Input.Root>,
     );
 
@@ -232,9 +252,18 @@ describe("<Input />", () => {
 
   it("Renderiza botao com icone", () => {
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" />
-        <Input.Button onClick={() => {}} icon="send" datatestid="input" />
+        <Input.Button
+          onClick={() => alert("Botao apertado")}
+          icon="send"
+          datatestid="input"
+        />
       </Input.Root>,
     );
 
@@ -247,7 +276,12 @@ describe("<Input />", () => {
     const mockOnClick = jest.fn();
 
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" datatestid="input" />
         <Input.Button onClick={mockOnClick} label="Button" datatestid="input" />
       </Input.Root>,
@@ -264,9 +298,18 @@ describe("<Input />", () => {
 
   it("Renderiza botao com loading", () => {
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" datatestid="input" />
-        <Input.Button onClick={() => {}} loading datatestid="input" />
+        <Input.Button
+          onClick={() => alert("Botao apertado")}
+          loading
+          datatestid="input"
+        />
       </Input.Root>,
     );
 
@@ -277,9 +320,18 @@ describe("<Input />", () => {
 
   it("Renderiza botao desabilitado", () => {
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" datatestid="input" />
-        <Input.Button onClick={() => {}} disabled datatestid="input" />
+        <Input.Button
+          onClick={() => alert("Botao apertado")}
+          disabled
+          datatestid="input"
+        />
       </Input.Root>,
     );
 
@@ -291,7 +343,12 @@ describe("<Input />", () => {
 
   it("Focus", () => {
     render(
-      <Input.Root name="input" value="" setValue={() => {}} datatestid="input">
+      <Input.Root
+        name="input"
+        value=""
+        setValue={() => alert("Botao apertado")}
+        datatestid="input"
+      >
         <Input.Label label="label" datatestid="input" />
       </Input.Root>,
     );
@@ -310,7 +367,7 @@ describe("<Input />", () => {
       <Input.Root
         name="input"
         value="test"
-        setValue={() => {}}
+        setValue={() => alert("Botao apertado")}
         datatestid="input"
       >
         <Input.Label label="label" datatestid="input" />
@@ -325,6 +382,4 @@ describe("<Input />", () => {
 
     expect(component1).toHaveClass("filled");
   });
-
-  it("Coverage 100%", async () => {});
 });

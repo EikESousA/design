@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Icon, Input } from "@/components";
-import { fields } from "../../utils";
-import { Container } from "./styles";
+
 import { IFieldDTO } from "../../dtos/IFieldDTO";
+import { fields } from "../../utils";
+
+import { Container } from "./styles";
 
 interface IProps {
   openComponents: boolean;
@@ -28,7 +30,7 @@ export default function MenuComponents({
         );
 
   function handleSelect(field: IFieldDTO) {
-    navigate(`/design/components/${field.name}`);
+    navigate(`/design/${field.name}`);
     setOpenComponents(false);
   }
 
@@ -39,7 +41,7 @@ export default function MenuComponents({
         name="menu"
         variant="tertiary"
         value={value}
-        setValue={(value) => setValue(value)}
+        setValue={(valueUpdate) => setValue(valueUpdate)}
       >
         <Input.Label
           label="Procure o componente"

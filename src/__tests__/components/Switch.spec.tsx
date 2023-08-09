@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import { Switch } from "@/components";
@@ -8,7 +9,7 @@ describe("<Switch />", () => {
       <Switch.Root
         label="Test"
         checked={false}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         datatestid="switch"
       />,
     );
@@ -23,7 +24,7 @@ describe("<Switch />", () => {
       <Switch.Root
         label="Test"
         checked={false}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         datatestid="switch"
         disabled
       />,
@@ -39,8 +40,8 @@ describe("<Switch />", () => {
     render(
       <Switch.Root
         label="Test"
-        checked={true}
-        setChecked={() => {}}
+        checked
+        setChecked={() => alert("Botao apertado")}
         datatestid="switch"
       />,
     );
@@ -56,7 +57,7 @@ describe("<Switch />", () => {
       <Switch.Root
         label="Test"
         checked={false}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         datatestid="switch"
       />,
     );
@@ -87,6 +88,4 @@ describe("<Switch />", () => {
 
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
-
-  it("Coverage 100%", async () => {});
 });

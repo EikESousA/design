@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { DragEvent } from "react";
 
 import { useDatas } from "../../hooks/datas";
 import { onClick, onDragOver, onDrop } from "./functions";
+
 import { Container } from "./styles";
 
 import { Links, Node } from "..";

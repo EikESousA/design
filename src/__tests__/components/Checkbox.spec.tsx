@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import { Checkbox } from "@/components";
@@ -34,7 +35,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={[]}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         datatestid="checkbox"
       />,
     );
@@ -50,7 +51,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={[]}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         msgEmpty="Nao possui items de teste"
         datatestid="checkbox"
       />,
@@ -67,7 +68,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options1}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         datatestid="checkbox"
       />,
     );
@@ -83,7 +84,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options2}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         datatestid="checkbox"
       />,
     );
@@ -101,7 +102,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options2}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         disabled
         datatestid="checkbox"
       />,
@@ -120,7 +121,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options1}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         title="Titulo de teste"
         datatestid="checkbox"
       />,
@@ -137,7 +138,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options1}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         horizontal
         datatestid="checkbox"
       />,
@@ -154,7 +155,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options1}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         horizontal={false}
         datatestid="checkbox"
       />,
@@ -171,7 +172,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options1}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         required={1}
         datatestid="checkbox"
       />,
@@ -188,7 +189,7 @@ describe("<Checkbox />", () => {
         name="checkbox"
         options={options1}
         checked={[]}
-        setChecked={() => {}}
+        setChecked={() => alert("Botao apertado")}
         datatestid="checkbox"
       />,
     );
@@ -285,6 +286,4 @@ describe("<Checkbox />", () => {
 
     expect(mockSetState).toHaveBeenCalledTimes(1);
   });
-
-  it("Coverage 100%", async () => {});
 });

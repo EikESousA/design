@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 import { Icon } from "@/components";
 import { IToastMessageDTO, useToast } from "@/hooks/toast";
+
 import { Container } from "./styles";
 
 const TIMEOUTCLOSESECONDS = 5 * 1000; // 5 seconds

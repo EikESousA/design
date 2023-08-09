@@ -1,8 +1,12 @@
-import { Loading } from "@/components";
-import { handleRipple } from "@/utils";
-import { Container } from "./styles";
+/* eslint-disable no-alert */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MouseEvent } from "react";
 import { ReactNode } from "react";
+
+import { Loading } from "@/components";
+import { handleRipple } from "@/utils";
+
+import { Container } from "./styles";
 
 interface IButtonDefaultRootProps {
   label: string;
@@ -32,7 +36,7 @@ export default function ButtonDefaultRoot({
   loading = false,
   type = "button",
   disabled = false,
-  onClick = () => {},
+  onClick = () => alert("Botao apertado"),
   datatestid = null,
   children,
 }: IButtonDefaultRootProps) {

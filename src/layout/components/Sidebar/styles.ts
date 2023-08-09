@@ -318,8 +318,8 @@ export const Container = styled.nav`
       right: -3rem;
 
       & svg {
-        height: 1rem;
-        width: 1rem;
+        height: 1.5rem;
+        width: 1.5rem;
 
         fill: var(--color-primary-base);
       }

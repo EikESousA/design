@@ -1,4 +1,5 @@
 import { Icon } from "@/components";
+
 import { Container } from "./styles";
 
 interface IBadgeRootProps {
@@ -20,14 +21,13 @@ export default function BadgeRoot({
           />
         </Container>
       );
-    } else {
-      return (
-        <Container data-testid={datatestid}>
-          <p data-testid={datatestid ? `${datatestid}-p` : null}>{number}</p>
-        </Container>
-      );
     }
+    return (
+      <Container data-testid={datatestid}>
+        <p data-testid={datatestid ? `${datatestid}-p` : null}>{number}</p>
+      </Container>
+    );
   }
 
-  return <></>;
+  return null;
 }

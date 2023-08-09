@@ -1,12 +1,14 @@
-import { ButtonDefault } from "@/components";
+/* eslint-disable no-alert */
 import { render, screen, fireEvent } from "@testing-library/react";
+
+import { ButtonDefault } from "@/components";
 
 describe("<ButtonDefault />", () => {
   it("Renderiza", () => {
     render(
       <ButtonDefault.Root
         label="Button"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         datatestid="button-default"
       />,
     );
@@ -20,7 +22,7 @@ describe("<ButtonDefault />", () => {
     render(
       <ButtonDefault.Root
         label="Button"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         datatestid="button-default"
       />,
     );
@@ -35,25 +37,25 @@ describe("<ButtonDefault />", () => {
       <>
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="primary"
           datatestid="button-default-primary"
         />
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="secondary"
           datatestid="button-default-secondary"
         />
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="tertiary"
           datatestid="button-default-tertiary"
         />
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           variant="danger"
           datatestid="button-default-danger"
         />
@@ -83,19 +85,19 @@ describe("<ButtonDefault />", () => {
       <>
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           size="sm"
           datatestid="button-default-sm"
         />
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           size="md"
           datatestid="button-default-md"
         />
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           size="lg"
           datatestid="button-default-lg"
         />
@@ -120,7 +122,7 @@ describe("<ButtonDefault />", () => {
     render(
       <ButtonDefault.Root
         label="Button"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         full
         datatestid="button-default"
       />,
@@ -136,7 +138,7 @@ describe("<ButtonDefault />", () => {
     render(
       <ButtonDefault.Root
         label="Button"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         loading
         datatestid="button-default"
       />,
@@ -155,7 +157,7 @@ describe("<ButtonDefault />", () => {
     render(
       <ButtonDefault.Root
         label="Button"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         disabled
         datatestid="button-default"
       />,
@@ -171,7 +173,7 @@ describe("<ButtonDefault />", () => {
     render(
       <ButtonDefault.Root
         label="Button"
-        onClick={() => {}}
+        onClick={() => alert("Botao apertado")}
         datatestid="button-default"
       >
         <ButtonDefault.LeftIcon icon="attachfile" datatestid="button-default" />
@@ -213,13 +215,13 @@ describe("<ButtonDefault />", () => {
       <>
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           type="button"
           datatestid="button-default-button"
         />
         <ButtonDefault.Root
           label="Button"
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
           type="submit"
           datatestid="button-default-submit"
         />
@@ -234,6 +236,4 @@ describe("<ButtonDefault />", () => {
     expect(submit).toBeVisible();
     expect(submit).toHaveProperty("type", "submit");
   });
-
-  it("Coverage 100%", async () => {});
 });

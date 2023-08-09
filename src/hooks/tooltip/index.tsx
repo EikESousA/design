@@ -8,7 +8,6 @@ import {
   useContext,
   ReactNode,
   RefObject,
-  MouseEvent,
 } from "react";
 
 import Tooltip from "@/components/Tooltip";
@@ -17,7 +16,7 @@ interface ITooltipContextData {
   tooltipRef: RefObject<HTMLDivElement>;
   pastShow: () => void;
   handleOnMouseOut: () => void;
-  handleOnMouseOver: ({ event, label }: IHandleOnMouseOver) => void;
+  handleOnMouseOver: ({ el, text }: IHandleOnMouseOver) => void;
 }
 
 interface ITooltipProps {
@@ -25,8 +24,8 @@ interface ITooltipProps {
 }
 
 interface IHandleOnMouseOver {
-  event: MouseEvent<HTMLButtonElement>;
-  label: string;
+  el: Element;
+  text: string;
 }
 
 const TooltipContext = createContext<ITooltipContextData>(
@@ -42,17 +41,19 @@ export function TooltipProvider({ children }: ITooltipProps) {
   const [type, setType] = useState<string>("none");
   const [label, setLabel] = useState<string>("");
 
-  const style = {
-    left: x + window.scrollX + "px",
-    top: y + window.scrollY + "px",
-  };
+  const style = useMemo(() => {
+    return {
+      left: `${x + window.scrollX}px`,
+      top: `${y + window.scrollY}px`,
+    };
+  }, [x, y]);
 
   const pastShow = useCallback(() => {
     const ttNode = tooltipRef.current;
 
     if (ttNode != null && rect !== null) {
-      let x = 0;
-      let y = 0;
+      let xUpdated = 0;
+      let yUpdated = 0;
 
       const docWidth = document.documentElement.clientWidth;
       const docHeight = document.documentElement.clientHeight;
@@ -69,49 +70,49 @@ export function TooltipProvider({ children }: ITooltipProps) {
       const bLeft = lx - ttRect.width >= 0;
       const bRight = rx + ttRect.width <= window.scrollX + docWidth;
 
-      let type = "none";
+      let typeUpdated = "none";
 
       if (bAbove) {
-        y = ty - rect.height / 2 - 5;
-        x = lx + rect.width / 2 - ttRect.width / 2;
+        yUpdated = ty - rect.height / 2 - 5;
+        xUpdated = lx + rect.width / 2 - ttRect.width / 2;
 
-        if (x < 0) {
-          x = lx;
+        if (xUpdated < 0) {
+          xUpdated = lx;
         }
 
-        type = "top";
+        typeUpdated = "top";
       } else if (bBellow) {
-        y = by + 5;
-        x = lx + (rect.width / 2 - ttRect.width / 2);
+        yUpdated = by + 5;
+        xUpdated = lx + (rect.width / 2 - ttRect.width / 2);
 
-        if (x < 0) {
-          x = lx;
+        if (xUpdated < 0) {
+          xUpdated = lx;
         }
 
-        type = "bottom";
+        typeUpdated = "bottom";
       } else if (bLeft) {
-        x = lx - ttRect.width - 5;
-        y = ty + (rect.height / 2 - ttRect.height / 2);
+        xUpdated = lx - ttRect.width - 5;
+        yUpdated = ty + (rect.height / 2 - ttRect.height / 2);
 
-        if (y < 0) {
-          y = ty;
+        if (yUpdated < 0) {
+          yUpdated = ty;
         }
 
-        type = "left";
+        typeUpdated = "left";
       } else if (bRight) {
-        x = rx + 5;
-        y = ty + (rect.height / 2 - ttRect.height / 2);
+        xUpdated = rx + 5;
+        yUpdated = ty + (rect.height / 2 - ttRect.height / 2);
 
-        if (y < 0) {
-          y = ty;
+        if (yUpdated < 0) {
+          yUpdated = ty;
         }
 
-        type = "right";
+        typeUpdated = "right";
       }
 
-      setType(type);
-      setX(x);
-      setY(y);
+      setType(typeUpdated);
+      setX(xUpdated);
+      setY(yUpdated);
     }
   }, [rect]);
 
@@ -119,18 +120,14 @@ export function TooltipProvider({ children }: ITooltipProps) {
     setRect(null);
   }, []);
 
-  const handleOnMouseOver = useCallback(
-    ({ event, label }: IHandleOnMouseOver) => {
-      const el = event.currentTarget;
+  const handleOnMouseOver = useCallback(({ el, text }: IHandleOnMouseOver) => {
+    if (el != null) {
+      const rectUpdated = el.getBoundingClientRect();
 
-      if (el != null) {
-        const rect = el.getBoundingClientRect();
-        setLabel(label);
-        setRect(rect);
-      }
-    },
-    [],
-  );
+      setLabel(text);
+      setRect(rectUpdated);
+    }
+  }, []);
 
   useEffect(() => {
     if (rect) {

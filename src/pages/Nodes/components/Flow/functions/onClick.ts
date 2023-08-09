@@ -1,9 +1,10 @@
+import { MouseEvent } from "react";
+
 import {
   IHandleLinkProps,
   ILinkSelectedDTO,
   IUpdateNodeLinkProps,
 } from "@/pages/Nodes/hooks/datas/dtos/IDatasDTO";
-import { MouseEvent } from "react";
 
 interface IProps {
   event: MouseEvent<HTMLDivElement>;

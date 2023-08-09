@@ -1,11 +1,13 @@
-import { useTooltip } from "@/hooks/tooltip";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactNode } from "react";
 
 import { Loading } from "@/components";
-import { handleRipple } from "@/utils";
-import { Container } from "./styles";
 import Icon from "@/components/Icon";
-import { ReactNode } from "react";
 import { IIconDTO } from "@/components/Icon/dtos/IIconDTO";
+import { useTooltip } from "@/hooks/tooltip";
+import { handleRipple } from "@/utils";
+
+import { Container } from "./styles";
 
 interface IButtonIconRootProps {
   icon: IIconDTO;
@@ -13,11 +15,10 @@ interface IButtonIconRootProps {
   size?: IButtonIconSizeDTO;
   full?: boolean;
   loading?: boolean;
-  type?: "button" | "submit";
   disabled?: boolean;
-  onClick: (valu: any) => void;
+  onClick: (value?: any) => void;
   tooltip?: string;
-  datatestid?: string | null;
+  datatestid?: string;
   children?: ReactNode;
 }
 
@@ -34,11 +35,10 @@ export default function ButtonIconRoot({
   size = "md",
   full = false,
   loading = false,
-  type = "button",
   disabled = false,
-  onClick = () => {},
-  tooltip = "",
-  datatestid = null,
+  onClick,
+  tooltip,
+  datatestid,
   children,
 }: IButtonIconRootProps) {
   const { handleOnMouseOut, handleOnMouseOver } = useTooltip();
@@ -51,15 +51,33 @@ export default function ButtonIconRoot({
       }`}
     >
       <button
-        type={type}
+        type="button"
         disabled={disabled || loading}
         onClick={(event) => handleRipple({ event, onClick })}
         onMouseOver={
-          tooltip.length > 0
-            ? (event) => handleOnMouseOver({ event, label: tooltip })
-            : () => {}
+          tooltip && tooltip.length > 0
+            ? (event) =>
+                handleOnMouseOver({
+                  el: event.currentTarget,
+                  text: tooltip,
+                })
+            : undefined
         }
-        onMouseOut={tooltip.length > 0 ? () => handleOnMouseOut() : () => {}}
+        onMouseOut={
+          tooltip && tooltip.length > 0 ? () => handleOnMouseOut() : undefined
+        }
+        onFocus={
+          tooltip && tooltip.length > 0
+            ? (event) =>
+                handleOnMouseOver({
+                  el: event.currentTarget,
+                  text: tooltip,
+                })
+            : undefined
+        }
+        onBlur={
+          tooltip && tooltip.length > 0 ? () => handleOnMouseOut() : undefined
+        }
         aria-label="button-icon"
         data-testid={datatestid ? `${datatestid}-button` : null}
       >
@@ -75,16 +93,12 @@ export default function ButtonIconRoot({
             }
             datatestid={datatestid ? `${datatestid}-loading` : null}
           />
-        ) : (
-          <>
-            {icon ? (
-              <Icon.Root
-                icon={icon}
-                datatestid={datatestid ? `${datatestid}-icon` : null}
-              />
-            ) : null}
-          </>
-        )}
+        ) : icon ? (
+          <Icon.Root
+            icon={icon}
+            datatestid={datatestid ? `${datatestid}-icon` : null}
+          />
+        ) : null}
       </button>
 
       {children}

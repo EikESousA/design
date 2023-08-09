@@ -8,6 +8,7 @@ import Input from "./Input";
 import Link from "./Link";
 import Loading from "./Loading";
 import PageTitle from "./Page/Title";
+import Password from "./Password";
 import Radio from "./Radio";
 import Switch from "./Switch";
 import Table from "./Table";
@@ -26,4 +27,5 @@ export {
   Table,
   PageTitle,
   Backdrop,
+  Password,
 };

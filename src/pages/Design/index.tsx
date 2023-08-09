@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 import {
   FieldInput,
@@ -14,25 +14,15 @@ import {
   FieldIcon,
   FieldToast,
   MenuComponents,
+  FieldPassword,
 } from "./components";
 
 import { Container, Menu, Fields } from "./styles";
 
 export default function Design() {
-  const navigate = useNavigate();
   const { type, component } = useParams();
 
   const [openComponents, setOpenComponents] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (!type) {
-      navigate(`/design/components`);
-    } else if (type === "components") {
-      setOpenComponents(true);
-    } else {
-      setOpenComponents(false);
-    }
-  }, [type, navigate]);
 
   return (
     <Container
@@ -63,6 +53,7 @@ export default function Design() {
         {component === "Loading" || !component ? <FieldLoading /> : null}
         {component === "Icon" || !component ? <FieldIcon /> : null}
         {component === "Toast" || !component ? <FieldToast /> : null}
+        {component === "Password" || !component ? <FieldPassword /> : null}
       </Fields>
     </Container>
   );

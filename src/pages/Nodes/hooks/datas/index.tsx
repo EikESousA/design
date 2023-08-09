@@ -6,6 +6,7 @@ import {
   useCallback,
   useEffect,
 } from "react";
+
 import { v4 as uuidV4 } from "uuid";
 
 import { ILinkDTO } from "../../dtos/ILink";
@@ -46,8 +47,12 @@ interface IDatasProps {
   children: JSX.Element;
 }
 
+interface IDataDTO {
+  nodes: INodeDTO[];
+}
+
 export function DatasProvider({ children }: IDatasProps) {
-  const [nodes, setNodes] = useState<INodeDTO[]>(() => {
+  const [data, setData] = useState<IDataDTO>(() => {
     const nodes = localStorage.getItem("@flowchart:nodes");
 
     let parsedNodes: INodeDTO[] = [];
@@ -56,7 +61,7 @@ export function DatasProvider({ children }: IDatasProps) {
       parsedNodes = JSON.parse(nodes);
     }
 
-    return parsedNodes;
+    return { nodes: parsedNodes };
   });
 
   const [links, setLinks] = useState<ILinkDTO[]>([]);
@@ -83,18 +88,21 @@ export function DatasProvider({ children }: IDatasProps) {
         fathers: [],
       } as INodeDTO;
 
-      const updatedNodes = [...nodes, newNode];
+      const updatedNodes = [...data.nodes, newNode];
 
-      setNodes(updatedNodes);
+      setData({
+        ...data,
+        nodes: updatedNodes,
+      });
 
       localStorage.setItem("@flowchart:nodes", JSON.stringify(updatedNodes));
     },
-    [nodes],
+    [data],
   );
 
   const removeNode = useCallback(
     (id: string) => {
-      const updatedNodes = [...nodes];
+      const updatedNodes = [...data.nodes];
 
       const findIndex = updatedNodes.findIndex((item) => item.id === id);
 
@@ -102,16 +110,19 @@ export function DatasProvider({ children }: IDatasProps) {
         updatedNodes.splice(findIndex, 1);
       }
 
-      setNodes(updatedNodes);
+      setData({
+        ...data,
+        nodes: updatedNodes,
+      });
 
       localStorage.setItem("@flowchart:nodes", JSON.stringify(updatedNodes));
     },
-    [nodes],
+    [data],
   );
 
   const updateNodeLink = useCallback(
     ({ input_node_id, output_node_id }: IUpdateNodeLinkProps) => {
-      const updatedNodes = [...nodes];
+      const updatedNodes = [...data.nodes];
 
       const findInput = updatedNodes.find((item) => item.id === input_node_id);
       const findOutput = updatedNodes.find(
@@ -131,16 +142,19 @@ export function DatasProvider({ children }: IDatasProps) {
         });
       }
 
-      setNodes(updatedNodes);
+      setData({
+        ...data,
+        nodes: updatedNodes,
+      });
 
       localStorage.setItem("@flowchart:nodes", JSON.stringify(updatedNodes));
     },
-    [nodes],
+    [data],
   );
 
   const updateNodePosition = useCallback(
     ({ id, pos }: IUpdateNodePositionProps) => {
-      const updatedNodes = [...nodes];
+      const updatedNodes = [...data.nodes];
 
       const findNode = updatedNodes.find((item) => item.id === id);
 
@@ -150,28 +164,31 @@ export function DatasProvider({ children }: IDatasProps) {
 
       findNode.pos = pos;
 
-      setNodes(updatedNodes);
+      setData({
+        ...data,
+        nodes: updatedNodes,
+      });
 
       localStorage.setItem("@flowchart:nodes", JSON.stringify(updatedNodes));
     },
-    [nodes],
+    [data],
   );
 
   const updateLinks = useCallback(() => {
     const updatedLinks: ILinkDTO[] = [];
 
-    if (nodes && nodes.length > 0) {
-      nodes.forEach((node) => {
-        if (node.sons.length > 0) {
-          node.sons.forEach((nodeSons) => {
-            const findSon = nodes.find(
-              (nodeFind) => nodeFind.id === nodeSons.id,
+    if (data && data.nodes && data.nodes.length > 0) {
+      data.nodes.forEach((item) => {
+        if (item.sons.length > 0) {
+          item.sons.forEach((itemSons) => {
+            const findSon = data.nodes.find(
+              (itemFind) => itemFind.id === itemSons.id,
             );
 
             if (findSon) {
               if (findSon.fathers.length > 0) {
                 const findFather = findSon.fathers.find(
-                  (nodeFind) => nodeFind.id === node.id,
+                  (itemFind) => itemFind.id === item.id,
                 );
 
                 if (findFather) {
@@ -189,7 +206,7 @@ export function DatasProvider({ children }: IDatasProps) {
     }
 
     setLinks(updatedLinks);
-  }, [nodes]);
+  }, [data]);
 
   const handleLink = useCallback(
     ({ active, input_node_id, output_node_id }: IHandleLinkProps) => {
@@ -208,7 +225,7 @@ export function DatasProvider({ children }: IDatasProps) {
 
   const context = useMemo(() => {
     return {
-      nodes,
+      nodes: data.nodes,
       links,
       mouse,
       setMouse,
@@ -222,7 +239,7 @@ export function DatasProvider({ children }: IDatasProps) {
       selectMouse,
     };
   }, [
-    nodes,
+    data,
     links,
     mouse,
     linkSelected,

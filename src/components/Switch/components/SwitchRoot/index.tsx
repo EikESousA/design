@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { Container } from "./styles";
 
 interface ISwitchRootProps {
@@ -13,7 +14,7 @@ export default function SwitchRoot({
   id = "switch-example",
   label,
   checked = false,
-  setChecked = () => {},
+  setChecked = () => alert("Botao apertado"),
   disabled = false,
   datatestid,
 }: ISwitchRootProps) {
@@ -31,7 +32,7 @@ export default function SwitchRoot({
         disabled={disabled}
         data-testid={datatestid ? `${datatestid}-input` : null}
       />
-      <div></div>
+      <div />
       <p>{label}</p>
     </Container>
   );

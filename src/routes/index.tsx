@@ -31,7 +31,7 @@ export default function routes() {
         <Route path="/chatshop" element={<ChatShop />} />
         <Route path="/administration" element={<Administration />} />
 
-        <Route path="/design/:type?/:component?" element={<Design />} />
+        <Route path="/design/:component?" element={<Design />} />
         <Route path="/nodes" element={<Nodes />} />
 
         <Route path="*" element={<NotPage />} />

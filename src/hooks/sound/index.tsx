@@ -4,6 +4,7 @@ import {
   useContext,
   useState,
   ReactNode,
+  useMemo,
 } from "react";
 
 interface ISoundContextData {
@@ -24,15 +25,15 @@ export default function SoundProvider({ children }: ISoundProps) {
     setIsPlayed((prev) => !prev);
   }, []);
 
+  const context = useMemo(() => {
+    return {
+      isPlayed,
+      play,
+    };
+  }, [isPlayed, play]);
+
   return (
-    <SoundContext.Provider
-      value={{
-        isPlayed,
-        play,
-      }}
-    >
-      {children}
-    </SoundContext.Provider>
+    <SoundContext.Provider value={context}>{children}</SoundContext.Provider>
   );
 }
 

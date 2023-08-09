@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
+
 import { Headerbar } from "..";
+
 import { Container } from "./styles";
 
 interface IProps {

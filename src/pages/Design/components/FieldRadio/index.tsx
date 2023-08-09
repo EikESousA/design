@@ -84,7 +84,6 @@ export default function FieldRadio() {
               label="Label"
               placeholder="Label"
             />
-            <Input.LeftIcon icon="profile" />
           </Input.Root>
         </section>
         <section>
@@ -101,7 +100,6 @@ export default function FieldRadio() {
               label="Label do item 1"
               placeholder="Label do item 1"
             />
-            <Input.LeftIcon icon="profile" />
           </Input.Root>
         </section>
         <section>

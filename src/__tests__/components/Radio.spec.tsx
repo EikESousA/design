@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import { Radio } from "@/components";
@@ -31,8 +32,8 @@ describe("Radio />", () => {
   it("Renderiza sem items", () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={[]}
         datatestid="radio"
       />,
@@ -46,8 +47,8 @@ describe("Radio />", () => {
   it("Renderiza sem items com mensagem vazia", () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={[]}
         msgEmpty="Nao possui items de teste"
         datatestid="radio"
@@ -62,8 +63,8 @@ describe("Radio />", () => {
   it("Renderiza com items", async () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={options1}
         datatestid="radio"
       />,
@@ -77,8 +78,8 @@ describe("Radio />", () => {
   it("Renderiza com items e alguns desabilitados", () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={options2}
         datatestid="radio"
       />,
@@ -94,8 +95,8 @@ describe("Radio />", () => {
   it("Renderiza com items e todos desabilitados", () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={options1}
         disabled
         datatestid="radio"
@@ -112,8 +113,8 @@ describe("Radio />", () => {
   it("Renderiza com titulo", async () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={[]}
         title="Titulo de teste"
         datatestid="radio"
@@ -128,8 +129,8 @@ describe("Radio />", () => {
   it("Renderiza horizontal", async () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={options1}
         horizontal
         datatestid="radio"
@@ -144,8 +145,8 @@ describe("Radio />", () => {
   it("Renderiza vertical", async () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={options1}
         horizontal={false}
         datatestid="radio"
@@ -160,8 +161,8 @@ describe("Radio />", () => {
   it("Seleciona um radio", async () => {
     render(
       <Radio.Root
-        checked={""}
-        setChecked={() => {}}
+        checked=""
+        setChecked={() => alert("Botao apertado")}
         options={options1}
         datatestid="radio"
       />,
@@ -223,6 +224,4 @@ describe("Radio />", () => {
 
     expect(selected).toEqual("2");
   });
-
-  it("Coverage 100%", async () => {});
 });

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   left: 50px;
   top: 50px;
 
@@ -10,6 +10,8 @@ export const Container = styled.div`
   font-size: var(--font-size-xs);
 
   display: none;
+
+  z-index: 999;
 
   & div.arrow {
     position: absolute;

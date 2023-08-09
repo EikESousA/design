@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Container, Pagination } from "./styles";
 
 const initFieldHeader = {
@@ -9,7 +10,7 @@ const initFieldHeader = {
 interface ITableRootProps {
   id: string;
   datas: any[];
-  header: any[];
+  headers: any[];
   fieldHeader: IHeaderFieldDTO;
   loading?: boolean;
   tableStyles: any;
@@ -17,7 +18,6 @@ interface ITableRootProps {
   setPage?: (value: number) => void | null;
   pages?: number | null;
   total?: number | null;
-  labelItems?: string;
 }
 
 interface IHeaderFieldDTO {
@@ -29,7 +29,7 @@ interface IHeaderFieldDTO {
 export default function TableRoot({
   id = "table",
   datas = [],
-  header = [],
+  headers = [],
   fieldHeader = initFieldHeader,
   loading = false,
   tableStyles = {},
@@ -51,7 +51,7 @@ export default function TableRoot({
         <table>
           <thead>
             <tr>
-              {header.map((header) => (
+              {headers.map((header) => (
                 <th
                   key={`${id}-table-thead-tr-th-${header[fieldHeader.id]}`}
                   style={
@@ -70,53 +70,45 @@ export default function TableRoot({
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan={header.length} className="empty">
+                <td colSpan={headers.length} className="empty">
                   <div>{/* <LoadingSpinner /> */}</div>
+                </td>
+              </tr>
+            ) : datas.length === 0 ? (
+              <tr>
+                <td colSpan={headers.length} className="empty">
+                  <div>
+                    <p>Não possui dados</p>
+                  </div>
                 </td>
               </tr>
             ) : (
               <>
-                {datas.length === 0 ? (
-                  <tr>
-                    <td colSpan={header.length} className="empty">
-                      <div>
-                        <p>Não possui dados</p>
-                      </div>
-                    </td>
-                  </tr>
-                ) : (
-                  <>
-                    {datas.map((data) => (
-                      <tr key={`${id}-table-tbody-tr-${data[fieldHeader.id]}`}>
-                        {header.map((header) => (
-                          <td
-                            key={`${id}-table-tbody-tr-${
-                              data[fieldHeader.id]
-                            }-td-${header[fieldHeader.id]}`}
-                            style={
-                              tableStyles &&
-                              tableStyles.columnStyle &&
-                              tableStyles.columnStyle[header[fieldHeader.value]]
-                                ? tableStyles.columnStyle[
-                                    header[fieldHeader.value]
-                                  ]
-                                : {}
-                            }
-                          >
-                            {typeof data[header[fieldHeader.value]] ===
-                              "string" ||
-                            typeof data[header[fieldHeader.value]] ===
-                              "number" ? (
-                              <p>{data[header[fieldHeader.value]]}</p>
-                            ) : (
-                              <>{data[header[fieldHeader.value]]}</>
-                            )}
-                          </td>
-                        ))}
-                      </tr>
+                {datas.map((data) => (
+                  <tr key={`${id}-table-tbody-tr-${data[fieldHeader.id]}`}>
+                    {headers.map((header) => (
+                      <td
+                        key={`${id}-table-tbody-tr-${data[fieldHeader.id]}-td-${
+                          header[fieldHeader.id]
+                        }`}
+                        style={
+                          tableStyles &&
+                          tableStyles.columnStyle &&
+                          tableStyles.columnStyle[header[fieldHeader.value]]
+                            ? tableStyles.columnStyle[header[fieldHeader.value]]
+                            : {}
+                        }
+                      >
+                        {typeof data[header[fieldHeader.value]] === "string" ||
+                        typeof data[header[fieldHeader.value]] === "number" ? (
+                          <p>{data[header[fieldHeader.value]]}</p>
+                        ) : (
+                          data[header[fieldHeader.value]]
+                        )}
+                      </td>
                     ))}
-                  </>
-                )}
+                  </tr>
+                ))}
               </>
             )}
           </tbody>

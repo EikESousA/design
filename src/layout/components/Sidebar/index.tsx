@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { useState, useEffect, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -64,7 +65,11 @@ export default function Sidebar() {
         </main>
 
         <footer>
-          <button className="user" type="button" onClick={() => {}}>
+          <button
+            className="user"
+            type="button"
+            onClick={() => alert("Botao apertado")}
+          >
             <section>
               <img src={userLogo} alt="Imagem do usuario" />
               <div>
@@ -74,16 +79,25 @@ export default function Sidebar() {
             </section>
           </button>
           <section className="buttons">
-            <button className="logout" type="button" onClick={() => {}}>
+            <button
+              className="logout"
+              type="button"
+              onClick={() => alert("Botao apertado")}
+            >
               <Icon.Root icon="logout" />
             </button>
-            <button className="bug" type="button" onClick={() => {}} disabled>
+            <button
+              className="bug"
+              type="button"
+              onClick={() => alert("Botao apertado")}
+              disabled
+            >
               <Icon.Root icon="bug" />
             </button>
             <button
               className="suport"
               type="button"
-              onClick={() => {}}
+              onClick={() => alert("Botao apertado")}
               disabled
             >
               <Icon.Root icon="suport" />

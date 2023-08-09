@@ -1,9 +1,10 @@
 import { DragEvent } from "react";
 
 import { useDatas } from "../../hooks/datas";
-import { onDragEnd, onDragOver, onDragStart } from "./functions";
-import { Container } from "./styles";
 import { nodesType } from "../../utils";
+import { onDragEnd, onDragOver, onDragStart } from "./functions";
+
+import { Container } from "./styles";
 
 export default function Menu() {
   const { selectMouse } = useDatas();

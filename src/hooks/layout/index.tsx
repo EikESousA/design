@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import {
   createContext,
   useCallback,
@@ -34,12 +33,9 @@ export default function LayoutProvider({ children }: ILayoutProps) {
     setFold((prev) => !prev);
   }, []);
 
-  const toogleFull = useCallback(() => {
+  const toogleFull = useCallback(async () => {
     if (document.fullscreenElement) {
-      document
-        .exitFullscreen()
-        .then(() => {})
-        .catch(() => {});
+      await document.exitFullscreen();
     } else {
       document.documentElement.requestFullscreen();
     }

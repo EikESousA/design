@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { useState } from "react";
 
 import { Input, ButtonIcon } from "@/components";
@@ -11,7 +12,11 @@ export default function FieldTooltip() {
     <FieldContainer>
       <legend>Tooltip</legend>
       <FieldContent>
-        <ButtonIcon.Root icon="delete" tooltip={label} onClick={() => {}} />
+        <ButtonIcon.Root
+          icon="delete"
+          tooltip={label}
+          onClick={() => alert("Botao apertado")}
+        />
       </FieldContent>
 
       <FieldInfo>

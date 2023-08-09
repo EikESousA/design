@@ -1,9 +1,12 @@
-import { handleRipple } from "@/utils";
-import { Loading } from "@/components";
-import { Container } from "./styles";
-import Icon from "@/components/Icon";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MouseEvent } from "react";
+
+import { Loading } from "@/components";
+import Icon from "@/components/Icon";
 import { IIconDTO } from "@/components/Icon/dtos/IIconDTO";
+import { handleRipple } from "@/utils";
+
+import { Container } from "./styles";
 
 interface IInputButtonProps {
   onClick: (value?: any) => void;
@@ -26,7 +29,7 @@ export default function InputButton({
     <Container
       type="button"
       onClick={(event: MouseEvent<HTMLButtonElement>) =>
-        handleRipple({ event, onClick: onClick })
+        handleRipple({ event, onClick })
       }
       disabled={disabled}
       data-testid={datatestid ? `${datatestid}-button` : null}
@@ -34,20 +37,16 @@ export default function InputButton({
       {loading ? (
         <Loading.Root
           size="xs"
-          variant={"secondary"}
+          variant="secondary"
           datatestid={datatestid ? `${datatestid}-button-loading` : null}
         />
+      ) : icon ? (
+        <Icon.Root
+          icon={icon}
+          datatestid={datatestid ? `${datatestid}-button-icon` : null}
+        />
       ) : (
-        <>
-          {icon ? (
-            <Icon.Root
-              icon={icon}
-              datatestid={datatestid ? `${datatestid}-button-icon` : null}
-            />
-          ) : (
-            <p> {label} </p>
-          )}
-        </>
+        <p> {label} </p>
       )}
     </Container>
   );

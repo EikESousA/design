@@ -1,3 +1,4 @@
+import { IIconRootProps } from "../../dtos/IIconDTO";
 import {
   IconAlert,
   IconArrowDown,
@@ -49,8 +50,6 @@ import {
   IconVolumeUp,
   IconWarning,
 } from "../../svgs";
-
-import { IIconRootProps } from "../../dtos/IIconDTO";
 
 export default function IconRoot({
   icon,
@@ -206,7 +205,7 @@ export default function IconRoot({
       return <IconWarning datatestid={datatestid} {...rest} />;
 
     default:
-      return <></>;
+      return <svg />;
   }
 }
 

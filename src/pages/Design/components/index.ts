@@ -5,6 +5,7 @@ import FieldIcon from "./FieldIcon";
 import FieldInput from "./FieldInput";
 import FieldLink from "./FieldLink";
 import FieldLoading from "./FieldLoading";
+import FieldPassword from "./FieldPassword";
 import FieldRadio from "./FieldRadio";
 import FieldSwitch from "./FieldSwitch";
 import FieldToast from "./FieldToast";
@@ -20,6 +21,7 @@ export {
   FieldSwitch,
   FieldLink,
   FieldLoading,
+  FieldPassword,
   FieldTooltip,
   FieldIcon,
   FieldToast,

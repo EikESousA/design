@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MouseEvent } from "react";
 
 interface IHandleRippeProps {
@@ -14,7 +15,8 @@ export default function handleRipple({ event, onClick }: IHandleRippeProps) {
 
   const buttonRect = button.getBoundingClientRect();
 
-  circle.style.width = circle.style.height = `${diameter}px`;
+  circle.style.width = `${diameter}px`;
+  circle.style.height = `${diameter}px`;
   circle.style.left = `${event.clientX - buttonRect.left - radius}px`;
   circle.style.top = `${event.clientY - buttonRect.top - radius}px`;
   circle.classList.add("ripple");

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Switch, Input, Link, Radio } from "@/components";
+
 import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 
 const optionsSize = [
@@ -86,7 +87,7 @@ export default function FieldLink() {
         <section>
           <Radio.Root
             name="field-button-size"
-            title={"Tamanho"}
+            title="Tamanho"
             options={optionsSize}
             checked={size}
             setChecked={(value) => setSize(value)}

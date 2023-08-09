@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -39,19 +40,27 @@ export default function Footerbar() {
       <button className="first" type="button" onClick={() => toogleOpen()}>
         <Icon.Root icon="menu" />
       </button>
-      <button type="button" onClick={() => {}}>
+      <button type="button" onClick={() => alert("Botao apertado")}>
         <Icon.Root icon="profile" />
       </button>
-      <button className="middle" type="button" onClick={() => {}}>
+      <button
+        className="middle"
+        type="button"
+        onClick={() => alert("Botao apertado")}
+      >
         <div>
           <Icon.Root icon={icon.icon} />
           <p>{icon.name}</p>
         </div>
       </button>
-      <button type="button" onClick={() => {}}>
+      <button type="button" onClick={() => alert("Botao apertado")}>
         <Icon.Root icon="call" />
       </button>
-      <button className="last" type="button" onClick={() => {}}>
+      <button
+        className="last"
+        type="button"
+        onClick={() => alert("Botao apertado")}
+      >
         <Icon.Root icon="notification" />
       </button>
     </Container>

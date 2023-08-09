@@ -164,6 +164,8 @@ export const FieldInfo = styled.div`
   height: calc(100% - 30rem);
   flex: 1 1 auto;
 
+  padding: var(--spacing-s2);
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -59,6 +59,7 @@
   ],
   "rules": {
     "camelcase": "off",
+    "no-nested-ternary": "off",
     "no-underscore-dangle": "off",
     "no-unused-expressions": "off",
     "no-use-before-define": "off",
@@ -101,6 +102,7 @@
         "newlinesBetween": "always",
         "groups": [
           ["/^react/"],
+          ["/^@testing-library/"],
           "/styled-components/",
           "module",
           "/^@/",

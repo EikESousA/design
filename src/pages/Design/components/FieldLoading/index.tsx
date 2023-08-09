@@ -1,11 +1,12 @@
 import { useState } from "react";
 
 import { Loading, Radio } from "@/components";
-import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 import {
   ILoadingSizeDTO,
   ILoadingVariantDTO,
 } from "@/components/Loading/components/LoadingRoot";
+
+import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 
 const optionsVariant = [
   {
@@ -62,7 +63,7 @@ export default function FieldLoading() {
         <section>
           <Radio.Root
             name="field-button-variant"
-            title={"Variante"}
+            title="Variante"
             options={optionsVariant}
             checked={variant}
             setChecked={(value) => setVariant(value)}
@@ -71,7 +72,7 @@ export default function FieldLoading() {
         <section>
           <Radio.Root
             name="field-button-size"
-            title={"Tamanho"}
+            title="Tamanho"
             options={optionsSize}
             checked={size}
             setChecked={(value) => setSize(value)}

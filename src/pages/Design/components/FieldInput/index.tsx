@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { useState } from "react";
 
 import { Input, Switch, Radio } from "@/components";
@@ -70,7 +71,7 @@ export default function FieldInput() {
 
             {button ? (
               <Input.Button
-                onClick={() => {}}
+                onClick={() => alert("Botao apertado")}
                 icon="send"
                 label={buttonLabel}
                 disabled={buttonDisabled}

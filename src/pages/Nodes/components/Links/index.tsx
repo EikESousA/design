@@ -1,7 +1,9 @@
+import Xarrow from "react-xarrows";
+
 import { useDatas } from "../../hooks/datas";
 import Label from "./components/Label";
+
 import { Container } from "./styles";
-import Xarrow from "react-xarrows";
 
 export default function Links() {
   const { links } = useDatas();

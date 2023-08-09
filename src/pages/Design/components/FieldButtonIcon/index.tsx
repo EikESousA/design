@@ -1,11 +1,13 @@
+/* eslint-disable no-alert */
 import { useState } from "react";
 
 import { ButtonIcon, Switch, Radio } from "@/components";
-import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 import {
   IButtonIconSizeDTO,
   IButtonIconVariantDTO,
 } from "@/components/ButtonIcon/components/ButtonIconRoot";
+
+import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 
 const optionsVariant = [
   {
@@ -60,7 +62,7 @@ export default function FieldButtonIcon() {
           full={full}
           disabled={disabled}
           loading={loading}
-          onClick={() => {}}
+          onClick={() => alert("Botao apertado")}
         >
           {badge ? <ButtonIcon.Badge number={1} /> : null}
         </ButtonIcon.Root>
@@ -70,7 +72,7 @@ export default function FieldButtonIcon() {
         <section>
           <Radio.Root
             name="field-button-variant"
-            title={"Variante"}
+            title="Variante"
             options={optionsVariant}
             checked={variant}
             setChecked={(value) => setVariant(value)}
@@ -79,7 +81,7 @@ export default function FieldButtonIcon() {
         <section>
           <Radio.Root
             name="field-button-size"
-            title={"Tamanho"}
+            title="Tamanho"
             options={optionsSize}
             checked={size}
             setChecked={(value) => setSize(value)}

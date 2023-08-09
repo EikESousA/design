@@ -6,7 +6,7 @@ afterEach(cleanup);
 
 describe("<Icon />", () => {
   it("Renderiza Alert", () => {
-    render(<Icon.Root icon={"alert"} datatestid="icon" />);
+    render(<Icon.Root icon="alert" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -14,7 +14,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Asterisk", () => {
-    render(<Icon.Root icon={"asterisk"} datatestid="icon" />);
+    render(<Icon.Root icon="asterisk" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -22,7 +22,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Attachfile", () => {
-    render(<Icon.Root icon={"attachfile"} datatestid="icon" />);
+    render(<Icon.Root icon="attachfile" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -30,7 +30,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Chatbot", () => {
-    render(<Icon.Root icon={"chatbot"} datatestid="icon" />);
+    render(<Icon.Root icon="chatbot" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -38,7 +38,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Check", () => {
-    render(<Icon.Root icon={"check"} datatestid="icon" />);
+    render(<Icon.Root icon="check" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -46,7 +46,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Close", () => {
-    render(<Icon.Root icon={"close"} datatestid="icon" />);
+    render(<Icon.Root icon="close" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -54,7 +54,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Dark", () => {
-    render(<Icon.Root icon={"dark"} datatestid="icon" />);
+    render(<Icon.Root icon="dark" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -62,7 +62,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Delete", () => {
-    render(<Icon.Root icon={"delete"} datatestid="icon" />);
+    render(<Icon.Root icon="delete" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -70,7 +70,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Edit", () => {
-    render(<Icon.Root icon={"edit"} datatestid="icon" />);
+    render(<Icon.Root icon="edit" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -78,7 +78,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Email", () => {
-    render(<Icon.Root icon={"email"} datatestid="icon" />);
+    render(<Icon.Root icon="email" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -86,7 +86,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Eye", () => {
-    render(<Icon.Root icon={"eye"} datatestid="icon" />);
+    render(<Icon.Root icon="eye" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -94,7 +94,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Eyeslash", () => {
-    render(<Icon.Root icon={"eyeslash"} datatestid="icon" />);
+    render(<Icon.Root icon="eyeslash" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -102,7 +102,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Filter", () => {
-    render(<Icon.Root icon={"filter"} datatestid="icon" />);
+    render(<Icon.Root icon="filter" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -110,7 +110,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Info", () => {
-    render(<Icon.Root icon={"info"} datatestid="icon" />);
+    render(<Icon.Root icon="info" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -118,7 +118,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Light", () => {
-    render(<Icon.Root icon={"light"} datatestid="icon" />);
+    render(<Icon.Root icon="light" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -126,7 +126,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Menu", () => {
-    render(<Icon.Root icon={"menu"} datatestid="icon" />);
+    render(<Icon.Root icon="menu" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -134,7 +134,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Notification", () => {
-    render(<Icon.Root icon={"notification"} datatestid="icon" />);
+    render(<Icon.Root icon="notification" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -142,7 +142,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Password", () => {
-    render(<Icon.Root icon={"password"} datatestid="icon" />);
+    render(<Icon.Root icon="password" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -150,7 +150,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Profile", () => {
-    render(<Icon.Root icon={"profile"} datatestid="icon" />);
+    render(<Icon.Root icon="profile" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -158,7 +158,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Search", () => {
-    render(<Icon.Root icon={"search"} datatestid="icon" />);
+    render(<Icon.Root icon="search" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -166,7 +166,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Send", () => {
-    render(<Icon.Root icon={"send"} datatestid="icon" />);
+    render(<Icon.Root icon="send" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -174,7 +174,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Success", () => {
-    render(<Icon.Root icon={"success"} datatestid="icon" />);
+    render(<Icon.Root icon="success" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -182,7 +182,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Volumedown", () => {
-    render(<Icon.Root icon={"volumedown"} datatestid="icon" />);
+    render(<Icon.Root icon="volumedown" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -190,15 +190,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Volumemute", () => {
-    render(<Icon.Root icon={"volumemute"} datatestid="icon" />);
-
-    const component = screen.getByTestId("icon");
-
-    expect(component).toBeVisible();
-  });
-
-  it("Renderiza Volumemute", () => {
-    render(<Icon.Root icon={"volumemute"} datatestid="icon" />);
+    render(<Icon.Root icon="volumemute" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -206,7 +198,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza Volumeup", () => {
-    render(<Icon.Root icon={"volumeup"} datatestid="icon" />);
+    render(<Icon.Root icon="volumeup" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -214,7 +206,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza warning", () => {
-    render(<Icon.Root icon={"warning"} datatestid="icon" />);
+    render(<Icon.Root icon="warning" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -222,7 +214,7 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza painting", () => {
-    render(<Icon.Root icon={"painting"} datatestid="icon" />);
+    render(<Icon.Root icon="painting" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
@@ -230,12 +222,10 @@ describe("<Icon />", () => {
   });
 
   it("Renderiza components", () => {
-    render(<Icon.Root icon={"components"} datatestid="icon" />);
+    render(<Icon.Root icon="components" datatestid="icon" />);
 
     const component = screen.getByTestId("icon");
 
     expect(component).toBeVisible();
   });
-
-  it("Coverage 100%", async () => {});
 });

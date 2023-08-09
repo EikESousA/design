@@ -4,7 +4,7 @@ import { getChildrens } from "../../functions";
 
 import { Container } from "./styles";
 
-interface IInputRootProps {
+export interface IInputRootProps {
   id?: string;
   variant?: IInputVariantDTO;
   name: string;
@@ -15,6 +15,7 @@ interface IInputRootProps {
   disabled?: boolean;
   error?: string;
   full?: boolean;
+  type?: "text" | "password";
   datatestid?: string;
   children?: ReactNode[] | ReactNode;
 }
@@ -32,6 +33,7 @@ export default function InputRoot({
   disabled = false,
   error,
   full = false,
+  type = "text",
   datatestid,
   children,
 }: IInputRootProps) {
@@ -71,7 +73,7 @@ export default function InputRoot({
 
         <input
           id={id}
-          type="text"
+          type={type}
           value={value}
           name={name}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
