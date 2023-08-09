@@ -1,4 +1,6 @@
-import { useState, useEffect, ChangeEvent, ReactNode } from "react";
+import { useState, useEffect, ChangeEvent, useMemo, ReactNode } from "react";
+
+import { getChildrens } from "../../functions";
 
 import { Container } from "./styles";
 
@@ -14,7 +16,7 @@ interface IInputRootProps {
   error?: string;
   full?: boolean;
   datatestid?: string;
-  children: ReactNode;
+  children?: ReactNode[] | ReactNode;
 }
 
 export type IInputVariantDTO = "primary" | "secondary" | "tertiary";
@@ -49,16 +51,24 @@ export default function InputRoot({
     setIsFilled(value.length > 0);
   }, [value.length]);
 
+  const childrenComponents = useMemo(() => getChildrens(children), [children]);
+
   return (
     <Container
       htmlFor={id}
       className={`${variant} ${isFocused ? "focused" : ""} ${
         isFilled ? "filled" : ""
       } ${disabled ? "disabled" : ""}
-      ${full ? "full" : ""}`}
+      ${full ? "full" : ""}
+      ${childrenComponents.lefticon ? "left-icon" : ""}
+      ${childrenComponents.righticon ? "right-icon" : ""}`}
       data-testid={datatestid}
     >
+      {childrenComponents.label}
+
       <div className="input">
+        {childrenComponents.lefticon}
+
         <input
           id={id}
           type="text"
@@ -74,6 +84,8 @@ export default function InputRoot({
           required={required}
           data-testid={datatestid ? `${datatestid}-input` : null}
         />
+
+        {childrenComponents.righticon}
       </div>
 
       {error ? (
@@ -85,7 +97,7 @@ export default function InputRoot({
         </p>
       ) : null}
 
-      {children}
+      {childrenComponents.button}
     </Container>
   );
 }

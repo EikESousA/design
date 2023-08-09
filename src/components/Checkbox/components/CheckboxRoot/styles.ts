@@ -65,12 +65,12 @@ export const Container = styled.div`
     transform: translateY(-0.075rem);
   }
 
-  & input:before {
+  & input::before {
     content: "";
     width: 0.65rem;
     height: 0.65rem;
 
-    clippath: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     transform: scale(0);
     transform-origin: bottom left;
 

@@ -57,13 +57,13 @@ export const Container = styled.nav`
     height: 100%;
     width: 100%;
 
-    padding: 0 var(--spacing-s2);
+    padding: 0 var(--spacing-s4);
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: var(--spacing-s2);
+    gap: var(--spacing-s3);
   }
 
   & main button {
@@ -71,7 +71,7 @@ export const Container = styled.nav`
 
     position: relative;
 
-    padding: var(--spacing-s1) var(--spacing-s1) var(--spacing-s1)
+    padding: var(--spacing-s2) var(--spacing-s1) var(--spacing-s2)
       var(--spacing-s2);
 
     display: flex;
@@ -147,7 +147,7 @@ export const Container = styled.nav`
 
     margin-bottom: var(--spacing-s4);
 
-    padding: var(--spacing-s1) var(--spacing-s2);
+    padding: var(--spacing-s2) var(--spacing-s2);
 
     display: flex;
     flex-direction: row;
@@ -254,7 +254,7 @@ export const Container = styled.nav`
   }
 
   &.unfold {
-    width: 16rem;
+    width: 20rem;
 
     & header img {
       width: 6rem;

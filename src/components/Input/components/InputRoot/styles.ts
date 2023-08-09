@@ -106,7 +106,7 @@ export const Container = styled.label`
       }
     }
 
-    & svg.icon {
+    & svg {
       position: absolute;
 
       height: var(--font-size-xl2);
@@ -147,7 +147,7 @@ export const Container = styled.label`
     &.filled {
       border-color: var(--color-primary-base);
 
-      & label {
+      & p.label {
         top: calc(var(--spacing-s3) * -1);
         left: var(--spacing-s2);
 
@@ -266,7 +266,7 @@ export const Container = styled.label`
       }
     }
 
-    & svg.icon {
+    & svg {
       position: absolute;
 
       height: var(--font-size-xl2);
@@ -401,7 +401,7 @@ export const Container = styled.label`
       }
     }
 
-    & svg.icon {
+    & svg {
       position: absolute;
 
       height: var(--font-size-xl2);

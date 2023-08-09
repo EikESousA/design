@@ -1,6 +1,6 @@
 import { IInputVariantDTO } from "../InputRoot";
 
-interface IInputLabelProps {
+export interface IInputLabelProps {
   variant?: IInputVariantDTO;
   label: string;
   placeholder?: string;
@@ -10,7 +10,7 @@ interface IInputLabelProps {
 
 export default function InputLabel({
   variant = "primary",
-  label = "",
+  label,
   placeholder = "",
   required = false,
   datatestid,
@@ -37,5 +37,5 @@ export default function InputLabel({
     );
   }
 
-  return <></>;
+  return null;
 }

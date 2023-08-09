@@ -34,7 +34,7 @@ export const Container = styled.div`
   & section.title p {
     text-align: center;
 
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl2);
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family-title);
 

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
   padding: var(--spacing-s2) var(--spacing-s4);
 
@@ -45,7 +45,7 @@ export const Container = styled.div`
 
 export const Menu = styled.section`
   height: 100%;
-  width: 24rem;
+  width: 18rem;
 
   padding: var(--spacing-s4) var(--spacing-s2);
 

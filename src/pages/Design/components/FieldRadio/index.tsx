@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { Radio, Input, Switch } from "@/components";
+
 import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 
 const optionsDefault = [
@@ -27,10 +28,10 @@ export default function FieldRadio() {
 
   const [options, setOptions] = useState(optionsDefault);
 
-  function changeLabel(value: string) {
+  function changeLabel(updateValue: string) {
     const updatedOptions = [...options];
 
-    updatedOptions[0].label = value;
+    updatedOptions[0].label = updateValue;
 
     setOptions(updatedOptions);
   }
@@ -63,7 +64,7 @@ export default function FieldRadio() {
             title={label}
             options={options}
             checked={value}
-            setChecked={(value) => setValue(value)}
+            setChecked={(updateValue) => setValue(updateValue)}
           />
         </div>
       </FieldContent>
@@ -75,7 +76,7 @@ export default function FieldRadio() {
             name="label"
             variant="secondary"
             value={label}
-            setValue={(value) => setLabel(value)}
+            setValue={(updateValue) => setLabel(updateValue)}
             disabled={false}
           >
             <Input.Label
@@ -83,6 +84,7 @@ export default function FieldRadio() {
               label="Label"
               placeholder="Label"
             />
+            <Input.LeftIcon icon="profile" />
           </Input.Root>
         </section>
         <section>
@@ -91,7 +93,7 @@ export default function FieldRadio() {
             name="labelitem"
             variant="secondary"
             value={options[0].label}
-            setValue={(value) => changeLabel(value)}
+            setValue={(updateValue) => changeLabel(updateValue)}
             disabled={false}
           >
             <Input.Label
@@ -99,6 +101,7 @@ export default function FieldRadio() {
               label="Label do item 1"
               placeholder="Label do item 1"
             />
+            <Input.LeftIcon icon="profile" />
           </Input.Root>
         </section>
         <section>

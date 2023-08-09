@@ -14,9 +14,6 @@ import {
   FieldIcon,
   FieldToast,
   MenuComponents,
-  MenuTypes,
-  FieldTheme,
-  FieldVolume,
 } from "./components";
 
 import { Container, Menu, Fields } from "./styles";
@@ -30,14 +27,12 @@ export default function Design() {
   useEffect(() => {
     if (!type) {
       navigate(`/design/components`);
+    } else if (type === "components") {
+      setOpenComponents(true);
     } else {
-      if (type === "components") {
-        setOpenComponents(true);
-      } else {
-        setOpenComponents(false);
-      }
+      setOpenComponents(false);
     }
-  }, [type, history]);
+  }, [type, navigate]);
 
   return (
     <Container
@@ -45,59 +40,29 @@ export default function Design() {
       data-theme="light"
       className={openComponents ? "opened" : "closed"}
     >
-      <button className="backdrop" onClick={() => setOpenComponents(false)} />
+      {/* <button className="backdrop" onClick={() => setOpenComponents(false)} /> */}
       <Menu className={openComponents ? "opened" : "closed"}>
-        <MenuTypes
+        <MenuComponents
           openComponents={openComponents}
           setOpenComponents={(value) => setOpenComponents(value)}
         />
-
-        {type === "components" ? (
-          <MenuComponents
-            openComponents={openComponents}
-            setOpenComponents={(value) => setOpenComponents(value)}
-          />
-        ) : null}
       </Menu>
 
       <Fields className={openComponents ? "opened" : "closed"}>
-        {type === "components" && (component === "Input" || !component) ? (
-          <FieldInput />
-        ) : null}
-        {type === "components" && (component === "Checkbox" || !component) ? (
-          <FieldCheckbox />
-        ) : null}
-        {type === "components" && (component === "Switch" || !component) ? (
-          <FieldSwitch />
-        ) : null}
-        {type === "components" && (component === "Radio" || !component) ? (
-          <FieldRadio />
-        ) : null}
+        {component === "Input" || !component ? <FieldInput /> : null}
+        {component === "Checkbox" || !component ? <FieldCheckbox /> : null}
+        {component === "Switch" || !component ? <FieldSwitch /> : null}
+        {component === "Radio" || !component ? <FieldRadio /> : null}
         {type === "components" &&
         (component === "ButtonDefault" || !component) ? (
           <FieldButtonDefault />
         ) : null}
-        {type === "components" && (component === "ButtonIcon" || !component) ? (
-          <FieldButtonIcon />
-        ) : null}
-        {type === "components" && (component === "Link" || !component) ? (
-          <FieldLink />
-        ) : null}
-        {type === "components" && (component === "Tooltip" || !component) ? (
-          <FieldTooltip />
-        ) : null}
-        {type === "components" && (component === "Loading" || !component) ? (
-          <FieldLoading />
-        ) : null}
-        {type === "components" && (component === "Icon" || !component) ? (
-          <FieldIcon />
-        ) : null}
-        {type === "components" && (component === "Toast" || !component) ? (
-          <FieldToast />
-        ) : null}
-
-        {type === "theme" ? <FieldTheme /> : null}
-        {type === "volume" ? <FieldVolume /> : null}
+        {component === "ButtonIcon" || !component ? <FieldButtonIcon /> : null}
+        {component === "Link" || !component ? <FieldLink /> : null}
+        {component === "Tooltip" || !component ? <FieldTooltip /> : null}
+        {component === "Loading" || !component ? <FieldLoading /> : null}
+        {component === "Icon" || !component ? <FieldIcon /> : null}
+        {component === "Toast" || !component ? <FieldToast /> : null}
       </Fields>
     </Container>
   );

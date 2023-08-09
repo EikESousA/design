@@ -13,7 +13,7 @@ export default function InputRightIcon({
   return (
     <Icon.Root
       icon={icon}
-      className="right-icon"
+      className="icon-right"
       datatestid={datatestid ? `${datatestid}-right-icon` : null}
     />
   );

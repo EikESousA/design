@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 
-import { Container } from "./styles";
 import { Icon } from "@/components";
+
+import { Container } from "./styles";
 
 interface ITitleRootProps {
   title: string;

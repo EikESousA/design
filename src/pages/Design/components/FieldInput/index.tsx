@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 import { Input, Switch, Radio } from "@/components";
-import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 import { IInputVariantDTO } from "@/components/Input/components/InputRoot";
+
+import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
 
 const optionsVariant = [
   {
@@ -53,9 +54,10 @@ export default function FieldInput() {
             name="main"
             variant={variant}
             value={value}
-            setValue={(value) => setValue(value)}
+            setValue={(updateValue) => setValue(updateValue)}
             disabled={disabled}
             required={required}
+            placeholder={placeholder}
           >
             <Input.Label
               variant={variant}
@@ -85,7 +87,7 @@ export default function FieldInput() {
             name="label"
             variant="secondary"
             value={label}
-            setValue={(value) => setLabel(value)}
+            setValue={(updateValue) => setLabel(updateValue)}
             disabled={false}
           >
             <Input.Label
@@ -101,7 +103,7 @@ export default function FieldInput() {
             name="placeholder"
             variant="secondary"
             value={placeholder}
-            setValue={(value) => setPlaceholder(value)}
+            setValue={(updateValue) => setPlaceholder(updateValue)}
             disabled={false}
           >
             <Input.Label
@@ -114,10 +116,10 @@ export default function FieldInput() {
         <section>
           <Radio.Root
             name="field-input-variant"
-            title={"Variante"}
+            title="Variante"
             options={optionsVariant}
             checked={variant}
-            setChecked={(value) => setVariant(value)}
+            setChecked={(updateValue) => setVariant(updateValue)}
           />
         </section>
         <section>
@@ -125,7 +127,7 @@ export default function FieldInput() {
             id="field-input-disabled"
             label="Desabilitado"
             checked={disabled}
-            setChecked={(value) => setDisabled(value)}
+            setChecked={(updateValue) => setDisabled(updateValue)}
           />
         </section>
         <section>
@@ -133,7 +135,7 @@ export default function FieldInput() {
             id="field-input-required"
             label="Obrigatorio"
             checked={required}
-            setChecked={(value) => setRequired(value)}
+            setChecked={(updateValue) => setRequired(updateValue)}
           />
         </section>
         <section>
@@ -141,7 +143,7 @@ export default function FieldInput() {
             id="field-input-leftIcon"
             label="Icone Esquerda"
             checked={leftIcon}
-            setChecked={(value) => setLeftIcon(value)}
+            setChecked={(updateValue) => setLeftIcon(updateValue)}
           />
         </section>
         <section>
@@ -149,7 +151,7 @@ export default function FieldInput() {
             id="field-input-rightIcon"
             label="Icone Direita"
             checked={rightIcon}
-            setChecked={(value) => setRightIcon(value)}
+            setChecked={(updateValue) => setRightIcon(updateValue)}
           />
         </section>
         <section>
@@ -157,7 +159,7 @@ export default function FieldInput() {
             id="field-input-button"
             label="Botao"
             checked={button}
-            setChecked={(value) => setButton(value)}
+            setChecked={(updateValue) => setButton(updateValue)}
           />
         </section>
         <section>
@@ -165,7 +167,7 @@ export default function FieldInput() {
             id="field-input-button-icon"
             label="Icone do Botao"
             checked={buttonIcon}
-            setChecked={(value) => setButtonIcon(value)}
+            setChecked={(updateValue) => setButtonIcon(updateValue)}
             disabled={!button}
           />
         </section>
@@ -175,7 +177,7 @@ export default function FieldInput() {
             name="buttonLabel"
             variant="secondary"
             value={buttonLabel}
-            setValue={(value) => setButtonLabel(value)}
+            setValue={(updateValue) => setButtonLabel(updateValue)}
             disabled={!button}
           >
             <Input.Label
@@ -190,7 +192,7 @@ export default function FieldInput() {
             id="field-input-button-disabled"
             label="Botao desabilitado"
             checked={buttonDisabled}
-            setChecked={(value) => setButtonDisabled(value)}
+            setChecked={(updateValue) => setButtonDisabled(updateValue)}
             disabled={!button}
           />
         </section>
@@ -199,7 +201,7 @@ export default function FieldInput() {
             id="field-input-button-loading"
             label="Botao carregando"
             checked={buttonLoading}
-            setChecked={(value) => setButtonLoading(value)}
+            setChecked={(updateValue) => setButtonLoading(updateValue)}
             disabled={!button}
           />
         </section>

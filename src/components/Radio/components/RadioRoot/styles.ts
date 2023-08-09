@@ -54,11 +54,11 @@ export const Container = styled.div`
   }
 
   & ul li label input:checked {
-    box-shadow: inset 0 0 0 0.4375rem var(--color-primary-base);
+    box-shadow: inset 0 0 0 0.4375rem var(--color-primary-dark);
   }
 
   & ul li label input:focus {
-    outline: max(2px, 0.15rem) solid var(--color-primary-base);
+    outline: max(2px, 0.15rem) solid var(--color-primary-dark);
     outline-offset: max(2px, 0.15rem);
   }
 

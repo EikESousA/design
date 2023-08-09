@@ -30,7 +30,7 @@ export const Container = styled.header`
   }
 
   & section.company p {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
 
     color: var(--color-primary-base);
@@ -55,8 +55,8 @@ export const Container = styled.header`
   }
 
   & section button svg {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 2rem;
+    width: 2rem;
 
     fill: var(--color-primary-base);
     color: var(--color-primary-base);
