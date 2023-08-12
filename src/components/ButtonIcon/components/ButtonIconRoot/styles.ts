@@ -36,7 +36,7 @@ export const Container = styled.div`
   }
 
   &.secondary button {
-    background-color: var(--color-gray-100);
+    background-color: var(--aliases-200);
 
     border: var(--border-width-thin) solid var(--color-primary-base);
     outline: var(--border-width-thin) solid var(--color-primary-base);

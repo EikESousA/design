@@ -76,8 +76,8 @@ export default createGlobalStyle`
     --color-new-base: #02BFE7;
     --color-new-dark: #00A6D2;
 
-    --color-white: #ffffff;
-    --color-black: #000000;
+    --color-white: #000000;
+    --color-black: #ffffff;
 
     --color-gray-100: #2d2e2f;
     --color-gray-200: #444546;
@@ -106,6 +106,9 @@ export default createGlobalStyle`
   }
 
   html {
+    --color-white-fixed: #ffffff;
+    --color-black-fixed: #000000;
+
     --font-family-default: Roboto, sans-serif;
     --font-family-title: Poppins, sans-serif;
     --font-family-subtitle: Inter, sans-serif;
