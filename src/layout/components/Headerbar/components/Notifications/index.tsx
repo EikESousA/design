@@ -132,6 +132,7 @@ export default function Notifications() {
                         ? "profilegroup"
                         : "request"
                     }
+                    img_url={data.img_url}
                     type={data.connection_type}
                   />
                   <Notification.Text

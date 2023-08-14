@@ -3,6 +3,13 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
 
+  & img {
+    height: 2.5rem;
+    width: 2.5rem;
+
+    border-radius: 50%;
+  }
+
   & svg {
     height: 2.5rem;
     width: 2.5rem;
