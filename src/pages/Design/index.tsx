@@ -15,12 +15,13 @@ import {
   FieldToast,
   MenuComponents,
   FieldPassword,
+  FieldDivider,
 } from "./components";
 
 import { Container, Menu, Fields } from "./styles";
 
 export default function Design() {
-  const { type, component } = useParams();
+  const { component } = useParams();
 
   const [openComponents, setOpenComponents] = useState<boolean>(false);
 
@@ -31,6 +32,7 @@ export default function Design() {
       className={openComponents ? "opened" : "closed"}
     >
       {/* <button className="backdrop" onClick={() => setOpenComponents(false)} /> */}
+
       <Menu className={openComponents ? "opened" : "closed"}>
         <MenuComponents
           openComponents={openComponents}
@@ -43,8 +45,8 @@ export default function Design() {
         {component === "Checkbox" || !component ? <FieldCheckbox /> : null}
         {component === "Switch" || !component ? <FieldSwitch /> : null}
         {component === "Radio" || !component ? <FieldRadio /> : null}
-        {type === "components" &&
-        (component === "ButtonDefault" || !component) ? (
+        {component === "Divider" || !component ? <FieldDivider /> : null}
+        {component === "ButtonDefault" || !component ? (
           <FieldButtonDefault />
         ) : null}
         {component === "ButtonIcon" || !component ? <FieldButtonIcon /> : null}

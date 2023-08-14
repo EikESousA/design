@@ -46,8 +46,8 @@ export const Container = styled.div`
   }
 
   &.secondary {
-    border-top-color: var(--color-white);
-    border-bottom-color: var(--color-white);
+    border-top-color: var(--color-white-fixed);
+    border-bottom-color: var(--color-white-fixed);
   }
 
   &.danger {

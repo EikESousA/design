@@ -24,10 +24,10 @@ export default [
   },
   {
     name: "Password",
-    component: false,
+    component: true,
     test: false,
-    responsive: false,
-    dark: false,
+    responsive: true,
+    dark: true,
   },
   {
     name: "Switch",
@@ -156,11 +156,11 @@ export default [
     dark: true,
   },
   {
-    name: "Dividers",
-    component: false,
+    name: "Divider",
+    component: true,
     test: false,
-    responsive: false,
-    dark: false,
+    responsive: true,
+    dark: true,
   },
   {
     name: "Card",

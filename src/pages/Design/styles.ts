@@ -195,13 +195,17 @@ export const FieldInfo = styled.div`
 `;
 
 export const Icons = styled.ul`
-  display: grid;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-s4);
+  gap: var(--spacing-s8);
+  flex-wrap: wrap;
 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  overflow-y: auto;
 
   & li {
     flex: 1;

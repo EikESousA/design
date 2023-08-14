@@ -27,7 +27,7 @@ export const Container = styled.div`
     border: var(--border-width-thin) solid transparent;
 
     & > svg {
-      color: var(--color-white);
+      color: var(--color-white-fixed);
     }
 
     &:hover:not(&:disabled) {

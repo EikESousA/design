@@ -3,6 +3,7 @@ import Badge from "./Badge";
 import ButtonDefault from "./ButtonDefault";
 import ButtonIcon from "./ButtonIcon";
 import Checkbox from "./Checkbox";
+import Divider from "./Divider";
 import Icon from "./Icon";
 import Input from "./Input";
 import Link from "./Link";
@@ -14,18 +15,19 @@ import Switch from "./Switch";
 import Table from "./Table";
 
 export {
+  Backdrop,
+  Badge,
   ButtonDefault,
   ButtonIcon,
   Checkbox,
+  Divider,
+  Icon,
   Input,
-  Radio,
-  Switch,
   Link,
   Loading,
-  Icon,
-  Badge,
-  Table,
   PageTitle,
-  Backdrop,
   Password,
+  Radio,
+  Switch,
+  Table,
 };

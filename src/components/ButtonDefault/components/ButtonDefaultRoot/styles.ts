@@ -62,11 +62,11 @@ export const Container = styled.button`
     border: var(--border-width-thin) solid transparent;
 
     & p {
-      color: var(--color-white);
+      color: var(--color-white-fixed);
     }
 
     & svg {
-      color: var(--color-white);
+      color: var(--color-white-fixed);
     }
 
     &:focus {

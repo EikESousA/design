@@ -27,6 +27,7 @@ export default function FieldPassword() {
   const [variant, setVariant] = useState<IInputVariantDTO>("primary");
   const [disabled, setDisabled] = useState<boolean>(false);
   const [required, setRequired] = useState<boolean>(false);
+  const [strength, setStrength] = useState<boolean>(false);
 
   return (
     <FieldContainer>
@@ -50,7 +51,7 @@ export default function FieldPassword() {
             required={required}
             placeholder={placeholder}
           >
-            <Password.Level value={value} />
+            {strength ? <Password.Level value={value} /> : null}
           </Password.Root>
         </div>
       </FieldContent>
@@ -110,6 +111,14 @@ export default function FieldPassword() {
             label="Obrigatorio"
             checked={required}
             setChecked={(updateValue) => setRequired(updateValue)}
+          />
+        </section>
+        <section>
+          <Switch.Root
+            id="field-input-level"
+            label="Força"
+            checked={strength}
+            setChecked={(updateValue) => setStrength(updateValue)}
           />
         </section>
       </FieldInfo>

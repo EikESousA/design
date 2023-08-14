@@ -21,7 +21,8 @@ export default function PasswordLevel({
 
   return (
     <Container data-testid={datatestid ? `${datatestid}-level` : undefined}>
-      <p>{strength}</p>
+      <div className="empty" />
+      <div className={`s${String(strength)}`} />
     </Container>
   );
 }

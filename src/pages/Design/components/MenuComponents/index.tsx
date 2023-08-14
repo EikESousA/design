@@ -30,8 +30,13 @@ export default function MenuComponents({
         );
 
   function handleSelect(field: IFieldDTO) {
-    navigate(`/design/${field.name}`);
-    setOpenComponents(false);
+    if (component === field.name) {
+      navigate(`/design`);
+      setOpenComponents(false);
+    } else {
+      navigate(`/design/${field.name}`);
+      setOpenComponents(false);
+    }
   }
 
   return (

@@ -39,7 +39,7 @@ export const Container = styled.button`
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-sm);
 
-    color: var(--color-white);
+    color: var(--color-white-fixed);
 
     text-transform: uppercase;
 
@@ -52,7 +52,7 @@ export const Container = styled.button`
     height: var(--font-size-lg);
     width: var(--font-size-lg);
 
-    fill: var(--color-white);
+    fill: var(--color-white-fixed);
   }
 
   &:disabled {
