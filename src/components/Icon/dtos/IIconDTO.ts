@@ -26,10 +26,12 @@ export type IIconDTO =
   | "email"
   | "eye"
   | "eyeslash"
+  | "facebook"
   | "filter"
   | "fullscreen"
   | "help"
   | "info"
+  | "instagram"
   | "light"
   | "logout"
   | "manager"
@@ -40,16 +42,19 @@ export type IIconDTO =
   | "painting"
   | "password"
   | "profile"
+  | "profilegroup"
   | "report"
   | "request"
   | "search"
   | "send"
   | "success"
   | "suport"
+  | "telegram"
   | "volumedown"
   | "volumemute"
   | "volumeup"
-  | "warning";
+  | "warning"
+  | "whatsapp";
 
 export interface IIconRootProps extends SVGProps<SVGSVGElement> {
   icon: IIconDTO;

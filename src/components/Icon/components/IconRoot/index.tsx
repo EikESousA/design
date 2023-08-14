@@ -21,14 +21,16 @@ import {
   IconDark,
   IconDashboard,
   IconDelete,
-  IconEdit,
   IconEmail,
+  IconEdit,
   IconEye,
   IconEyeSlash,
+  IconFacebook,
   IconFilter,
   IconFullscreen,
   IconHelp,
   IconInfo,
+  IconInstagram,
   IconLight,
   IconLogout,
   IconManager,
@@ -39,16 +41,19 @@ import {
   IconPainting,
   IconPassword,
   IconProfile,
+  IconProfileGroup,
   IconReport,
   IconRequest,
   IconSearch,
   IconSend,
   IconSuccess,
   IconSuport,
+  IconTelegram,
   IconVolumeDown,
   IconVolumeMute,
   IconVolumeUp,
   IconWarning,
+  IconWhatsapp,
 } from "../../svgs";
 
 export default function IconRoot({
@@ -132,6 +137,9 @@ export default function IconRoot({
     case "eyeslash":
       return <IconEyeSlash datatestid={datatestid} {...rest} />;
 
+    case "facebook":
+      return <IconFacebook datatestid={datatestid} {...rest} />;
+
     case "filter":
       return <IconFilter datatestid={datatestid} {...rest} />;
 
@@ -143,6 +151,9 @@ export default function IconRoot({
 
     case "info":
       return <IconInfo datatestid={datatestid} {...rest} />;
+
+    case "instagram":
+      return <IconInstagram datatestid={datatestid} {...rest} />;
 
     case "light":
       return <IconLight datatestid={datatestid} {...rest} />;
@@ -174,6 +185,9 @@ export default function IconRoot({
     case "profile":
       return <IconProfile datatestid={datatestid} {...rest} />;
 
+    case "profilegroup":
+      return <IconProfileGroup datatestid={datatestid} {...rest} />;
+
     case "report":
       return <IconReport datatestid={datatestid} {...rest} />;
 
@@ -192,6 +206,9 @@ export default function IconRoot({
     case "suport":
       return <IconSuport datatestid={datatestid} {...rest} />;
 
+    case "telegram":
+      return <IconTelegram datatestid={datatestid} {...rest} />;
+
     case "volumedown":
       return <IconVolumeDown datatestid={datatestid} {...rest} />;
 
@@ -203,6 +220,9 @@ export default function IconRoot({
 
     case "warning":
       return <IconWarning datatestid={datatestid} {...rest} />;
+
+    case "whatsapp":
+      return <IconWhatsapp datatestid={datatestid} {...rest} />;
 
     default:
       return <svg />;
@@ -231,30 +251,37 @@ export {
   IconDark,
   IconDashboard,
   IconDelete,
-  IconEdit,
   IconEmail,
+  IconEdit,
   IconEye,
   IconEyeSlash,
+  IconFacebook,
   IconFilter,
   IconFullscreen,
   IconHelp,
   IconInfo,
+  IconInstagram,
   IconLight,
   IconLogout,
   IconManager,
   IconMenu,
+  IconMenuFold,
+  IconMenuUnfold,
   IconNotification,
   IconPainting,
   IconPassword,
   IconProfile,
+  IconProfileGroup,
   IconReport,
   IconRequest,
   IconSearch,
   IconSend,
   IconSuccess,
   IconSuport,
+  IconTelegram,
   IconVolumeDown,
   IconVolumeMute,
   IconVolumeUp,
   IconWarning,
+  IconWhatsapp,
 };

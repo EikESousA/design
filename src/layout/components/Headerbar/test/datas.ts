@@ -1,0 +1,133 @@
+import { INotificationDTO } from "../dtos/INotificationDTO";
+
+const datasTest = [
+  {
+    id: "1",
+    type: "ticket",
+    connection_type: "whatsapp",
+    status: "open",
+    title: "Eike Sousa",
+    subtitle:
+      "Ola meu nome e eike. Tenho uma duvida sobre seu sistema. Poderia me ajuda?",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url:
+      "https://scontent.faju5-1.fna.fbcdn.net/v/t39.30808-6/296339144_5510330919036417_9026366095093000264_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeFdGgYfi5iq13TN2Tpcp4jCJF7-VWZAgZ4kXv5VZkCBnlsTdk3SvCPga7VUqSTTxYe8_gAMgsyGAW8wKHB72U7Y&_nc_ohc=U78STEw8NJ0AX_2VBaB&_nc_ht=scontent.faju5-1.fna&oh=00_AfBXYibosvk2VhzVh6mwfwf2r6Ux8Sgt_OuSdEb-Yq-phw&oe=64DC392E",
+  },
+  {
+    id: "2",
+    type: "ticket",
+    connection_type: "telegram",
+    status: "pending",
+    title: "Amanda Barreto Sousa Brito",
+    subtitle: "Oi teste.",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "3",
+    type: "group",
+    connection_type: "instagram",
+    status: null,
+    title: "Amanda Barreto Sousa Brito",
+    subtitle: "Oi teste.",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "4",
+    type: "shop",
+    connection_type: null,
+    status: "Aguardando Pagamento",
+    title: "Pedido: Amanda Barreto",
+    subtitle: "Status: Aguardando Pagamento",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "5",
+    type: "ticket",
+    connection_type: "facebook",
+    status: "open",
+    title: "Eike Sousa",
+    subtitle:
+      "Ola meu nome e eike. Tenho uma duvida sobre seu sistema. Poderia me ajuda?",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url:
+      "https://scontent.faju5-1.fna.fbcdn.net/v/t39.30808-6/296339144_5510330919036417_9026366095093000264_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeFdGgYfi5iq13TN2Tpcp4jCJF7-VWZAgZ4kXv5VZkCBnlsTdk3SvCPga7VUqSTTxYe8_gAMgsyGAW8wKHB72U7Y&_nc_ohc=U78STEw8NJ0AX_2VBaB&_nc_ht=scontent.faju5-1.fna&oh=00_AfBXYibosvk2VhzVh6mwfwf2r6Ux8Sgt_OuSdEb-Yq-phw&oe=64DC392E",
+  },
+  {
+    id: "6",
+    type: "ticket",
+    connection_type: null,
+    status: "pending",
+    title: "Amanda Barreto Sousa Brito",
+    subtitle: "Oi teste.",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "7",
+    type: "group",
+
+    connection_type: null,
+    status: null,
+    title: "Amanda Barreto Sousa Brito",
+    subtitle: "Oi teste.",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "8",
+    type: "shop",
+    connection_type: null,
+    status: "Aguardando Pagamento",
+    title: "Pedido: Amanda Barreto",
+    subtitle: "Status: Aguardando Pagamento",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "9",
+    type: "ticket",
+    connection_type: null,
+    status: "open",
+    title: "Eike Sousa",
+    subtitle:
+      "Ola meu nome e eike. Tenho uma duvida sobre seu sistema. Poderia me ajuda?",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url:
+      "https://scontent.faju5-1.fna.fbcdn.net/v/t39.30808-6/296339144_5510330919036417_9026366095093000264_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=be3454&_nc_eui2=AeFdGgYfi5iq13TN2Tpcp4jCJF7-VWZAgZ4kXv5VZkCBnlsTdk3SvCPga7VUqSTTxYe8_gAMgsyGAW8wKHB72U7Y&_nc_ohc=U78STEw8NJ0AX_2VBaB&_nc_ht=scontent.faju5-1.fna&oh=00_AfBXYibosvk2VhzVh6mwfwf2r6Ux8Sgt_OuSdEb-Yq-phw&oe=64DC392E",
+  },
+  {
+    id: "10",
+    type: "ticket",
+    connection_type: null,
+    status: "pending",
+    title: "Amanda Barreto Sousa Brito",
+    subtitle: "Oi teste.",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "11",
+    type: "group",
+    connection_type: null,
+    status: null,
+    title: "Amanda Barreto Sousa Brito",
+    subtitle: "Oi teste.",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+  {
+    id: "12",
+    type: "shop",
+    connection_type: null,
+    status: "Aguardando Pagamento",
+    title: "Pedido: Amanda Barreto",
+    subtitle: "Status: Aguardando Pagamento",
+    date: "2023-07-21T20:40:15.000Z",
+    img_url: null,
+  },
+] as INotificationDTO[];
+
+export default datasTest;

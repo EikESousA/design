@@ -23,10 +23,12 @@ import IconEmail from "./Edit";
 import IconEdit from "./Email";
 import IconEye from "./Eye";
 import IconEyeSlash from "./EyeSlash";
+import IconFacebook from "./Facebook";
 import IconFilter from "./Filter";
 import IconFullscreen from "./Fullscreen";
 import IconHelp from "./Help";
 import IconInfo from "./Info";
+import IconInstagram from "./Instagram";
 import IconLight from "./Light";
 import IconLogout from "./Logout";
 import IconManager from "./Manager";
@@ -37,16 +39,19 @@ import IconNotification from "./Notification";
 import IconPainting from "./Painting";
 import IconPassword from "./Password";
 import IconProfile from "./Profile";
+import IconProfileGroup from "./ProfileGroup";
 import IconReport from "./Report";
 import IconRequest from "./Request";
 import IconSearch from "./Search";
 import IconSend from "./Send";
 import IconSuccess from "./Success";
 import IconSuport from "./Suport";
+import IconTelegram from "./Telegram";
 import IconVolumeDown from "./VolumeDown";
 import IconVolumeMute from "./VolumeMute";
 import IconVolumeUp from "./VolumeUp";
 import IconWarning from "./Warning";
+import IconWhatsapp from "./Whatsapp";
 
 export {
   IconAlert,
@@ -56,46 +61,51 @@ export {
   IconArrowUp,
   IconAsterisk,
   IconAttachFile,
-  IconChatbot,
-  IconCheck,
-  IconClose,
-  IconDark,
-  IconDelete,
-  IconEdit,
-  IconEmail,
-  IconEye,
-  IconEyeSlash,
-  IconFilter,
-  IconFullscreen,
-  IconHelp,
-  IconInfo,
-  IconLight,
-  IconMenu,
-  IconMenuFold,
-  IconMenuUnfold,
-  IconNotification,
-  IconPassword,
-  IconProfile,
-  IconSearch,
-  IconSend,
-  IconSuccess,
-  IconVolumeDown,
-  IconVolumeMute,
-  IconVolumeUp,
-  IconWarning,
-  IconPainting,
-  IconComponents,
   IconBug,
   IconCalendar,
   IconCall,
   IconCampaign,
+  IconChatbot,
   IconChatshop,
+  IconCheck,
+  IconClose,
+  IconComponents,
   IconConfig,
   IconContact,
+  IconDark,
   IconDashboard,
+  IconDelete,
+  IconEmail,
+  IconEdit,
+  IconEye,
+  IconEyeSlash,
+  IconFacebook,
+  IconFilter,
+  IconFullscreen,
+  IconHelp,
+  IconInfo,
+  IconInstagram,
+  IconLight,
   IconLogout,
   IconManager,
+  IconMenu,
+  IconMenuFold,
+  IconMenuUnfold,
+  IconNotification,
+  IconPainting,
+  IconPassword,
+  IconProfile,
+  IconProfileGroup,
   IconReport,
   IconRequest,
+  IconSearch,
+  IconSend,
+  IconSuccess,
   IconSuport,
+  IconTelegram,
+  IconVolumeDown,
+  IconVolumeMute,
+  IconVolumeUp,
+  IconWarning,
+  IconWhatsapp,
 };

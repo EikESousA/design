@@ -112,22 +112,21 @@ export const Container = styled.nav`
     height: 1.5rem;
     width: 1.5rem;
 
-    fill: var(--color-white);
+    fill: var(--color-white-fixed);
   }
 
   & main button div section.info p {
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-regular);
 
-    color: var(--color-white);
+    color: var(--color-white-fixed);
   }
 
   & main button div section.badge {
     padding: var(--spacing-s1) var(--spacing-s2);
 
-    background-color: var(--color-white);
+    background-color: var(--color-white-fixed);
 
-    border: 1px solid var(--color-white);
     border-radius: var(--border-radius-sm);
   }
 
@@ -195,7 +194,7 @@ export const Container = styled.nav`
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
 
-    color: var(--color-white);
+    color: var(--color-white-fixed);
 
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -206,7 +205,7 @@ export const Container = styled.nav`
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-regular);
 
-    color: var(--color-white);
+    color: var(--color-white-fixed);
 
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -250,7 +249,7 @@ export const Container = styled.nav`
     height: 1rem;
     width: 1rem;
 
-    fill: var(--color-white);
+    fill: var(--color-white-fixed);
   }
 
   &.unfold {
@@ -270,7 +269,7 @@ export const Container = styled.nav`
         height: 1.5rem;
         width: 1.5rem;
 
-        fill: var(--color-white);
+        fill: var(--color-white-fixed);
       }
 
       &:hover {
