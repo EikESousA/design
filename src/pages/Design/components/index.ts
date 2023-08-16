@@ -2,6 +2,7 @@ import FieldButtonDefault from "./FieldButtonDefault";
 import FieldButtonIcon from "./FieldButtonIcon";
 import FieldCheckbox from "./FieldCheckbox";
 import FieldDivider from "./FieldDivider";
+import FieldDropdown from "./FieldDropdown";
 import FieldIcon from "./FieldIcon";
 import FieldInput from "./FieldInput";
 import FieldLink from "./FieldLink";
@@ -19,6 +20,7 @@ export {
   FieldInput,
   FieldCheckbox,
   FieldDivider,
+  FieldDropdown,
   FieldRadio,
   FieldSwitch,
   FieldLink,

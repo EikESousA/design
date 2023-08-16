@@ -10,6 +10,7 @@ import Link from "./Link";
 import Loading from "./Loading";
 import PageTitle from "./Page/Title";
 import Password from "./Password";
+import Popover from "./Popover";
 import Radio from "./Radio";
 import Switch from "./Switch";
 import Table from "./Table";
@@ -27,6 +28,7 @@ export {
   Loading,
   PageTitle,
   Password,
+  Popover,
   Radio,
   Switch,
   Table,

@@ -6,8 +6,8 @@ interface IHandleRippeProps {
   onClick: (value?: any) => void;
 }
 
-export default function handleRipple({ event, onClick }: IHandleRippeProps) {
-  const button = event.currentTarget;
+export default function handleRipple(value: IHandleRippeProps) {
+  const button = value.event.currentTarget;
 
   const circle = document.createElement("span");
   const diameter = Math.max(button.clientWidth, button.clientHeight);
@@ -17,8 +17,8 @@ export default function handleRipple({ event, onClick }: IHandleRippeProps) {
 
   circle.style.width = `${diameter}px`;
   circle.style.height = `${diameter}px`;
-  circle.style.left = `${event.clientX - buttonRect.left - radius}px`;
-  circle.style.top = `${event.clientY - buttonRect.top - radius}px`;
+  circle.style.left = `${value.event.clientX - buttonRect.left - radius}px`;
+  circle.style.top = `${value.event.clientY - buttonRect.top - radius}px`;
   circle.classList.add("ripple");
 
   const ripple = button.getElementsByClassName("ripple")[0];
@@ -29,5 +29,5 @@ export default function handleRipple({ event, onClick }: IHandleRippeProps) {
 
   button.appendChild(circle);
 
-  onClick();
+  value.onClick(value);
 }
