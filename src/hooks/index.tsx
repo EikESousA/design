@@ -14,15 +14,15 @@ interface IAppProviderProps {
 export default function AppProvider({ children }: IAppProviderProps) {
   return (
     <ThemeProvider>
-      <ToastProvider>
-        <TooltipProvider>
-          <PopoverProvider>
+      <PopoverProvider>
+        <ToastProvider>
+          <TooltipProvider>
             <LayoutProvider>
               <SoundProvider>{children}</SoundProvider>
             </LayoutProvider>
-          </PopoverProvider>
-        </TooltipProvider>
-      </ToastProvider>
+          </TooltipProvider>
+        </ToastProvider>
+      </PopoverProvider>
     </ThemeProvider>
   );
 }

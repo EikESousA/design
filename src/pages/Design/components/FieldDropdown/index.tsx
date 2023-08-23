@@ -8,6 +8,11 @@ export default function FieldButtonDefault() {
   const elRef = createRef<HTMLButtonElement>();
 
   const [open, setOpen] = useState(false);
+  const [test, setTest] = useState("false");
+
+  function handleClose() {
+    setOpen(false);
+  }
 
   return (
     <FieldContainer>
@@ -17,16 +22,17 @@ export default function FieldButtonDefault() {
           label="Abrir"
           ref={elRef}
           onClick={() => {
-            setOpen((prev) => !prev);
+            setOpen(true);
           }}
         />
       </FieldContent>
 
-      {open && elRef ? (
-        <Popover.Root elRef={elRef} open={open} type="top" style={{}}>
-          <h1>Teste</h1>
-        </Popover.Root>
-      ) : null}
+      <Popover.Root elRef={elRef} open={open} handleClose={() => handleClose()}>
+        <h1>Teste</h1>
+        <button type="button" onClick={() => setTest("true")}>
+          {test}
+        </button>
+      </Popover.Root>
     </FieldContainer>
   );
 }

@@ -91,6 +91,17 @@ const modules: IModuleDTO[] = [
     open: false,
     badge: 0,
   },
+  {
+    id: uuidv4(),
+    name: "Design",
+    url: "/design",
+    icon: "painting",
+    global: false,
+    admin: false,
+    selected: false,
+    open: false,
+    badge: 0,
+  },
 ];
 
 export default modules;

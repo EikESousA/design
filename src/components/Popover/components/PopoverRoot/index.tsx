@@ -1,34 +1,38 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/jsx-no-useless-fragment */
-import { CSSProperties, ReactNode, RefObject, useEffect } from "react";
+
+import { RefObject, ReactNode, HTMLAttributes, useEffect } from "react";
 
 import { usePopover } from "@/hooks/popover";
 
-interface IPopoverRootProps {
+type Orders = "top" | "left" | "right" | "bottom";
+
+interface IPopoverRootProps extends HTMLAttributes<HTMLDivElement> {
   elRef: RefObject<HTMLButtonElement>;
   open: boolean;
-  type: string;
-  style: CSSProperties;
+  handleClose: (value?: any) => void;
+  order?: Orders[];
   children: ReactNode;
 }
 
 export default function PopoverRoot({
   elRef,
   open,
-  type,
-  style,
+  handleClose,
+  order,
   children,
 }: IPopoverRootProps) {
-  const { handleOnClickOver } = usePopover();
+  const { selectPopover } = usePopover();
 
   useEffect(() => {
-    if (elRef && open && type && style && children) {
-      handleOnClickOver({
-        child: children,
-        el: elRef.current as Element,
-      });
-    }
-  }, [children, elRef, handleOnClickOver, open, style, type]);
+    selectPopover({
+      open,
+      handleClose,
+      elRef,
+      popover: children,
+      order,
+    });
+  }, [children, elRef, handleClose, open, order, selectPopover]);
 
   return <></>;
 }

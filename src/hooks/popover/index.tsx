@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import {
   createContext,
   useRef,
@@ -9,37 +10,58 @@ import {
   useContext,
   ReactNode,
   RefObject,
+  isValidElement,
 } from "react";
+import { createPortal } from "react-dom";
+
+import { Container } from "./styles";
 
 interface IPopoverContextData {
-  popoverRef: RefObject<HTMLDivElement>;
-  pastShow: () => void;
-  handleOnClickOut: () => void;
-  handleOnClickOver: ({ el, child }: IHandleOnClickOver) => void;
+  selectPopover: (value: SelectPopoverProps) => void;
 }
 
-interface IPopoverProps {
+interface PopoverProps {
   children: ReactNode;
 }
 
-interface IHandleOnClickOver {
-  el: Element;
-  child: ReactNode;
+interface SelectPopoverProps {
+  open: boolean;
+  handleClose: (value?: any) => void;
+  elRef: RefObject<HTMLButtonElement> | null;
+  popover: ReactNode;
+  order?: Orders[];
+}
+
+interface IElement {
+  open: boolean;
+  handleClose: (value?: any) => void;
+  elRef: RefObject<HTMLButtonElement> | null;
+  popover: ReactNode | null;
+  order: Orders[];
 }
 
 const PopoverContext = createContext<IPopoverContextData>(
   {} as IPopoverContextData,
 );
 
-export function PopoverProvider({ children }: IPopoverProps) {
-  const popoverRef = useRef<HTMLDivElement>(null);
+type Orders = "top" | "left" | "right" | "bottom";
 
-  const [rect, setRect] = useState<DOMRect | null>(null);
+const orderDefault: Orders[] = ["bottom", "top", "left", "right"];
+
+export function PopoverProvider({ children }: PopoverProps) {
+  const popoverRef = useRef<HTMLDivElement | null>(null);
+
   const [x, setX] = useState<number>(0);
   const [y, setY] = useState<number>(0);
   const [type, setType] = useState<string>("none");
 
-  const [element, setElement] = useState<ReactNode | null>(null);
+  const [element, setElement] = useState<IElement>({
+    elRef: null,
+    order: orderDefault,
+    popover: null,
+    handleClose: () => {},
+    open: false,
+  });
 
   const style = useMemo(() => {
     return {
@@ -48,115 +70,185 @@ export function PopoverProvider({ children }: IPopoverProps) {
     };
   }, [x, y]);
 
-  const pastShow = useCallback(() => {
-    const ttNode = popoverRef.current;
+  const pastShow = useCallback(
+    (rect: DOMRect) => {
+      const ttNode = popoverRef.current;
 
-    if (ttNode != null && rect !== null) {
-      let xUpdated = 0;
-      let yUpdated = 0;
+      if (ttNode != null && rect !== null) {
+        let xUpdated = 0;
+        let yUpdated = 0;
 
-      const docWidth = document.documentElement.clientWidth;
-      const docHeight = document.documentElement.clientHeight;
+        const docWidth = document.documentElement.clientWidth;
+        const docHeight = document.documentElement.clientHeight;
 
-      const rx = rect.x + rect.width;
-      const lx = rect.x;
-      const ty = rect.y;
-      const by = rect.y + rect.height;
+        const rx = rect.x + rect.width;
+        const lx = rect.x;
+        const ty = rect.y;
+        const by = rect.y + rect.height;
 
-      const ttRect = ttNode.getBoundingClientRect();
+        const ttRect = ttNode.getBoundingClientRect();
 
-      const bAbove = ty - ttRect.height >= 0;
-      const bBellow = by + ttRect.height <= window.scrollY + docHeight;
-      const bLeft = lx - ttRect.width >= 0;
-      const bRight = rx + ttRect.width <= window.scrollX + docWidth;
+        const bAbove = ty - ttRect.height >= 0;
+        const bBellow = by + ttRect.height <= window.scrollY + docHeight;
+        const bLeft = lx - ttRect.width >= 0;
+        const bRight = rx + ttRect.width <= window.scrollX + docWidth;
 
-      let typeUpdated = "none";
+        let typeUpdated = "none";
 
-      if (bAbove) {
-        yUpdated = ty - rect.height / 2 - 5;
-        xUpdated = lx + rect.width / 2 - ttRect.width / 2;
+        let indexOrder = 0;
+        let findPosition = false;
 
-        if (xUpdated < 0) {
-          xUpdated = lx;
+        while (!findPosition || indexOrder < 4) {
+          if (
+            element.order[indexOrder] === "bottom" &&
+            bBellow &&
+            !findPosition
+          ) {
+            yUpdated = by + 5;
+            xUpdated = lx + (rect.width / 2 - ttRect.width / 2);
+
+            if (xUpdated < 0) {
+              xUpdated = lx;
+            }
+
+            typeUpdated = "bottom";
+            findPosition = true;
+          }
+
+          if (element.order[indexOrder] === "top" && bAbove && !findPosition) {
+            yUpdated = ty - rect.height / 2 - 5;
+            xUpdated = lx + rect.width / 2 - ttRect.width / 2;
+
+            if (xUpdated < 0) {
+              xUpdated = lx;
+            }
+
+            typeUpdated = "top";
+            findPosition = true;
+          }
+
+          if (element.order[indexOrder] === "left" && bLeft && !findPosition) {
+            xUpdated = lx - ttRect.width - 5;
+            yUpdated = ty + (rect.height / 2 - ttRect.height / 2);
+
+            if (yUpdated < 0) {
+              yUpdated = ty;
+            }
+
+            typeUpdated = "left";
+            findPosition = true;
+          }
+
+          if (
+            element.order[indexOrder] === "right" &&
+            bRight &&
+            !findPosition
+          ) {
+            xUpdated = rx + 5;
+            yUpdated = ty + (rect.height / 2 - ttRect.height / 2);
+
+            if (yUpdated < 0) {
+              yUpdated = ty;
+            }
+
+            typeUpdated = "right";
+            findPosition = true;
+          }
+
+          indexOrder += 1;
         }
 
-        typeUpdated = "top";
-      } else if (bBellow) {
-        yUpdated = by + 5;
-        xUpdated = lx + (rect.width / 2 - ttRect.width / 2);
+        if (!findPosition) {
+          yUpdated = by + 5;
+          xUpdated = lx + (rect.width / 2 - ttRect.width / 2);
 
-        if (xUpdated < 0) {
-          xUpdated = lx;
+          if (xUpdated < 0) {
+            xUpdated = lx;
+          }
+
+          typeUpdated = "bottom";
         }
 
-        typeUpdated = "bottom";
-      } else if (bLeft) {
-        xUpdated = lx - ttRect.width - 5;
-        yUpdated = ty + (rect.height / 2 - ttRect.height / 2);
-
-        if (yUpdated < 0) {
-          yUpdated = ty;
-        }
-
-        typeUpdated = "left";
-      } else if (bRight) {
-        xUpdated = rx + 5;
-        yUpdated = ty + (rect.height / 2 - ttRect.height / 2);
-
-        if (yUpdated < 0) {
-          yUpdated = ty;
-        }
-
-        typeUpdated = "right";
+        setType(typeUpdated);
+        setX(xUpdated);
+        setY(yUpdated);
       }
+    },
+    [element.order],
+  );
 
-      setType(typeUpdated);
-      setX(xUpdated);
-      setY(yUpdated);
-    }
-  }, [rect]);
-
-  const handleOnClickOut = useCallback(() => {
-    setRect(null);
-  }, []);
-
-  const handleOnClickOver = useCallback(({ el, child }: IHandleOnClickOver) => {
-    if (el != null) {
-      const rectUpdated = el.getBoundingClientRect();
-
-      setRect(rectUpdated);
-      setElement(child);
-    }
-  }, []);
+  const selectPopover = useCallback(
+    ({ open, handleClose, elRef, popover, order }: SelectPopoverProps) => {
+      setElement({
+        open,
+        handleClose,
+        elRef,
+        popover,
+        order: order || orderDefault,
+      });
+    },
+    [],
+  );
 
   useEffect(() => {
-    if (rect) {
-      pastShow();
+    const handleClick = (event: any) => {
+      if (
+        popoverRef.current &&
+        typeof popoverRef.current === "object" &&
+        !popoverRef.current.contains(event.target)
+      ) {
+        element.handleClose();
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [element]);
+
+  useEffect(() => {
+    if (
+      element.elRef &&
+      isValidElement(element.elRef.current) &&
+      element.elRef.current
+    ) {
+      const rect = element.elRef.current.getBoundingClientRect();
+
+      pastShow(rect);
+    } else {
+      setX(0);
+      setY(0);
+      setType("none");
     }
-  }, [pastShow, rect]);
+  }, [element.elRef, pastShow]);
 
   const context = useMemo(() => {
     return {
-      popoverRef,
-      pastShow,
-      handleOnClickOut,
-      handleOnClickOver,
-      element,
-      style,
-      type,
+      selectPopover,
     };
-  }, [
-    popoverRef,
-    pastShow,
-    handleOnClickOut,
-    handleOnClickOver,
-    element,
-    style,
-    type,
-  ]);
+  }, [selectPopover]);
 
   return (
     <PopoverContext.Provider value={context}>
+      {element.open && element.popover
+        ? createPortal(
+            <div
+              onClick={(event) => event.stopPropagation()}
+              aria-hidden="true"
+            >
+              <Container
+                className={`${type}`}
+                style={{ left: style.left, top: style.top }}
+                ref={popoverRef}
+              >
+                {element.popover}
+              </Container>
+            </div>,
+            document.getElementById("root") || document.body,
+          )
+        : null}
       {children}
     </PopoverContext.Provider>
   );
@@ -166,7 +258,7 @@ export function usePopover() {
   const context = useContext(PopoverContext);
 
   if (!context) {
-    throw new Error("useTooltip must be used within a TooltipProvider");
+    throw new Error("usePopover must be used within a PopoverProvider");
   }
 
   return context;
