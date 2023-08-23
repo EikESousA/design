@@ -27,6 +27,7 @@ import IconFacebook from "./Facebook";
 import IconFilter from "./Filter";
 import IconFullscreen from "./Fullscreen";
 import IconHelp from "./Help";
+import IconIA from "./IA";
 import IconInfo from "./Info";
 import IconInstagram from "./Instagram";
 import IconLight from "./Light";
@@ -83,6 +84,7 @@ export {
   IconFilter,
   IconFullscreen,
   IconHelp,
+  IconIA,
   IconInfo,
   IconInstagram,
   IconLight,

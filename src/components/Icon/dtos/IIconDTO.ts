@@ -30,6 +30,7 @@ export type IIconDTO =
   | "filter"
   | "fullscreen"
   | "help"
+  | "ia"
   | "info"
   | "instagram"
   | "light"

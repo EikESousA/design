@@ -29,6 +29,7 @@ import {
   IconFilter,
   IconFullscreen,
   IconHelp,
+  IconIA,
   IconInfo,
   IconInstagram,
   IconLight,
@@ -149,6 +150,9 @@ export default function IconRoot({
     case "help":
       return <IconHelp datatestid={datatestid} {...rest} />;
 
+    case "ia":
+      return <IconIA datatestid={datatestid} {...rest} />;
+
     case "info":
       return <IconInfo datatestid={datatestid} {...rest} />;
 
@@ -259,6 +263,7 @@ export {
   IconFilter,
   IconFullscreen,
   IconHelp,
+  IconIA,
   IconInfo,
   IconInstagram,
   IconLight,

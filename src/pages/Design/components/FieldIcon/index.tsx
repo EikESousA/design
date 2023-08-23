@@ -137,6 +137,10 @@ export default function FieldIcon() {
               <p>help</p>
             </li>
             <li>
+              <Icon.Root icon="ia" />
+              <p>ia</p>
+            </li>
+            <li>
               <Icon.Root icon="info" />
               <p>info</p>
             </li>
