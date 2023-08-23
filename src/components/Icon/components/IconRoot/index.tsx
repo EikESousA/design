@@ -17,6 +17,7 @@ import {
   IconClose,
   IconComponents,
   IconConfig,
+  IconConnections,
   IconContact,
   IconDark,
   IconDashboard,
@@ -26,30 +27,37 @@ import {
   IconEye,
   IconEyeSlash,
   IconFacebook,
+  IconFast,
   IconFilter,
   IconFullscreen,
   IconHelp,
   IconIA,
   IconInfo,
   IconInstagram,
+  IconIntegrations,
   IconLight,
   IconLogout,
   IconManager,
   IconMenu,
   IconMenuFold,
   IconMenuUnfold,
+  IconModules,
   IconNotification,
   IconPainting,
   IconPassword,
   IconProfile,
   IconProfileGroup,
+  IconQueues,
   IconReport,
   IconRequest,
+  IconSatisfaction,
   IconSearch,
   IconSend,
   IconSuccess,
   IconSuport,
+  IconTags,
   IconTelegram,
+  IconUsers,
   IconVolumeDown,
   IconVolumeMute,
   IconVolumeUp,
@@ -114,6 +122,9 @@ export default function IconRoot({
     case "config":
       return <IconConfig datatestid={datatestid} {...rest} />;
 
+    case "connections":
+      return <IconConnections datatestid={datatestid} {...rest} />;
+
     case "contact":
       return <IconContact datatestid={datatestid} {...rest} />;
 
@@ -141,6 +152,9 @@ export default function IconRoot({
     case "facebook":
       return <IconFacebook datatestid={datatestid} {...rest} />;
 
+    case "fast":
+      return <IconFast datatestid={datatestid} {...rest} />;
+
     case "filter":
       return <IconFilter datatestid={datatestid} {...rest} />;
 
@@ -158,6 +172,9 @@ export default function IconRoot({
 
     case "instagram":
       return <IconInstagram datatestid={datatestid} {...rest} />;
+
+    case "integrations":
+      return <IconIntegrations datatestid={datatestid} {...rest} />;
 
     case "light":
       return <IconLight datatestid={datatestid} {...rest} />;
@@ -177,6 +194,9 @@ export default function IconRoot({
     case "menuunfold":
       return <IconMenuUnfold datatestid={datatestid} {...rest} />;
 
+    case "modules":
+      return <IconModules datatestid={datatestid} {...rest} />;
+
     case "notification":
       return <IconNotification datatestid={datatestid} {...rest} />;
 
@@ -192,11 +212,17 @@ export default function IconRoot({
     case "profilegroup":
       return <IconProfileGroup datatestid={datatestid} {...rest} />;
 
+    case "queues":
+      return <IconQueues datatestid={datatestid} {...rest} />;
+
     case "report":
       return <IconReport datatestid={datatestid} {...rest} />;
 
     case "request":
       return <IconRequest datatestid={datatestid} {...rest} />;
+
+    case "satisfaction":
+      return <IconSatisfaction datatestid={datatestid} {...rest} />;
 
     case "search":
       return <IconSearch datatestid={datatestid} {...rest} />;
@@ -210,8 +236,14 @@ export default function IconRoot({
     case "suport":
       return <IconSuport datatestid={datatestid} {...rest} />;
 
+    case "tags":
+      return <IconTags datatestid={datatestid} {...rest} />;
+
     case "telegram":
       return <IconTelegram datatestid={datatestid} {...rest} />;
+
+    case "users":
+      return <IconUsers datatestid={datatestid} {...rest} />;
 
     case "volumedown":
       return <IconVolumeDown datatestid={datatestid} {...rest} />;
@@ -251,6 +283,7 @@ export {
   IconClose,
   IconComponents,
   IconConfig,
+  IconConnections,
   IconContact,
   IconDark,
   IconDashboard,
@@ -260,30 +293,37 @@ export {
   IconEye,
   IconEyeSlash,
   IconFacebook,
+  IconFast,
   IconFilter,
   IconFullscreen,
   IconHelp,
   IconIA,
   IconInfo,
   IconInstagram,
+  IconIntegrations,
   IconLight,
   IconLogout,
   IconManager,
   IconMenu,
   IconMenuFold,
   IconMenuUnfold,
+  IconModules,
   IconNotification,
   IconPainting,
   IconPassword,
   IconProfile,
   IconProfileGroup,
+  IconQueues,
   IconReport,
   IconRequest,
+  IconSatisfaction,
   IconSearch,
   IconSend,
   IconSuccess,
   IconSuport,
+  IconTags,
   IconTelegram,
+  IconUsers,
   IconVolumeDown,
   IconVolumeMute,
   IconVolumeUp,

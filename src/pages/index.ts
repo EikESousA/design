@@ -1,4 +1,5 @@
 import Administration from "./Administration";
+import Chatbot from "./Administration/pages/Chatbot";
 import Campaigns from "./Campaigns";
 import ChatShop from "./ChatShop";
 import Contacts from "./Contacts";
@@ -13,6 +14,7 @@ import Tickets from "./Tickets";
 
 export {
   Administration,
+  Chatbot,
   Campaigns,
   ChatShop,
   Contacts,

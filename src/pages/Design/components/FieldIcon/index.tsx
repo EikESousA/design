@@ -89,6 +89,10 @@ export default function FieldIcon() {
               <p>config</p>
             </li>
             <li>
+              <Icon.Root icon="connections" />
+              <p>connections</p>
+            </li>
+            <li>
               <Icon.Root icon="contact" />
               <p>contact</p>
             </li>
@@ -125,6 +129,10 @@ export default function FieldIcon() {
               <p>facebook</p>
             </li>
             <li>
+              <Icon.Root icon="fast" />
+              <p>fast</p>
+            </li>
+            <li>
               <Icon.Root icon="filter" />
               <p>filter</p>
             </li>
@@ -147,6 +155,10 @@ export default function FieldIcon() {
             <li>
               <Icon.Root icon="instagram" />
               <p>instagram</p>
+            </li>
+            <li>
+              <Icon.Root icon="integrations" />
+              <p>integrations</p>
             </li>
             <li>
               <Icon.Root icon="light" />
@@ -173,6 +185,10 @@ export default function FieldIcon() {
               <p>menuunfold</p>
             </li>
             <li>
+              <Icon.Root icon="modules" />
+              <p>modules</p>
+            </li>
+            <li>
               <Icon.Root icon="notification" />
               <p>notification</p>
             </li>
@@ -193,12 +209,20 @@ export default function FieldIcon() {
               <p>profilegroup</p>
             </li>
             <li>
+              <Icon.Root icon="queues" />
+              <p>queues</p>
+            </li>
+            <li>
               <Icon.Root icon="report" />
               <p>report</p>
             </li>
             <li>
               <Icon.Root icon="request" />
               <p>request</p>
+            </li>
+            <li>
+              <Icon.Root icon="satisfaction" />
+              <p>satisfaction</p>
             </li>
             <li>
               <Icon.Root icon="search" />
@@ -217,8 +241,16 @@ export default function FieldIcon() {
               <p>suport</p>
             </li>
             <li>
+              <Icon.Root icon="tags" />
+              <p>tags</p>
+            </li>
+            <li>
               <Icon.Root icon="telegram" />
               <p>telegram</p>
+            </li>
+            <li>
+              <Icon.Root icon="users" />
+              <p>users</p>
             </li>
             <li>
               <Icon.Root icon="volumedown" />

@@ -29,7 +29,9 @@ export default function Sidebar() {
   return (
     <>
       <Container
-        className={`${fold ? "fold" : "unfold"} ${open ? "open" : "closed"}`}
+        className={`${fold ? "menu-fold" : "menu-unfold"} ${
+          open ? "open" : "closed"
+        }`}
       >
         <header>
           <img src={companyLogo} alt="Logo da empresa" />

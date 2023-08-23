@@ -71,7 +71,7 @@ export const Container = styled.nav`
 
     position: relative;
 
-    padding: var(--spacing-s2) var(--spacing-s1) var(--spacing-s2)
+    padding: var(--spacing-s3) var(--spacing-s1) var(--spacing-s3)
       var(--spacing-s2);
 
     display: flex;
@@ -146,7 +146,7 @@ export const Container = styled.nav`
 
     margin-bottom: var(--spacing-s4);
 
-    padding: var(--spacing-s2) var(--spacing-s2);
+    padding: var(--spacing-s3) var(--spacing-s2);
 
     display: flex;
     flex-direction: row;
@@ -252,135 +252,9 @@ export const Container = styled.nav`
     fill: var(--color-white-fixed);
   }
 
-  &.unfold {
+  @media screen and (max-width: 768px) {
     width: 20rem;
 
-    & header img {
-      width: 6rem;
-      height: 6rem;
-    }
-
-    & button.fold {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-
-      & svg {
-        height: 1.5rem;
-        width: 1.5rem;
-
-        fill: var(--color-white-fixed);
-      }
-
-      &:hover {
-        background-color: #ffffff40;
-      }
-    }
-
-    & main button div section.info p {
-      display: flex;
-    }
-
-    & main button div section.badge span {
-      display: flex;
-    }
-
-    & footer button.user section img {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-
-    & footer button.user section div {
-      display: flex;
-    }
-
-    & footer section.buttons button.bug {
-      display: flex;
-    }
-
-    & footer section.buttons button.suport {
-      display: flex;
-    }
-  }
-
-  &.fold {
-    width: 5rem;
-
-    & header img {
-      width: 3rem;
-      height: 3rem;
-    }
-
-    & button.fold {
-      position: absolute;
-      top: 0.5rem;
-      right: -3rem;
-
-      & svg {
-        height: 1.5rem;
-        width: 1.5rem;
-
-        fill: var(--color-primary-base);
-      }
-
-      &:hover {
-        background-color: #00000025;
-      }
-    }
-
-    & main button {
-      justify-content: center;
-      align-items: center;
-    }
-
-    & main button div section.info {
-      justify-content: center;
-    }
-
-    & main button div section.info p {
-      display: none;
-    }
-
-    & main button div section.badge {
-      position: absolute;
-      top: 0.25rem;
-      right: 0.25rem;
-
-      width: var(--spacing-s2);
-      height: var(--spacing-s2);
-
-      padding: 0;
-
-      border-radius: 50%;
-    }
-
-    & main button div section.badge span {
-      display: none;
-    }
-
-    & footer button.user section img {
-      height: 2rem;
-      width: 2rem;
-    }
-
-    & footer button.user section div {
-      display: none;
-    }
-
-    & footer button.user section div {
-      display: none;
-    }
-
-    & footer section.buttons button.bug {
-      display: none;
-    }
-
-    & footer section.buttons button.suport {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
     border-top-right-radius: var(--border-radius-lg);
     border-bottom-right-radius: var(--border-radius-lg);
 
@@ -392,7 +266,7 @@ export const Container = styled.nav`
       left: 0;
 
       min-width: 16rem;
-      width: 50vw;
+      width: 30vw;
       max-width: 100vw;
 
       z-index: 2;
@@ -402,8 +276,48 @@ export const Container = styled.nav`
       display: none;
     }
 
+    & header img {
+      width: 6rem;
+      height: 6rem;
+    }
+
     & button.fold {
       display: none;
+    }
+
+    & main button {
+      padding: var(--spacing-s4) var(--spacing-s2) var(--spacing-s4)
+        var(--spacing-s2);
+    }
+
+    & main button div section.info p {
+      font-size: var(--font-size-lg);
+
+      display: flex;
+    }
+
+    & main button div section.badge span {
+      display: flex;
+
+      font-size: var(--font-size-xs);
+    }
+
+    & footer button.user section img {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+
+    & footer button.user section div p {
+      font-size: var(--font-size-lg);
+    }
+
+    & footer button.user section div span {
+      font-size: var(--font-size-md);
+    }
+
+    & footer section.buttons button svg {
+      height: 2rem;
+      width: 2rem;
     }
 
     @keyframes appearFromLeft {
@@ -419,5 +333,132 @@ export const Container = styled.nav`
   }
 
   @media screen and (min-width: 769px) {
+    &.menu-unfold {
+      width: 20rem;
+
+      & header img {
+        width: 6rem;
+        height: 6rem;
+      }
+
+      & button.fold {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+
+        & svg {
+          height: 1.5rem;
+          width: 1.5rem;
+
+          fill: var(--color-white-fixed);
+        }
+
+        &:hover {
+          background-color: #ffffff40;
+        }
+      }
+
+      & main button div section.info p {
+        display: flex;
+      }
+
+      & main button div section.badge span {
+        display: flex;
+      }
+
+      & footer button.user section img {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
+      & footer button.user section div {
+        display: flex;
+      }
+
+      & footer section.buttons button.bug {
+        display: flex;
+      }
+
+      & footer section.buttons button.suport {
+        display: flex;
+      }
+    }
+
+    &.menu-fold {
+      width: 5rem;
+
+      & header img {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      & button.fold {
+        position: absolute;
+        top: 0.5rem;
+        right: -3rem;
+
+        & svg {
+          height: 1.5rem;
+          width: 1.5rem;
+
+          fill: var(--color-primary-base);
+        }
+
+        &:hover {
+          background-color: #00000025;
+        }
+      }
+
+      & main button {
+        justify-content: center;
+        align-items: center;
+      }
+
+      & main button div section.info {
+        justify-content: center;
+      }
+
+      & main button div section.info p {
+        display: none;
+      }
+
+      & main button div section.badge {
+        position: absolute;
+        top: 0.25rem;
+        right: 0.25rem;
+
+        width: var(--spacing-s2);
+        height: var(--spacing-s2);
+
+        padding: 0;
+
+        border-radius: 50%;
+      }
+
+      & main button div section.badge span {
+        display: none;
+      }
+
+      & footer button.user section img {
+        height: 2rem;
+        width: 2rem;
+      }
+
+      & footer button.user section div {
+        display: none;
+      }
+
+      & footer button.user section div {
+        display: none;
+      }
+
+      & footer section.buttons button.bug {
+        display: none;
+      }
+
+      & footer section.buttons button.suport {
+        display: none;
+      }
+    }
   }
 `;

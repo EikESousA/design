@@ -44,9 +44,8 @@ export const Container = styled.nav`
       justify-content: center;
       align-items: center;
 
-      background-color: var(--aliases-200);
+      background-color: var(--color-primary-base);
 
-      border: 6px solid var(--color-primary-base);
       border-radius: 50%;
 
       cursor: auto;
@@ -61,7 +60,7 @@ export const Container = styled.nav`
       position: absolute;
       top: 3.75rem;
 
-      color: white;
+      color: var(--color-white-fixed);
     }
   }
 
@@ -69,8 +68,8 @@ export const Container = styled.nav`
     height: 2rem;
     width: 2rem;
 
-    fill: var(--color-white);
-    color: var(--color-white);
+    fill: var(--color-white-fixed);
+    color: var(--color-white-fixed);
   }
 
   & button img {
