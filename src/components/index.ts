@@ -2,6 +2,7 @@ import Backdrop from "./Backdrop";
 import Badge from "./Badge";
 import ButtonDefault from "./ButtonDefault";
 import ButtonIcon from "./ButtonIcon";
+import Card from "./Card";
 import Checkbox from "./Checkbox";
 import Divider from "./Divider";
 import Icon from "./Icon";
@@ -32,4 +33,5 @@ export {
   Radio,
   Switch,
   Table,
+  Card,
 };

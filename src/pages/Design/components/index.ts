@@ -1,5 +1,6 @@
 import FieldButtonDefault from "./FieldButtonDefault";
 import FieldButtonIcon from "./FieldButtonIcon";
+import FieldCard from "./FieldCard";
 import FieldCheckbox from "./FieldCheckbox";
 import FieldDivider from "./FieldDivider";
 import FieldDropdown from "./FieldDropdown";
@@ -29,5 +30,6 @@ export {
   FieldTooltip,
   FieldIcon,
   FieldToast,
+  FieldCard,
   MenuComponents,
 };

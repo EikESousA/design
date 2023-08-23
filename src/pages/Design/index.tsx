@@ -17,6 +17,7 @@ import {
   FieldPassword,
   FieldDivider,
   FieldDropdown,
+  FieldCard,
 } from "./components";
 
 import { Container, Menu, Fields } from "./styles";
@@ -58,6 +59,7 @@ export default function Design() {
         {component === "Toast" || !component ? <FieldToast /> : null}
         {component === "Password" || !component ? <FieldPassword /> : null}
         {component === "Dropdown" || !component ? <FieldDropdown /> : null}
+        {component === "Card" || !component ? <FieldCard /> : null}
       </Fields>
     </Container>
   );
