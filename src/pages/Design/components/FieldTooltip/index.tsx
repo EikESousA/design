@@ -21,19 +21,15 @@ export default function FieldTooltip() {
 
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-switch-label"
-            name="label"
-            variant="secondary"
-            value={label}
-            setValue={(value) => setLabel(value)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-tooltip-label">
+              <Input.Field.Label label="Label" />
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(updateValue) => setLabel(updateValue)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
       </FieldInfo>

@@ -14,7 +14,7 @@ export default function FieldDivider() {
         <div
           style={{
             minHeight: "60%",
-            minWidth: "60%",
+            minWidth: "30rem",
             display: "flex",
             justifyContent: "center",
             alignItems: horizontal ? "center" : "stretch",

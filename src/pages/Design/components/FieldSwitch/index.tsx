@@ -15,7 +15,7 @@ export default function FieldSwitch() {
       <FieldContent>
         <div
           style={{
-            minWidth: "60%",
+            minWidth: "30rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -36,19 +36,15 @@ export default function FieldSwitch() {
 
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-switch-label"
-            name="label"
-            variant="secondary"
-            value={label}
-            setValue={(value) => setLabel(value)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-switch-label">
+              <Input.Field.Label label="Label" />
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(updateValue) => setLabel(updateValue)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>

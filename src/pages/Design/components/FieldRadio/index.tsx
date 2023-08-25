@@ -50,7 +50,7 @@ export default function FieldRadio() {
       <FieldContent>
         <div
           style={{
-            minWidth: "60%",
+            minWidth: "30rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -71,35 +71,27 @@ export default function FieldRadio() {
 
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-radio-label"
-            name="label"
-            variant="secondary"
-            value={label}
-            setValue={(updateValue) => setLabel(updateValue)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-radio-label">
+              <Input.Field.Label label="Label" />
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(updateValue) => setLabel(updateValue)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>
-          <Input.Root
-            id="field-radio-label-1"
-            name="labelitem"
-            variant="secondary"
-            value={options[0].label}
-            setValue={(updateValue) => changeLabel(updateValue)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label do item 1"
-              placeholder="Label do item 1"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-radio-label-1">
+              <Input.Field.Label label="Label do item 1" />
+              <Input.Field.Input
+                name="labelitem"
+                value={options[0].label}
+                setValue={(updateValue) => changeLabel(updateValue)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>

@@ -173,6 +173,7 @@ export default createGlobalStyle`
     --spacing-s7: 1.75rem;
     --spacing-s8: 2rem;
     --spacing-s10: 2.50rem;
+    --spacing-s11: 2.75rem;
     --spacing-s12: 3rem;
     --spacing-s13: 3.25rem;
     --spacing-s14: 3.5rem;

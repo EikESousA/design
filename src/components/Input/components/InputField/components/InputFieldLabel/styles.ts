@@ -37,7 +37,7 @@ export const Container = styled.p`
   }
 
   &.secondary {
-    height: var(--spacing-s10);
+    height: var(--spacing-s11);
     padding: 0 var(--spacing-s2);
 
     display: flex;

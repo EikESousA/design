@@ -24,7 +24,6 @@ const optionsVariant = [
 export default function FieldInput() {
   const [value, setValue] = useState<string>("");
   const [label, setLabel] = useState<string>("Exemplo");
-  const [placeholder, setPlaceholder] = useState<string>("Exemplo Placeholder");
   const [variant, setVariant] = useState<IInputVariantDTO>("primary");
   const [disabled, setDisabled] = useState<boolean>(false);
   const [required, setRequired] = useState<boolean>(false);
@@ -44,7 +43,7 @@ export default function FieldInput() {
       <FieldContent>
         <div
           style={{
-            width: "60%",
+            minWidth: "30rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -79,48 +78,13 @@ export default function FieldInput() {
         <section>
           <Input.Root variant="secondary">
             <Input.Field.Root id="field-input-label">
-              {label ? <Input.Field.Label label="Label" /> : null}
-              {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
+              <Input.Field.Label label="Label" />
               <Input.Field.Input
                 name="label"
                 value={label}
                 setValue={(updateValue) => setLabel(updateValue)}
                 disabled={false}
               />
-              {rightIcon ? <Input.Field.RightIcon icon="search" /> : null}
-              {button ? (
-                <Input.Field.Button
-                  onClick={() => alert("Botao apertado")}
-                  icon="send"
-                  label={buttonLabel}
-                  disabled={buttonDisabled}
-                  loading={buttonLoading}
-                />
-              ) : null}
-            </Input.Field.Root>
-          </Input.Root>
-        </section>
-        <section>
-          <Input.Root variant="secondary">
-            <Input.Field.Root id="field-input-placeholder">
-              {label ? <Input.Field.Label label="Placeholder" /> : null}
-              {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
-              <Input.Field.Input
-                name="placeholder"
-                value={placeholder}
-                setValue={(updateValue) => setPlaceholder(updateValue)}
-                disabled={false}
-              />
-              {rightIcon ? <Input.Field.RightIcon icon="search" /> : null}
-              {button ? (
-                <Input.Field.Button
-                  onClick={() => alert("Botao apertado")}
-                  icon="send"
-                  label={buttonLabel}
-                  disabled={buttonDisabled}
-                  loading={buttonLoading}
-                />
-              ) : null}
             </Input.Field.Root>
           </Input.Root>
         </section>
@@ -185,24 +149,13 @@ export default function FieldInput() {
         <section>
           <Input.Root variant="secondary">
             <Input.Field.Root id="field-input-label-button">
-              {label ? <Input.Field.Label label="Label do Botao" /> : null}
-              {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
+              <Input.Field.Label label="Label do Botao" />
               <Input.Field.Input
                 name="buttonLabel"
                 value={buttonLabel}
                 setValue={(updateValue) => setButtonLabel(updateValue)}
                 disabled={!button}
               />
-              {rightIcon ? <Input.Field.RightIcon icon="search" /> : null}
-              {button ? (
-                <Input.Field.Button
-                  onClick={() => alert("Botao apertado")}
-                  icon="send"
-                  label={buttonLabel}
-                  disabled={buttonDisabled}
-                  loading={buttonLoading}
-                />
-              ) : null}
             </Input.Field.Root>
           </Input.Root>
         </section>

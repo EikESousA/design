@@ -23,7 +23,6 @@ const optionsVariant = [
 export default function FieldPassword() {
   const [value, setValue] = useState<string>("");
   const [label, setLabel] = useState<string>("Exemplo");
-  const [placeholder, setPlaceholder] = useState<string>("Exemplo Placeholder");
   const [variant, setVariant] = useState<IInputVariantDTO>("primary");
   const [disabled, setDisabled] = useState<boolean>(false);
   const [required, setRequired] = useState<boolean>(false);
@@ -35,7 +34,7 @@ export default function FieldPassword() {
       <FieldContent>
         <div
           style={{
-            width: "60%",
+            width: "30rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -49,7 +48,6 @@ export default function FieldPassword() {
             setValue={(updateValue) => setValue(updateValue)}
             disabled={disabled}
             required={required}
-            placeholder={placeholder}
           >
             {strength ? <Password.Level value={value} /> : null}
           </Password.Root>
@@ -57,37 +55,18 @@ export default function FieldPassword() {
       </FieldContent>
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-input-label"
-            name="label"
-            variant="secondary"
-            value={label}
-            setValue={(updateValue) => setLabel(updateValue)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-input-label">
+              <Input.Field.Label label="Label" />
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(updateValue) => setLabel(updateValue)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
-        <section>
-          <Input.Root
-            id="field-input-placeholder"
-            name="placeholder"
-            variant="secondary"
-            value={placeholder}
-            setValue={(updateValue) => setPlaceholder(updateValue)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Placeholder"
-              placeholder="Placeholder"
-            />
-          </Input.Root>
-        </section>
+
         <section>
           <Radio.Root
             name="field-input-variant"

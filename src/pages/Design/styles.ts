@@ -79,6 +79,8 @@ export const Fields = styled.section`
   height: 100%;
   width: calc(100% - 24rem - var(--spacing-s4));
 
+  overflow-y: auto;
+
   flex: 1 1 auto;
 
   @media screen and (max-width: 768px) {
@@ -116,8 +118,6 @@ export const FieldContainer = styled.fieldset`
 `;
 
 export const FieldContent = styled.div`
-  height: calc(100% - 30rem);
-
   flex: 1 1 auto;
 
   display: flex;
@@ -156,12 +156,9 @@ export const FieldContent = styled.div`
     );
 
   background-size: 40px 40px;
-
-  overflow-y: auto;
 `;
 
 export const FieldInfo = styled.div`
-  height: calc(100% - 30rem);
   flex: 1 1 auto;
 
   padding: var(--spacing-s2);
@@ -171,8 +168,6 @@ export const FieldInfo = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   gap: var(--spacing-s4);
-
-  overflow-y: auto;
 
   ::-webkit-scrollbar {
     width: 0.6rem;

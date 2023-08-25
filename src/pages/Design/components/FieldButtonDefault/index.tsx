@@ -77,19 +77,15 @@ export default function FieldButtonDefault() {
 
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-button-label"
-            variant="secondary"
-            name="label"
-            value={label}
-            setValue={(value) => setLabel(value)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-button-label">
+              <Input.Field.Label label="Label" />
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(value) => setLabel(value)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>

@@ -41,8 +41,9 @@ export default function MenuComponents({
 
   return (
     <Container className={openComponents ? "opened" : "closed"}>
-      <Input.Root id="field-input-menu" variant="tertiary">
-        <Input.Field.Root>
+      <Input.Root variant="tertiary">
+        <Input.Field.Root id="field-input-menu">
+          <Input.Field.Label label="Pesquise o nome do componente" />
           <Input.Field.Input
             name="menu"
             value={value}

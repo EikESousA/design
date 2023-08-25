@@ -53,7 +53,7 @@ export default function FieldCheckbox() {
       <FieldContent>
         <div
           style={{
-            minWidth: "60%",
+            minWidth: "30rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -75,35 +75,27 @@ export default function FieldCheckbox() {
 
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-checkbox-label"
-            variant="secondary"
-            value={label}
-            name="label"
-            setValue={(value) => setLabel(value)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-checkbox-label">
+              <Input.Field.Label label="Label" />
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(value) => setLabel(value)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>
-          <Input.Root
-            id="field-checkbox-label-1"
-            variant="secondary"
-            name="label0"
-            value={options[0].label}
-            setValue={(value) => changeLabel(value)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label do item 1"
-              placeholder="Label do item 1"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-checkbox-label-0">
+              <Input.Field.Label label="Label do item 1" />
+              <Input.Field.Input
+                name="labelitem"
+                value={options[0].label}
+                setValue={(value) => changeLabel(value)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>

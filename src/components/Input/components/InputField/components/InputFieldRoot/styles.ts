@@ -123,8 +123,8 @@ export const Container = styled.label`
       border-color: var(--color-primary-base);
 
       & p {
-        top: 0;
-        left: var(--spacing-s1);
+        top: 2px;
+        left: var(--spacing-s2);
 
         font-size: var(--font-size-xxs);
 
@@ -135,26 +135,18 @@ export const Container = styled.label`
         border-color: var(--color-primary-base);
       }
 
-      & div.icon svg {
-        top: calc(var(--spacing-s3) + 2px);
+      & div.icon {
+        margin-top: 8px;
 
-        color: var(--color-primary-base);
+        & svg {
+          color: var(--color-primary-base);
+        }
       }
     }
 
     &:has(div.left-icon) {
       & p {
         left: var(--spacing-s10);
-      }
-
-      & input {
-        padding-left: var(--spacing-s10);
-      }
-    }
-
-    &:has(div.right-icon) {
-      & input {
-        padding-right: var(--spacing-s10);
       }
     }
 

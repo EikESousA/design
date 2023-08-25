@@ -36,7 +36,7 @@ export default function FieldLink() {
       <FieldContent>
         <div
           style={{
-            minWidth: "60%",
+            minWidth: "30rem",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -57,31 +57,27 @@ export default function FieldLink() {
 
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-link-label"
-            name="label"
-            variant="secondary"
-            value={label}
-            setValue={(value) => setLabel(value)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-link-label">
+              <Input.Field.Label label="Label" />
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(value) => setLabel(value)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>
-          <Input.Root
-            id="field-link-url"
-            name="url"
-            variant="secondary"
-            value={url}
-            setValue={(value) => setUrl(value)}
-            disabled={false}
-          >
-            <Input.Label variant="secondary" label="URL" placeholder="URL" />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-link-url">
+              <Input.Field.Label label="URL" />
+              <Input.Field.Input
+                name="url"
+                value={url}
+                setValue={(value) => setUrl(value)}
+              />
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>

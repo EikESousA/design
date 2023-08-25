@@ -4,7 +4,7 @@ export const Container = styled.button`
   position: relative;
   overflow: hidden;
 
-  height: var(--spacing-s10);
+  height: var(--spacing-s11);
 
   display: flex;
   justify-content: center;
@@ -49,8 +49,10 @@ export const Container = styled.button`
   }
 
   & svg {
-    height: var(--font-size-lg);
-    width: var(--font-size-lg);
+    min-height: var(--font-size-lg);
+    min-width: var(--font-size-lg);
+    max-height: var(--font-size-lg);
+    max-width: var(--font-size-lg);
 
     fill: var(--color-white-fixed);
   }
