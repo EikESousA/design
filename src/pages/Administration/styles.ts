@@ -2,19 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+`;
 
-  & main {
-    padding: 1rem 5rem;
+export const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  flex-wrap: wrap;
 
-    flex-wrap: wrap;
-  }
-
-  & main button {
+  & button {
     height: 10rem;
     width: 15rem;
 
@@ -35,7 +33,7 @@ export const Container = styled.div`
     transition: border-color var(--animation-fast) ease-out;
   }
 
-  & main button svg {
+  & button svg {
     height: 3rem;
     width: 3rem;
 
@@ -44,7 +42,7 @@ export const Container = styled.div`
     transition: color var(--animation-fast) ease-out;
   }
 
-  & main button p {
+  & button p {
     font-weight: bold;
     font-size: 1rem;
     font-family: Roboto, sans-serif;
@@ -54,7 +52,7 @@ export const Container = styled.div`
     transition: color var(--animation-fast) ease-out;
   }
 
-  & main button:hover {
+  & button:hover {
     border-color: var(--color-primary-dark);
 
     & svg {
