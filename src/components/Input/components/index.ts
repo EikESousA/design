@@ -1,7 +1,5 @@
-import InputButton from "./InputButton";
-import InputLabel from "./InputLabel";
-import InputLeftIcon from "./InputLeftIcon";
-import InputRightIcon from "./InputRightIcon";
+import InputAlert from "./InputAlert";
+import InputField from "./InputField";
 import InputRoot from "./InputRoot";
 
-export { InputButton, InputLabel, InputLeftIcon, InputRightIcon, InputRoot };
+export { InputAlert, InputField, InputRoot };

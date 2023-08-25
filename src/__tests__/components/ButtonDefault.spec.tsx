@@ -7,10 +7,11 @@ describe("<ButtonDefault />", () => {
   it("Renderiza", () => {
     render(
       <ButtonDefault.Root
-        label="Button"
         onClick={() => alert("Botao apertado")}
         datatestid="button-default"
-      />,
+      >
+        <ButtonDefault.Label label="Button" />
+      </ButtonDefault.Root>,
     );
 
     const component = screen.getByTestId("button-default");
@@ -21,10 +22,11 @@ describe("<ButtonDefault />", () => {
   it("Renderiza com label", () => {
     render(
       <ButtonDefault.Root
-        label="Button"
         onClick={() => alert("Botao apertado")}
         datatestid="button-default"
-      />,
+      >
+        <ButtonDefault.Label label="Button" />
+      </ButtonDefault.Root>,
     );
 
     const component = screen.queryByText("Button");
@@ -36,29 +38,37 @@ describe("<ButtonDefault />", () => {
     render(
       <>
         <ButtonDefault.Root
-          label="Button"
-          onClick={() => alert("Botao apertado")}
           variant="primary"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-default-primary"
-        />
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
         <ButtonDefault.Root
-          label="Button"
-          onClick={() => alert("Botao apertado")}
           variant="secondary"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-default-secondary"
-        />
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
         <ButtonDefault.Root
-          label="Button"
-          onClick={() => alert("Botao apertado")}
           variant="tertiary"
-          datatestid="button-default-tertiary"
-        />
-        <ButtonDefault.Root
-          label="Button"
           onClick={() => alert("Botao apertado")}
+          datatestid="button-default-tertiary"
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
+        <ButtonDefault.Root
           variant="danger"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-default-danger"
-        />
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
       </>,
     );
 
@@ -84,23 +94,29 @@ describe("<ButtonDefault />", () => {
     render(
       <>
         <ButtonDefault.Root
-          label="Button"
-          onClick={() => alert("Botao apertado")}
           size="sm"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-default-sm"
-        />
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
         <ButtonDefault.Root
-          label="Button"
-          onClick={() => alert("Botao apertado")}
           size="md"
-          datatestid="button-default-md"
-        />
-        <ButtonDefault.Root
-          label="Button"
           onClick={() => alert("Botao apertado")}
+          datatestid="button-default-md"
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
+        <ButtonDefault.Root
           size="lg"
+          onClick={() => alert("Botao apertado")}
           datatestid="button-default-lg"
-        />
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
       </>,
     );
 
@@ -121,11 +137,12 @@ describe("<ButtonDefault />", () => {
   it("Renderiza com tamanho completo", () => {
     render(
       <ButtonDefault.Root
-        label="Button"
-        onClick={() => alert("Botao apertado")}
         full
+        onClick={() => alert("Botao apertado")}
         datatestid="button-default"
-      />,
+      >
+        <ButtonDefault.Label label="Button" />
+      </ButtonDefault.Root>,
     );
 
     const component = screen.getByTestId("button-default");
@@ -137,11 +154,12 @@ describe("<ButtonDefault />", () => {
   it("Renderiza carregando", () => {
     render(
       <ButtonDefault.Root
-        label="Button"
-        onClick={() => alert("Botao apertado")}
         loading
+        onClick={() => alert("Botao apertado")}
         datatestid="button-default"
-      />,
+      >
+        <ButtonDefault.Label label="Button" />
+      </ButtonDefault.Root>,
     );
 
     const component = screen.getByTestId("button-default");
@@ -156,11 +174,12 @@ describe("<ButtonDefault />", () => {
   it("Renderiza desabilitado", () => {
     render(
       <ButtonDefault.Root
-        label="Button"
-        onClick={() => alert("Botao apertado")}
         disabled
+        onClick={() => alert("Botao apertado")}
         datatestid="button-default"
-      />,
+      >
+        <ButtonDefault.Label label="Button" />
+      </ButtonDefault.Root>,
     );
 
     const component = screen.getByTestId("button-default");
@@ -172,11 +191,11 @@ describe("<ButtonDefault />", () => {
   it("Renderiza com icones", () => {
     render(
       <ButtonDefault.Root
-        label="Button"
         onClick={() => alert("Botao apertado")}
         datatestid="button-default"
       >
         <ButtonDefault.LeftIcon icon="attachfile" datatestid="button-default" />
+        <ButtonDefault.Label label="Button" />
         <ButtonDefault.RightIcon icon="delete" datatestid="button-default" />
       </ButtonDefault.Root>,
     );
@@ -194,11 +213,9 @@ describe("<ButtonDefault />", () => {
     const mockOnClick = jest.fn();
 
     render(
-      <ButtonDefault.Root
-        label="Button"
-        onClick={mockOnClick}
-        datatestid="button-default"
-      />,
+      <ButtonDefault.Root onClick={mockOnClick} datatestid="button-default">
+        <ButtonDefault.Label label="Button" />
+      </ButtonDefault.Root>,
     );
 
     const component = screen.getByTestId("button-default");
@@ -214,17 +231,21 @@ describe("<ButtonDefault />", () => {
     render(
       <>
         <ButtonDefault.Root
-          label="Button"
           onClick={() => alert("Botao apertado")}
           type="button"
           datatestid="button-default-button"
-        />
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
         <ButtonDefault.Root
-          label="Button"
           onClick={() => alert("Botao apertado")}
           type="submit"
           datatestid="button-default-submit"
-        />
+        >
+          <ButtonDefault.Label label="Button" />
+        </ButtonDefault.Root>
+        ,
       </>,
     );
 

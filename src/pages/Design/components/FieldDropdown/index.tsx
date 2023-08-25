@@ -19,12 +19,13 @@ export default function FieldButtonDefault() {
       <legend>Botão</legend>
       <FieldContent>
         <ButtonDefault.Root
-          label="Abrir"
           ref={elRef}
           onClick={() => {
             setOpen(true);
           }}
-        />
+        >
+          <ButtonDefault.Label label="Abrir" />
+        </ButtonDefault.Root>
       </FieldContent>
 
       <Popover.Root elRef={elRef} open={open} handleClose={() => handleClose()}>

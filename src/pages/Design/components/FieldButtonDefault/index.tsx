@@ -58,7 +58,6 @@ export default function FieldButtonDefault() {
       <legend>Botão</legend>
       <FieldContent>
         <ButtonDefault.Root
-          label={label}
           variant={variant}
           size={size}
           disabled={disabled}
@@ -67,6 +66,11 @@ export default function FieldButtonDefault() {
           onClick={() => alert("Botao apertado")}
         >
           {leftIcon ? <ButtonDefault.LeftIcon icon="attachfile" /> : null}
+          <ButtonDefault.Label
+            label={label}
+            loading={loading}
+            variant={variant}
+          />
           {rightIcon ? <ButtonDefault.RightIcon icon="delete" /> : null}
         </ButtonDefault.Root>
       </FieldContent>

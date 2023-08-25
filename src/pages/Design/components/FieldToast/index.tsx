@@ -15,7 +15,6 @@ export default function FieldToast() {
       <FieldInfo>
         <section style={{ width: "8rem" }}>
           <ButtonDefault.Root
-            label="Sucesso"
             full
             onClick={() =>
               addToast({
@@ -23,34 +22,39 @@ export default function FieldToast() {
                 message: "Mensagem de sucesso!",
               })
             }
-          />
+          >
+            <ButtonDefault.Label label="Sucesso" />
+          </ButtonDefault.Root>
         </section>
         <section style={{ width: "8rem" }}>
           <ButtonDefault.Root
-            label="Informacao"
             full
             onClick={() =>
               addToast({ type: "info", message: "Mensagem de informação!" })
             }
-          />
+          >
+            <ButtonDefault.Label label="Informacao" />
+          </ButtonDefault.Root>
         </section>
         <section style={{ width: "8rem" }}>
           <ButtonDefault.Root
-            label="Alerta"
             full
             onClick={() =>
               addToast({ type: "warning", message: "Mensagem de alerta!" })
             }
-          />
+          >
+            <ButtonDefault.Label label="Alerta" />
+          </ButtonDefault.Root>
         </section>
         <section style={{ width: "8rem" }}>
           <ButtonDefault.Root
-            label="Erro"
             full
             onClick={() =>
               addToast({ type: "error", message: "Mensagem de error!" })
             }
-          />
+          >
+            <ButtonDefault.Label label="Erro" />
+          </ButtonDefault.Root>
         </section>
       </FieldInfo>
     </FieldContainer>

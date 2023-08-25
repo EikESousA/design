@@ -50,68 +50,78 @@ export default function FieldInput() {
             alignItems: "center",
           }}
         >
-          <Input.Root
-            id="field-input-main"
-            name="main"
-            variant={variant}
-            value={value}
-            setValue={(updateValue) => setValue(updateValue)}
-            disabled={disabled}
-            required={required}
-            placeholder={placeholder}
-          >
-            <Input.Label
-              variant={variant}
-              label={label}
-              placeholder={placeholder}
-            />
-
-            {leftIcon ? <Input.LeftIcon icon="profile" /> : null}
-            {rightIcon ? <Input.RightIcon icon="search" /> : null}
-
-            {button ? (
-              <Input.Button
-                onClick={() => alert("Botao apertado")}
-                icon="send"
-                label={buttonLabel}
-                disabled={buttonDisabled}
-                loading={buttonLoading}
+          <Input.Root variant={variant}>
+            <Input.Field.Root id="field-input-menu">
+              {label ? <Input.Field.Label label={label} /> : null}
+              {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
+              <Input.Field.Input
+                name="menu"
+                value={value}
+                setValue={(valueUpdate) => setValue(valueUpdate)}
+                disabled={disabled}
+                required={required}
               />
-            ) : null}
+              {rightIcon ? <Input.Field.RightIcon icon="search" /> : null}
+              {button ? (
+                <Input.Field.Button
+                  onClick={() => alert("Botao apertado")}
+                  icon="send"
+                  label={buttonLabel}
+                  disabled={buttonDisabled}
+                  loading={buttonLoading}
+                />
+              ) : null}
+            </Input.Field.Root>
           </Input.Root>
         </div>
       </FieldContent>
       <FieldInfo>
         <section>
-          <Input.Root
-            id="field-input-label"
-            name="label"
-            variant="secondary"
-            value={label}
-            setValue={(updateValue) => setLabel(updateValue)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label"
-              placeholder="Label"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-input-label">
+              {label ? <Input.Field.Label label="Label" /> : null}
+              {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
+              <Input.Field.Input
+                name="label"
+                value={label}
+                setValue={(updateValue) => setLabel(updateValue)}
+                disabled={false}
+              />
+              {rightIcon ? <Input.Field.RightIcon icon="search" /> : null}
+              {button ? (
+                <Input.Field.Button
+                  onClick={() => alert("Botao apertado")}
+                  icon="send"
+                  label={buttonLabel}
+                  disabled={buttonDisabled}
+                  loading={buttonLoading}
+                />
+              ) : null}
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>
-          <Input.Root
-            id="field-input-placeholder"
-            name="placeholder"
-            variant="secondary"
-            value={placeholder}
-            setValue={(updateValue) => setPlaceholder(updateValue)}
-            disabled={false}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Placeholder"
-              placeholder="Placeholder"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-input-placeholder">
+              {label ? <Input.Field.Label label="Placeholder" /> : null}
+              {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
+              <Input.Field.Input
+                name="placeholder"
+                value={placeholder}
+                setValue={(updateValue) => setPlaceholder(updateValue)}
+                disabled={false}
+              />
+              {rightIcon ? <Input.Field.RightIcon icon="search" /> : null}
+              {button ? (
+                <Input.Field.Button
+                  onClick={() => alert("Botao apertado")}
+                  icon="send"
+                  label={buttonLabel}
+                  disabled={buttonDisabled}
+                  loading={buttonLoading}
+                />
+              ) : null}
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>
@@ -173,19 +183,27 @@ export default function FieldInput() {
           />
         </section>
         <section>
-          <Input.Root
-            id="field-input-label-button"
-            name="buttonLabel"
-            variant="secondary"
-            value={buttonLabel}
-            setValue={(updateValue) => setButtonLabel(updateValue)}
-            disabled={!button}
-          >
-            <Input.Label
-              variant="secondary"
-              label="Label do Botao"
-              placeholder="Label do Botao"
-            />
+          <Input.Root variant="secondary">
+            <Input.Field.Root id="field-input-label-button">
+              {label ? <Input.Field.Label label="Label do Botao" /> : null}
+              {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
+              <Input.Field.Input
+                name="buttonLabel"
+                value={buttonLabel}
+                setValue={(updateValue) => setButtonLabel(updateValue)}
+                disabled={!button}
+              />
+              {rightIcon ? <Input.Field.RightIcon icon="search" /> : null}
+              {button ? (
+                <Input.Field.Button
+                  onClick={() => alert("Botao apertado")}
+                  icon="send"
+                  label={buttonLabel}
+                  disabled={buttonDisabled}
+                  loading={buttonLoading}
+                />
+              ) : null}
+            </Input.Field.Root>
           </Input.Root>
         </section>
         <section>

@@ -14,6 +14,7 @@ import {
   GoogleCalendar,
   Reports,
   Tickets,
+  Chatbot,
 } from "../pages";
 
 export default function routes() {
@@ -30,6 +31,7 @@ export default function routes() {
         <Route path="/googlecalendar" element={<GoogleCalendar />} />
         <Route path="/chatshop" element={<ChatShop />} />
         <Route path="/administration" element={<Administration />} />
+        <Route path="/administration/chatbot" element={<Chatbot />} />
 
         <Route path="/design/:component?" element={<Design />} />
         <Route path="/nodes" element={<Nodes />} />

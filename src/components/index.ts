@@ -9,7 +9,7 @@ import Icon from "./Icon";
 import Input from "./Input";
 import Link from "./Link";
 import Loading from "./Loading";
-import PageTitle from "./Page/Title";
+import Page from "./Page";
 import Password from "./Password";
 import Popover from "./Popover";
 import Radio from "./Radio";
@@ -27,7 +27,7 @@ export {
   Input,
   Link,
   Loading,
-  PageTitle,
+  Page,
   Password,
   Popover,
   Radio,

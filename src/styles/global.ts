@@ -109,6 +109,8 @@ export default createGlobalStyle`
     --color-white-fixed: #ffffff;
     --color-black-fixed: #000000;
 
+    --color-red-fixed: #d0271f;
+
     --font-family-default: Roboto, sans-serif;
     --font-family-title: Poppins, sans-serif;
     --font-family-subtitle: Inter, sans-serif;

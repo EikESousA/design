@@ -41,19 +41,15 @@ export default function MenuComponents({
 
   return (
     <Container className={openComponents ? "opened" : "closed"}>
-      <Input.Root
-        id="field-input-menu"
-        name="menu"
-        variant="tertiary"
-        value={value}
-        setValue={(valueUpdate) => setValue(valueUpdate)}
-      >
-        <Input.Label
-          label="Procure o componente"
-          placeholder="Procure o componente"
-          variant="tertiary"
-        />
-        <Input.RightIcon icon="search" />
+      <Input.Root id="field-input-menu" variant="tertiary">
+        <Input.Field.Root>
+          <Input.Field.Input
+            name="menu"
+            value={value}
+            setValue={(valueUpdate) => setValue(valueUpdate)}
+          />
+          <Input.Field.RightIcon icon="search" />
+        </Input.Field.Root>
       </Input.Root>
 
       {fieldsFiltered.map((field) => (
