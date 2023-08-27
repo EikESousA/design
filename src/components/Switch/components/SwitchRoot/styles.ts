@@ -13,9 +13,6 @@ export const Container = styled.label`
   & div {
     position: relative;
 
-    height: var(--spacing-s6);
-    width: var(--spacing-s16);
-
     display: inline-block;
 
     background-color: var(--color-gray-600);
@@ -32,12 +29,6 @@ export const Container = styled.label`
   }
 
   & div:before {
-    height: var(--spacing-s4);
-    width: var(--spacing-s8);
-
-    position: absolute;
-    top: var(--spacing-s1);
-
     display: block;
 
     background-color: var(--color-switch);
@@ -68,10 +59,6 @@ export const Container = styled.label`
     left: var(--spacing-s1);
   }
 
-  & input:checked + div:before {
-    left: var(--spacing-s7);
-  }
-
   &:focus {
     outline: max(2px, 0.15rem) solid var(--color-primary-base);
     outline-offset: max(2px, 0.15rem);
@@ -80,7 +67,6 @@ export const Container = styled.label`
   & p {
     font-family: var(--font-family-default);
     font-weight: var(--font-weight-medium);
-    font-size: var(--font-size-md);
 
     color: var(--color-gray-900);
 
@@ -93,5 +79,84 @@ export const Container = styled.label`
     opacity: var(--opacity-medium);
 
     cursor: not-allowed;
+  }
+
+  &.sm {
+    & div {
+      height: var(--spacing-s4);
+      width: var(--spacing-s10);
+    }
+
+    & div:before {
+      height: var(--spacing-s2);
+      width: var(--spacing-s6);
+
+      position: absolute;
+      top: var(--spacing-s1);
+    }
+
+    & input:checked + div:before {
+      left: var(--spacing-s3);
+    }
+
+    & p {
+      font-size: var(--font-size-sm);
+    }
+  }
+
+  &.md {
+    & div {
+      height: var(--spacing-s6);
+      width: var(--spacing-s16);
+    }
+
+    & div:before {
+      height: var(--spacing-s4);
+      width: var(--spacing-s8);
+
+      position: absolute;
+      top: var(--spacing-s1);
+    }
+
+    & input:checked + div:before {
+      left: var(--spacing-s7);
+    }
+
+    & p {
+      font-size: var(--font-size-md);
+    }
+  }
+
+  &.lg {
+    & div {
+      height: var(--spacing-s8);
+      width: var(--spacing-s16);
+    }
+
+    & div:before {
+      height: var(--spacing-s6);
+      width: var(--spacing-s8);
+
+      border-radius: var(--border-radius-md);
+
+      position: absolute;
+      top: var(--spacing-s1);
+    }
+
+    & input:checked + div:before {
+      left: var(--spacing-s7);
+    }
+
+    & p {
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  &.color input:checked ~ p {
+    color: var(--color-primary-base);
+  }
+
+  &.color input:not(:checked) ~ p {
+    color: var(--color-gray-700);
   }
 `;

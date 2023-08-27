@@ -98,7 +98,7 @@ export const Container = styled.div`
 
     border-radius: var(--border-radius-xs);
 
-    box-shadow: var(--box-shadow-base);
+    /* box-shadow: var(--box-shadow-base); */
 
     opacity: var(--opacity-default);
 

@@ -7,8 +7,12 @@ interface ISwitchRootProps {
   checked: boolean;
   setChecked: (value: boolean) => void;
   disabled?: boolean;
+  size?: ISwitchSizeDTO;
+  color?: boolean;
   datatestid?: string;
 }
+
+export type ISwitchSizeDTO = "sm" | "md" | "lg";
 
 export default function SwitchRoot({
   id = "switch-example",
@@ -16,12 +20,16 @@ export default function SwitchRoot({
   checked = false,
   setChecked = () => alert("Botao apertado"),
   disabled = false,
+  size = "md",
+  color = false,
   datatestid,
 }: ISwitchRootProps) {
   return (
     <Container
       htmlFor={id}
-      className={`${disabled ? "disabled" : ""}`}
+      className={`${disabled ? "disabled" : ""} ${size} ${
+        color ? "color" : ""
+      }`}
       data-testid={datatestid}
     >
       <input
