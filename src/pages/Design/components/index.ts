@@ -11,6 +11,7 @@ import FieldLoading from "./FieldLoading";
 import FieldPassword from "./FieldPassword";
 import FieldRadio from "./FieldRadio";
 import FieldSwitch from "./FieldSwitch";
+import FieldTable from "./FieldTable";
 import FieldToast from "./FieldToast";
 import FieldTooltip from "./FieldTooltip";
 import MenuComponents from "./MenuComponents";
@@ -18,18 +19,19 @@ import MenuComponents from "./MenuComponents";
 export {
   FieldButtonDefault,
   FieldButtonIcon,
-  FieldInput,
+  FieldCard,
   FieldCheckbox,
   FieldDivider,
   FieldDropdown,
-  FieldRadio,
-  FieldSwitch,
+  FieldIcon,
+  FieldInput,
   FieldLink,
   FieldLoading,
   FieldPassword,
-  FieldTooltip,
-  FieldIcon,
+  FieldRadio,
+  FieldSwitch,
+  FieldTable,
   FieldToast,
-  FieldCard,
+  FieldTooltip,
   MenuComponents,
 };

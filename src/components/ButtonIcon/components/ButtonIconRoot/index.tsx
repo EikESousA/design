@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ReactNode } from "react";
+import { ReactNode, ButtonHTMLAttributes } from "react";
 
 import { Loading } from "@/components";
 import Icon from "@/components/Icon";
@@ -9,7 +9,7 @@ import { handleRipple } from "@/utils";
 
 import { Container } from "./styles";
 
-interface IButtonIconRootProps {
+interface IButtonIconRootProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: IIconDTO;
   variant?: IButtonIconVariantDTO;
   size?: IButtonIconSizeDTO;
@@ -40,6 +40,7 @@ export default function ButtonIconRoot({
   tooltip,
   datatestid,
   children,
+  ...rest
 }: IButtonIconRootProps) {
   const { handleOnMouseOut, handleOnMouseOver } = useTooltip();
 
@@ -80,6 +81,7 @@ export default function ButtonIconRoot({
         }
         aria-label="button-icon"
         data-testid={datatestid ? `${datatestid}-button` : null}
+        {...rest}
       >
         {loading ? (
           <Loading.Root

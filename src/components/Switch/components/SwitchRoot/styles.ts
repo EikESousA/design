@@ -84,7 +84,7 @@ export const Container = styled.label`
   &.sm {
     & div {
       height: var(--spacing-s4);
-      width: var(--spacing-s10);
+      width: var(--spacing-s12);
     }
 
     & div:before {
@@ -96,7 +96,7 @@ export const Container = styled.label`
     }
 
     & input:checked + div:before {
-      left: var(--spacing-s3);
+      left: var(--spacing-s5);
     }
 
     & p {
@@ -154,9 +154,11 @@ export const Container = styled.label`
 
   &.color input:checked ~ p {
     color: var(--color-primary-base);
+    font-weight: var(--font-weight-bold);
   }
 
   &.color input:not(:checked) ~ p {
     color: var(--color-gray-700);
+    font-weight: var(--font-weight-lighter);
   }
 `;

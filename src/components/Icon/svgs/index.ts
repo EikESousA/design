@@ -12,6 +12,10 @@ import IconCampaign from "./Campaign";
 import IconChatbot from "./Chatbot";
 import IconChatshop from "./Chatshop";
 import IconCheck from "./Check";
+import IconChevronDown from "./ChevronDown";
+import IconChevronLeft from "./ChevronLeft";
+import IconChevronRight from "./ChevronRight";
+import IconChevronUp from "./ChevronUp";
 import IconClose from "./Close";
 import IconComponents from "./Components";
 import IconConfig from "./Config";
@@ -77,6 +81,10 @@ export {
   IconChatbot,
   IconChatshop,
   IconCheck,
+  IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
+  IconChevronUp,
   IconClose,
   IconComponents,
   IconConfig,

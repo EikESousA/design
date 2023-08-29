@@ -8,19 +8,19 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-s2);
+  gap: var(--spacing-s8);
 
   flex-wrap: wrap;
 
   & button {
     height: 10rem;
-    width: 15rem;
+    width: 12rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--spacing-s6);
+    gap: var(--spacing-s4);
 
     background-color: var(--aliases-300);
 
@@ -44,7 +44,7 @@ export const Content = styled.div`
 
   & button p {
     font-weight: bold;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     font-family: Roboto, sans-serif;
 
     color: var(--color-gray-900);

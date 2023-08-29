@@ -13,8 +13,6 @@ export const Container = styled.label`
 
   background-color: var(--color-gray-300);
 
-  transition: opacity var(--animation-fast) ease-out;
-
   &:has(input:disabled) {
     opacity: var(--opacity-medium);
 
@@ -33,6 +31,8 @@ export const Container = styled.label`
 
     border: var(--border-width-thin) solid var(--color-gray-600);
     border-radius: var(--border-radius-xs);
+
+    transition: opacity var(--animation-fast) ease-out;
 
     &.focused,
     &.filled {
@@ -82,6 +82,8 @@ export const Container = styled.label`
 
     box-shadow: var(--box-shadow-base);
 
+    transition: opacity var(--animation-fast) ease-out;
+
     &.focused,
     &.filled {
       border-color: var(--color-primary-base);
@@ -116,7 +118,9 @@ export const Container = styled.label`
     border-top: var(--border-width-thin) solid transparent;
     border-bottom: var(--border-width-thick) solid transparent;
 
-    transition: border-color var(--animation-fast) ease-out;
+    transition:
+      border-color var(--animation-fast) ease-out,
+      opacity var(--animation-fast) ease-out;
 
     &.focused,
     &.filled {

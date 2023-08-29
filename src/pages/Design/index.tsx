@@ -18,6 +18,7 @@ import {
   FieldDivider,
   FieldDropdown,
   FieldCard,
+  FieldTable,
 } from "./components";
 
 import { Container, Menu, Fields } from "./styles";
@@ -33,8 +34,6 @@ export default function Design() {
       data-theme="light"
       className={openComponents ? "opened" : "closed"}
     >
-      {/* <button className="backdrop" onClick={() => setOpenComponents(false)} /> */}
-
       <Menu className={openComponents ? "opened" : "closed"}>
         <MenuComponents
           openComponents={openComponents}
@@ -60,6 +59,7 @@ export default function Design() {
         {component === "Password" || !component ? <FieldPassword /> : null}
         {component === "Dropdown" || !component ? <FieldDropdown /> : null}
         {component === "Card" || !component ? <FieldCard /> : null}
+        {component === "Table" || !component ? <FieldTable /> : null}
       </Fields>
     </Container>
   );

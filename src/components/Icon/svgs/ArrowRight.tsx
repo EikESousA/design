@@ -11,7 +11,8 @@ export default function ArrowRight({ datatestid = null, ...rest }: ISVGProps) {
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <path d="M14 12L10 16V8L14 12Z" />
+      <path fill="none" d="M0 0h24v24H0V0z" />
+      <path d="M10 17l5-5-5-5v10z" />
     </svg>
   );
 }

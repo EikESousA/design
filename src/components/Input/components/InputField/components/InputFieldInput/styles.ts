@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.input`
+  width: 100%;
+
   &:disabled {
     cursor: not-allowed;
   }
 
   &.primary {
-    flex: 1;
-
     padding: var(--spacing-s3) 0;
 
     font-family: var(--font-family-default);
@@ -20,8 +20,6 @@ export const Container = styled.input`
   }
 
   &.secondary {
-    flex: 1;
-
     font-family: var(--font-family-default);
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-sm);
@@ -43,8 +41,6 @@ export const Container = styled.input`
   }
 
   &.tertiary {
-    flex: 1;
-
     padding: var(--spacing-s4) 0 var(--spacing-s2) 0;
 
     font-family: var(--font-family-default);

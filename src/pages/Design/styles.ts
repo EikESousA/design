@@ -45,7 +45,7 @@ export const Container = styled.div`
 
 export const Menu = styled.section`
   height: 100%;
-  width: 18rem;
+  width: 12rem;
 
   padding: var(--spacing-s4) var(--spacing-s2);
 
@@ -225,5 +225,20 @@ export const Icons = styled.ul`
     width: var(--font-size-xl2);
 
     color: var(--color-gray-900);
+  }
+`;
+
+export const CardUser = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  & img {
+    min-height: 4rem;
+    max-height: 4rem;
+    min-width: 4rem;
+    max-width: 4rem;
+
+    border-radius: 50%;
   }
 `;

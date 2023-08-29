@@ -43,7 +43,7 @@ export default function MenuComponents({
     <Container className={openComponents ? "opened" : "closed"}>
       <Input.Root variant="tertiary">
         <Input.Field.Root id="field-input-menu">
-          <Input.Field.Label label="Pesquise o nome do componente" />
+          <Input.Field.Label label="Pesquisar" />
           <Input.Field.Input
             name="menu"
             value={value}
@@ -61,33 +61,6 @@ export default function MenuComponents({
           onClick={() => handleSelect(field)}
         >
           {field.component ? (
-            <Icon.Root
-              icon="check"
-              fill={component === field.name ? "white" : "green"}
-            />
-          ) : (
-            <Icon.Root icon="close" fill="red" />
-          )}
-
-          {field.test ? (
-            <Icon.Root
-              icon="check"
-              fill={component === field.name ? "white" : "green"}
-            />
-          ) : (
-            <Icon.Root icon="close" fill="red" />
-          )}
-
-          {field.responsive ? (
-            <Icon.Root
-              icon="check"
-              fill={component === field.name ? "white" : "green"}
-            />
-          ) : (
-            <Icon.Root icon="close" fill="red" />
-          )}
-
-          {field.dark ? (
             <Icon.Root
               icon="check"
               fill={component === field.name ? "white" : "green"}

@@ -14,6 +14,10 @@ import {
   IconChatbot,
   IconChatshop,
   IconCheck,
+  IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
+  IconChevronUp,
   IconClose,
   IconComponents,
   IconConfig,
@@ -112,6 +116,18 @@ export default function IconRoot({
 
     case "check":
       return <IconCheck datatestid={datatestid} {...rest} />;
+
+    case "chevrondown":
+      return <IconChevronDown datatestid={datatestid} {...rest} />;
+
+    case "chevronleft":
+      return <IconChevronLeft datatestid={datatestid} {...rest} />;
+
+    case "chevronright":
+      return <IconChevronRight datatestid={datatestid} {...rest} />;
+
+    case "chevronup":
+      return <IconChevronUp datatestid={datatestid} {...rest} />;
 
     case "close":
       return <IconClose datatestid={datatestid} {...rest} />;
@@ -280,6 +296,10 @@ export {
   IconChatbot,
   IconChatshop,
   IconCheck,
+  IconChevronDown,
+  IconChevronLeft,
+  IconChevronRight,
+  IconChevronUp,
   IconClose,
   IconComponents,
   IconConfig,
