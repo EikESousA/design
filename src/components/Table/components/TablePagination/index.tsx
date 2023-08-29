@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
+import { useMemo } from "react";
+
 import { Icon } from "@/components";
 
 import { Container } from "./styles";
@@ -16,6 +17,46 @@ export default function TablePagination({
   pages,
   loading = false,
 }: ITablePaginationProps) {
+  const pagesShow = useMemo(() => {
+    const pagesShowUpdated = [];
+
+    if (page - 2 >= 1) {
+      pagesShowUpdated.push(page - 2);
+    }
+
+    if (page - 1 >= 1) {
+      pagesShowUpdated.push(page - 1);
+    }
+
+    pagesShowUpdated.push(page);
+
+    if (page + 1 <= pages) {
+      pagesShowUpdated.push(page + 1);
+    }
+
+    if (page + 2 <= pages) {
+      pagesShowUpdated.push(page + 2);
+    }
+
+    if (pagesShowUpdated.length < 5 && page + 3 <= pages) {
+      pagesShowUpdated.push(page + 3);
+    }
+
+    if (pagesShowUpdated.length < 5 && page + 4 <= pages) {
+      pagesShowUpdated.push(page + 4);
+    }
+
+    if (pagesShowUpdated.length < 5 && page - 3 <= pages) {
+      pagesShowUpdated.unshift(page - 3);
+    }
+
+    if (pagesShowUpdated.length < 5 && page - 4 <= pages) {
+      pagesShowUpdated.unshift(page - 4);
+    }
+
+    return pagesShowUpdated;
+  }, [page, pages]);
+
   return (
     <Container>
       <button
@@ -25,48 +66,23 @@ export default function TablePagination({
       >
         <Icon.Root icon="chevronleft" />
       </button>
-      <div>
-        <button
-          className={page === 1 ? "active" : ""}
-          type="button"
-          onClick={() => setPage(1)}
-          disabled={loading}
-        >
-          <p>1</p>
-        </button>
-        <button
-          className={page === 2 ? "active" : ""}
-          type="button"
-          onClick={() => setPage(2)}
-          disabled={loading}
-        >
-          <p>1</p>
-        </button>
-        <button
-          className={page === 3 ? "active" : ""}
-          type="button"
-          onClick={() => setPage(3)}
-          disabled={loading}
-        >
-          <p>1</p>
-        </button>
-        <button
-          className={page === 7 ? "active" : ""}
-          type="button"
-          onClick={() => setPage(7)}
-          disabled={loading}
-        >
-          <p>1</p>
-        </button>
-        <button
-          className={page === 7 ? "active" : ""}
-          type="button"
-          onClick={() => setPage(7)}
-          disabled={loading}
-        >
-          <p>1</p>
-        </button>
-      </div>
+
+      {pagesShow.length > 0 ? (
+        <ul>
+          {pagesShow.map((item) => (
+            <li key={`table-pagination-${item}`}>
+              <button
+                className={page === item ? "active" : ""}
+                type="button"
+                onClick={() => setPage(item)}
+                disabled={loading}
+              >
+                <p>{item}</p>
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : null}
 
       <button
         type="button"

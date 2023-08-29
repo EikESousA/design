@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.td`
-  padding: 1rem;
+  padding: var(--spacing-s4);
 
   background-color: var(--aliases-200);
 
-  text-align: left;
-
   font-weight: normal;
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
+
+  text-align: left;
 
   color: var(--color-gray-900);
 `;

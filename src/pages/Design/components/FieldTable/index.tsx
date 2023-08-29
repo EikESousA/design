@@ -1,14 +1,36 @@
 /* eslint-disable no-alert */
 import { useState } from "react";
 
-import { ButtonDefault, ButtonIcon, Switch, Table } from "@/components";
+import { ButtonDefault, ButtonIcon, Input, Switch, Table } from "@/components";
 
 import { datas } from "./utils";
+import { paginate, filter } from "./utils";
 
 import { FieldContainer, FieldContent, CardUser } from "../../styles";
 
 export default function FieldTable() {
   const [page, setPage] = useState<number>(1);
+
+  const [name, setName] = useState<string>("");
+
+  const datasFilter =
+    datas.length > 0
+      ? name.length > 0
+        ? paginate({
+            array: filter({
+              array: datas,
+              object: "name",
+              search: name,
+            }),
+            page_number: page,
+            page_size: 5,
+          })
+        : paginate({
+            array: datas,
+            page_number: page,
+            page_size: 5,
+          })
+      : [];
 
   return (
     <FieldContainer>
@@ -24,6 +46,35 @@ export default function FieldTable() {
           }}
         >
           <Table.Root>
+            <Table.Actions>
+              <div
+                style={{
+                  width: "100%",
+                  padding: "0 1rem",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <div style={{ width: "60%", maxWidth: "25rem" }}>
+                  <Input.Root>
+                    <Input.Field.Root id="table-search">
+                      <Input.Field.Label label="Pesquise pelo nome ou e-mail" />
+                      <Input.Field.Input
+                        name="name"
+                        value={name}
+                        setValue={(value: string) => setName(value)}
+                      />
+                      <Input.Field.RightIcon icon="search" />
+                    </Input.Field.Root>
+                  </Input.Root>
+                </div>
+
+                <ButtonDefault.Root onClick={() => alert("Botao apertado!")}>
+                  <ButtonDefault.Label label="Cadastrar" />
+                </ButtonDefault.Root>
+              </div>
+            </Table.Actions>
             <Table.Field.Root>
               <Table.Field.Head.Root>
                 <Table.Field.Head.Row>
@@ -35,7 +86,7 @@ export default function FieldTable() {
                 </Table.Field.Head.Row>
               </Table.Field.Head.Root>
               <Table.Field.Body.Root>
-                {datas.map((data) => (
+                {datasFilter.map((data) => (
                   <Table.Field.Body.Row
                     key={`table-body-row-${data.id}`}
                     color={data.color}
@@ -94,7 +145,7 @@ export default function FieldTable() {
             <Table.Pagination
               page={page}
               setPage={(value: number) => setPage(value)}
-              pages={7}
+              pages={6}
             />
           </Table.Root>
         </div>

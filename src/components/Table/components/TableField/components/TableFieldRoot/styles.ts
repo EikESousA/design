@@ -7,7 +7,7 @@ export const Container = styled.div`
   overflow: auto;
 
   & table {
-    height: 100%;
+    height: fit-content;
     width: 100%;
   }
 
@@ -20,6 +20,6 @@ export const Container = styled.div`
     border: none;
 
     border-collapse: separate;
-    border-spacing: 0 1rem;
+    border-spacing: 0 var(--spacing-s4);
   }
 `;

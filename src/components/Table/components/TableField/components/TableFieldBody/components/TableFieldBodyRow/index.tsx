@@ -12,7 +12,7 @@ export default function TableFieldBodyColumn({
   children,
 }: ITableFieldBodyColumnProps) {
   return (
-    <Container className={color ? "color" : ""} borderColor={color}>
+    <Container className={color ? "color" : ""} bordercolor={color}>
       {children}
     </Container>
   );

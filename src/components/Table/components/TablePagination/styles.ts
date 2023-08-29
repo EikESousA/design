@@ -3,46 +3,64 @@ import styled from "styled-components";
 export const Container = styled.footer`
   width: 100%;
 
-  margin-top: 1rem;
+  margin-top: var(--spacing-s4);
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: var(--spacing-s8);
 
-  & div {
+  & ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: var(--spacing-s4);
   }
 
   & button {
-    padding: 0.25rem 0.5rem;
+    padding: var(--spacing-s1) var(--spacing-s2);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    border-radius: 5px;
+    border-radius: var(--border-radius-sm);
 
-    border: 1px solid red;
+    border: var(--border-width-thin) solid var(--color-gray-500);
+
+    transition:
+      background-color var(--animation-fast) ease-out,
+      border-color var(--animation-fast) ease-out;
   }
 
   & button svg {
-    height: 2rem;
-    width: 2rem;
+    height: var(--spacing-s6);
+    width: var(--spacing-s6);
+
+    color: var(--color-gray-900);
   }
 
   & button p {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     font-weight: bold;
+
+    color: var(--color-gray-900);
+
+    transition: color var(--animation-fast) ease-out;
   }
 
   & button.active {
-    background-color: red;
+    background-color: var(--color-primary-base);
+    border-color: var(--color-primary-base);
   }
 
   & button.active p {
-    color: white;
+    color: var(--color-white-fixed);
+  }
+
+  & button:disabled {
+    opacity: var(--opacity-light);
+
+    cursor: not-allowed;
   }
 `;

@@ -1,26 +1,26 @@
 import styled from "styled-components";
 
 interface IContainerProps {
-  borderColor?: string;
+  bordercolor?: string;
 }
 
 export const Container = styled.tr<IContainerProps>`
-  border-radius: 10px;
+  border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-base);
 
   td:first-child {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: var(--border-radius-md);
+    border-bottom-left-radius: var(--border-radius-md);
   }
 
   td:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-right-radius: var(--border-radius-md);
+    border-bottom-right-radius: var(--border-radius-md);
   }
 
   &.color td:first-child {
     box-shadow:
-      0 0 0 ${({ borderColor }) => borderColor} inset,
-      4px 0 0 ${({ borderColor }) => borderColor} inset;
+      0 0 0 ${({ bordercolor }) => bordercolor} inset,
+      4px 0 0 ${({ bordercolor }) => bordercolor} inset;
   }
 `;
