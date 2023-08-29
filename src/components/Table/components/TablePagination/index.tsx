@@ -1,10 +1,10 @@
-import { useMemo } from "react";
+import { useMemo, HtmlHTMLAttributes } from "react";
 
 import { Icon } from "@/components";
 
 import { Container } from "./styles";
 
-interface ITablePaginationProps {
+interface ITablePaginationProps extends HtmlHTMLAttributes<HTMLDivElement> {
   page: number;
   setPage: (value: number) => void;
   pages: number;
@@ -16,49 +16,37 @@ export default function TablePagination({
   setPage,
   pages,
   loading = false,
+  ...rest
 }: ITablePaginationProps) {
   const pagesShow = useMemo(() => {
-    const pagesShowUpdated = [];
+    let count = 1;
 
-    if (page - 2 >= 1) {
-      pagesShowUpdated.push(page - 2);
+    const pagesShowUpdated = [page];
+
+    while (
+      pagesShowUpdated.length < 5 ||
+      (page - count <= 0 && page + count > pages)
+    ) {
+      if (page - count > 0 && pagesShowUpdated.length < 5) {
+        pagesShowUpdated.unshift(page - count);
+      }
+
+      if (page + count <= pages && pagesShowUpdated.length < 5) {
+        pagesShowUpdated.push(page + count);
+      }
+
+      count += 1;
     }
 
-    if (page - 1 >= 1) {
-      pagesShowUpdated.push(page - 1);
-    }
-
-    pagesShowUpdated.push(page);
-
-    if (page + 1 <= pages) {
-      pagesShowUpdated.push(page + 1);
-    }
-
-    if (page + 2 <= pages) {
-      pagesShowUpdated.push(page + 2);
-    }
-
-    if (pagesShowUpdated.length < 5 && page + 3 <= pages) {
-      pagesShowUpdated.push(page + 3);
-    }
-
-    if (pagesShowUpdated.length < 5 && page + 4 <= pages) {
-      pagesShowUpdated.push(page + 4);
-    }
-
-    if (pagesShowUpdated.length < 5 && page - 3 <= pages) {
-      pagesShowUpdated.unshift(page - 3);
-    }
-
-    if (pagesShowUpdated.length < 5 && page - 4 <= pages) {
-      pagesShowUpdated.unshift(page - 4);
-    }
-
-    return pagesShowUpdated;
+    return {
+      pages: pagesShowUpdated,
+      hasLeft: page - count > 0,
+      hasRight: page + count <= pages,
+    };
   }, [page, pages]);
 
   return (
-    <Container>
+    <Container {...rest}>
       <button
         type="button"
         onClick={() => setPage(page - 1)}
@@ -67,9 +55,14 @@ export default function TablePagination({
         <Icon.Root icon="chevronleft" />
       </button>
 
-      {pagesShow.length > 0 ? (
+      {pagesShow.pages.length > 0 ? (
         <ul>
-          {pagesShow.map((item) => (
+          {pagesShow.hasLeft ? (
+            <li>
+              <Icon.Root icon="ellipsis" />
+            </li>
+          ) : null}
+          {pagesShow.pages.map((item) => (
             <li key={`table-pagination-${item}`}>
               <button
                 className={page === item ? "active" : ""}
@@ -81,6 +74,11 @@ export default function TablePagination({
               </button>
             </li>
           ))}
+          {pagesShow.hasRight ? (
+            <li>
+              <Icon.Root icon="ellipsis" />
+            </li>
+          ) : null}
         </ul>
       ) : null}
 

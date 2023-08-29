@@ -1,5 +1,5 @@
-import TableFieldHeadColumn from "./TableFieldHeadColumn";
+import TableFieldHeadCell from "./TableFieldHeadCell";
 import TableFieldHeadRoot from "./TableFieldHeadRoot";
 import TableFieldHeadRow from "./TableFieldHeadRow";
 
-export { TableFieldHeadColumn, TableFieldHeadRoot, TableFieldHeadRow };
+export { TableFieldHeadCell, TableFieldHeadRoot, TableFieldHeadRow };

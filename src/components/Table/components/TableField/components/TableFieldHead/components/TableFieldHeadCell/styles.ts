@@ -6,6 +6,8 @@ export const Container = styled.th`
   font-weight: bold;
   font-size: var(--font-size-lg);
 
+  text-transform: uppercase;
+
   text-align: left;
 
   color: var(--color-gray-900);

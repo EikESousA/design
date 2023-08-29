@@ -28,6 +28,7 @@ export type IIconDTO =
   | "dashboard"
   | "delete"
   | "edit"
+  | "ellipsis"
   | "email"
   | "eye"
   | "eyeslash"

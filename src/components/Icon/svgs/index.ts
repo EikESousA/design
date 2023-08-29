@@ -25,6 +25,7 @@ import IconDark from "./Dark";
 import IconDashboard from "./Dashboard";
 import IconDelete from "./Delete";
 import IconEdit from "./Edit";
+import IconEllipsis from "./Ellipsis";
 import IconEmail from "./Email";
 import IconEye from "./Eye";
 import IconEyeSlash from "./EyeSlash";
@@ -95,6 +96,7 @@ export {
   IconDelete,
   IconEmail,
   IconEdit,
+  IconEllipsis,
   IconEye,
   IconEyeSlash,
   IconFacebook,

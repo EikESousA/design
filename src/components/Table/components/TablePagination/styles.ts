@@ -17,6 +17,19 @@ export const Container = styled.footer`
     gap: var(--spacing-s4);
   }
 
+  & li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & svg {
+    height: var(--spacing-s6);
+    width: var(--spacing-s6);
+
+    color: var(--color-gray-900);
+  }
+
   & button {
     padding: var(--spacing-s1) var(--spacing-s2);
 

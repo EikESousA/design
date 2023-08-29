@@ -1,19 +1,15 @@
-import { ReactNode } from "react";
+import { ReactNode, TableHTMLAttributes } from "react";
 
 import { Container } from "./styles";
 
-interface ITableFieldBodyColumnProps {
-  color?: string;
+interface ITableFieldBodyRowProps
+  extends TableHTMLAttributes<HTMLTableRowElement> {
   children: ReactNode;
 }
 
-export default function TableFieldBodyColumn({
-  color = "transparent",
+export default function TableFieldBodyRow({
   children,
-}: ITableFieldBodyColumnProps) {
-  return (
-    <Container className={color ? "color" : ""} bordercolor={color}>
-      {children}
-    </Container>
-  );
+  ...rest
+}: ITableFieldBodyRowProps) {
+  return <Container {...rest}>{children}</Container>;
 }

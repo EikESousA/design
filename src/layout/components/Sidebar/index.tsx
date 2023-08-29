@@ -34,7 +34,7 @@ export default function Sidebar() {
         }`}
       >
         <header>
-          <img src={companyLogo} alt="Logo da empresa" />
+          <img src={companyLogo} alt="Logo da empresa" loading="lazy" />
         </header>
 
         <button type="button" className="fold" onClick={() => toogleFold()}>

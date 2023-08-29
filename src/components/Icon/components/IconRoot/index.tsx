@@ -28,6 +28,7 @@ import {
   IconDelete,
   IconEmail,
   IconEdit,
+  IconEllipsis,
   IconEye,
   IconEyeSlash,
   IconFacebook,
@@ -155,6 +156,9 @@ export default function IconRoot({
 
     case "edit":
       return <IconEdit datatestid={datatestid} {...rest} />;
+
+    case "ellipsis":
+      return <IconEllipsis datatestid={datatestid} {...rest} />;
 
     case "email":
       return <IconEmail datatestid={datatestid} {...rest} />;
@@ -310,6 +314,7 @@ export {
   IconDelete,
   IconEmail,
   IconEdit,
+  IconEllipsis,
   IconEye,
   IconEyeSlash,
   IconFacebook,

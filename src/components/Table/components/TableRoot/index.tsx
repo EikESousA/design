@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode, HtmlHTMLAttributes } from "react";
 
 import { Container } from "./styles";
 
-interface ITableActionsProps {
+interface ITableActionsProps extends HtmlHTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 

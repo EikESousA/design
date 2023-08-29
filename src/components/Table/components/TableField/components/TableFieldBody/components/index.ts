@@ -1,5 +1,5 @@
-import TableFieldBodyColumn from "./TableFieldBodyColumn";
+import TableFieldBodyCell from "./TableFieldBodyCell";
 import TableFieldBodyRoot from "./TableFieldBodyRoot";
 import TableFieldBodyRow from "./TableFieldBodyRow";
 
-export { TableFieldBodyColumn, TableFieldBodyRoot, TableFieldBodyRow };
+export { TableFieldBodyCell, TableFieldBodyRoot, TableFieldBodyRow };

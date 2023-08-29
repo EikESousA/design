@@ -1,15 +1,18 @@
-import { ReactNode } from "react";
+import { ReactNode, TableHTMLAttributes } from "react";
 
 import { Container } from "./styles";
 
-interface ITableFieldRootProps {
+interface ITableFieldRootProps extends TableHTMLAttributes<HTMLTableElement> {
   children: ReactNode;
 }
 
-export default function TableFieldRoot({ children }: ITableFieldRootProps) {
+export default function TableFieldRoot({
+  children,
+  ...rest
+}: ITableFieldRootProps) {
   return (
     <Container>
-      <table>{children}</table>
+      <table {...rest}>{children}</table>
     </Container>
   );
 }

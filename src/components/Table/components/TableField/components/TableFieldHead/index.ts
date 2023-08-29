@@ -1,5 +1,5 @@
 import {
-  TableFieldHeadColumn,
+  TableFieldHeadCell,
   TableFieldHeadRoot,
   TableFieldHeadRow,
 } from "./components";
@@ -7,5 +7,5 @@ import {
 export default {
   Root: TableFieldHeadRoot,
   Row: TableFieldHeadRow,
-  Column: TableFieldHeadColumn,
+  Cell: TableFieldHeadCell,
 };

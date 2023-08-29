@@ -33,9 +33,9 @@ export function ThemeProvider({ children }: IThemeProps) {
   useEffect(() => {
     if (window.matchMedia) {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setData({ light: false });
-      } else {
         setData({ light: true });
+      } else {
+        setData({ light: false });
       }
     }
   }, []);
