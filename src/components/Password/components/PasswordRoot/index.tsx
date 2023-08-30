@@ -1,10 +1,10 @@
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, InputHTMLAttributes } from "react";
 
 import { Input } from "@/components";
 
 import { Container } from "./styles";
 
-interface IPasswordRootProps {
+interface IPasswordRootProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
   variant?: IInputVariantDTO;
   name: string;
@@ -32,6 +32,7 @@ export default function PasswordRoot({
   full = false,
   datatestid,
   children,
+  ...rest
 }: IPasswordRootProps) {
   const [show, setShow] = useState(false);
 
@@ -51,6 +52,7 @@ export default function PasswordRoot({
             disabled={disabled}
             required={required}
             datatestid={datatestid ? `${datatestid}-root` : undefined}
+            {...rest}
           />
           <Input.Field.Button
             icon={show ? "eye" : "eyeslash"}

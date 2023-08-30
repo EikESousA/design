@@ -82,7 +82,7 @@ export default [
   },
   {
     name: "Skeleton",
-    component: false,
+    component: true,
   },
   {
     name: "Modal",

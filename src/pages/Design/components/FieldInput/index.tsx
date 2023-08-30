@@ -50,7 +50,7 @@ export default function FieldInput() {
           }}
         >
           <Input.Root variant={variant}>
-            <Input.Field.Root id="field-input-menu">
+            <Input.Field.Root id="field-input">
               {label ? <Input.Field.Label label={label} /> : null}
               {leftIcon ? <Input.Field.LeftIcon icon="profile" /> : null}
               <Input.Field.Input

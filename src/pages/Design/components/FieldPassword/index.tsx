@@ -32,7 +32,7 @@ export default function FieldPassword() {
     <FieldContainer>
       <legend>Entrada Senha</legend>
       <FieldContent>
-        <div
+        <form
           style={{
             width: "30rem",
             display: "flex",
@@ -41,22 +41,23 @@ export default function FieldPassword() {
           }}
         >
           <Password.Root
-            id="field-input-main"
+            id="field-password-main"
             name="main"
             variant={variant}
             value={value}
             setValue={(updateValue) => setValue(updateValue)}
             disabled={disabled}
             required={required}
+            autoComplete="current-password"
           >
             {strength ? <Password.Level value={value} /> : null}
           </Password.Root>
-        </div>
+        </form>
       </FieldContent>
       <FieldInfo>
         <section>
           <Input.Root variant="secondary">
-            <Input.Field.Root id="field-input-label">
+            <Input.Field.Root id="field-password-label">
               <Input.Field.Label label="Label" />
               <Input.Field.Input
                 name="label"
@@ -69,7 +70,7 @@ export default function FieldPassword() {
 
         <section>
           <Radio.Root
-            name="field-input-variant"
+            name="field-password-variant"
             title="Variante"
             options={optionsVariant}
             checked={variant}
@@ -78,7 +79,7 @@ export default function FieldPassword() {
         </section>
         <section>
           <Switch.Root
-            id="field-input-disabled"
+            id="field-password-disabled"
             label="Desabilitado"
             checked={disabled}
             setChecked={(updateValue) => setDisabled(updateValue)}
@@ -86,7 +87,7 @@ export default function FieldPassword() {
         </section>
         <section>
           <Switch.Root
-            id="field-input-required"
+            id="field-password-required"
             label="Obrigatorio"
             checked={required}
             setChecked={(updateValue) => setRequired(updateValue)}
@@ -94,7 +95,7 @@ export default function FieldPassword() {
         </section>
         <section>
           <Switch.Root
-            id="field-input-level"
+            id="field-password-level"
             label="Força"
             checked={strength}
             setChecked={(updateValue) => setStrength(updateValue)}

@@ -11,7 +11,6 @@ export interface IInputFieldInputProps
   // Options
   required?: boolean;
   disabled?: boolean;
-  type?: "text" | "password";
   // Clone
   id?: string;
   variant?: IInputVariantDTO;
@@ -40,6 +39,7 @@ export default function InputFieldInput({
   setIsRequired = () => {},
   // Test
   datatestid,
+  ...rest
 }: IInputFieldInputProps) {
   function handleInputFocus() {
     setIsFocused(true);
@@ -78,6 +78,7 @@ export default function InputFieldInput({
       placeholder=""
       required={required}
       data-testid={datatestid ? `${datatestid}-input` : null}
+      {...rest}
     />
   );
 }

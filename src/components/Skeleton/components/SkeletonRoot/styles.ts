@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  height: 5rem;
+  background: var(--color-gray-200);
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-200) 0%,
+    var(--color-gray-400) 25%,
+    var(--color-gray-500) 50%,
+    var(--color-gray-400) 75%,
+    var(--color-gray-200) 100%
+  );
 
-  background: #eee;
-  background: linear-gradient(110deg, red 8%, blue 18%, green 33%);
-  border-radius: 5px;
+  border-radius: var(--border-radius-sm);
   background-size: 200% 100%;
-  animation: 1.5s shine linear infinite;
+  animation: shine 1.5s linear infinite;
+
+  &.circle {
+    border-radius: var(--border-radius-circle);
+  }
 
   @keyframes shine {
     to {

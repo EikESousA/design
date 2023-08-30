@@ -1,6 +1,6 @@
 import { useMemo, HtmlHTMLAttributes } from "react";
 
-import { Icon } from "@/components";
+import { Icon, Skeleton } from "@/components";
 
 import { Container } from "./styles";
 
@@ -44,6 +44,40 @@ export default function TablePagination({
       hasRight: page + count <= pages,
     };
   }, [page, pages]);
+
+  if (loading) {
+    return (
+      <Container {...rest}>
+        <Skeleton.Root type="square" height="3rem" width="3rem" />
+
+        <ul>
+          <li>
+            <Skeleton.Root type="square" height="2.5rem" width="2.5rem" />
+          </li>
+          <li>
+            <Skeleton.Root type="square" height="2.5rem" width="2.5rem" />
+          </li>
+          <li>
+            <Skeleton.Root type="square" height="2.5rem" width="2.5rem" />
+          </li>
+          <li>
+            <Skeleton.Root type="square" height="2.5rem" width="2.5rem" />
+          </li>
+          <li>
+            <Skeleton.Root type="square" height="2.5rem" width="2.5rem" />
+          </li>
+          <li>
+            <Skeleton.Root type="square" height="2.5rem" width="2.5rem" />
+          </li>
+          <li>
+            <Skeleton.Root type="square" height="2.5rem" width="2.5rem" />
+          </li>
+        </ul>
+
+        <Skeleton.Root type="square" height="3rem" width="3rem" />
+      </Container>
+    );
+  }
 
   return (
     <Container {...rest}>
