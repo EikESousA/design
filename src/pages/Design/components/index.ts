@@ -10,6 +10,7 @@ import FieldLink from "./FieldLink";
 import FieldLoading from "./FieldLoading";
 import FieldPassword from "./FieldPassword";
 import FieldRadio from "./FieldRadio";
+import FieldSkeleton from "./FieldSkeleton";
 import FieldSwitch from "./FieldSwitch";
 import FieldTable from "./FieldTable";
 import FieldToast from "./FieldToast";
@@ -29,6 +30,7 @@ export {
   FieldLoading,
   FieldPassword,
   FieldRadio,
+  FieldSkeleton,
   FieldSwitch,
   FieldTable,
   FieldToast,

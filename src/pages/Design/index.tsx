@@ -19,6 +19,7 @@ import {
   FieldDropdown,
   FieldCard,
   FieldTable,
+  FieldSkeleton,
 } from "./components";
 
 import { Container, Menu, Fields } from "./styles";
@@ -60,6 +61,7 @@ export default function Design() {
         {component === "Dropdown" || !component ? <FieldDropdown /> : null}
         {component === "Card" || !component ? <FieldCard /> : null}
         {component === "Table" || !component ? <FieldTable /> : null}
+        {component === "Skeleton" || !component ? <FieldSkeleton /> : null}
       </Fields>
     </Container>
   );

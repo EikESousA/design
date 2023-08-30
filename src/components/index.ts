@@ -13,6 +13,7 @@ import Page from "./Page";
 import Password from "./Password";
 import Popover from "./Popover";
 import Radio from "./Radio";
+import Skeleton from "./Skeleton";
 import Switch from "./Switch";
 import Table from "./Table";
 
@@ -34,4 +35,5 @@ export {
   Switch,
   Table,
   Card,
+  Skeleton,
 };

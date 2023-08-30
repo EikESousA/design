@@ -98,7 +98,7 @@ export default [
   },
   {
     name: "Card",
-    component: false,
+    component: true,
   },
   {
     name: "Icon",
