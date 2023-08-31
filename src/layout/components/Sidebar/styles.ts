@@ -21,6 +21,9 @@ export const Container = styled.nav`
   }
 
   & header img {
+    height: var(--spacing-s4);
+    width: var(--spacing-s4);
+
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -45,6 +48,11 @@ export const Container = styled.nav`
       background-color var(--animation-fast) ease-out,
       top var(--animation-normal) ease-out,
       right var(--animation-normal) ease-out;
+  }
+
+  & button.fold svg {
+    height: var(--spacing-s4);
+    width: var(--spacing-s4);
   }
 
   & main {
