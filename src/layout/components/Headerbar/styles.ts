@@ -12,6 +12,8 @@ export const Container = styled.header`
   border-bottom: var(--border-width-thin) solid var(--color-primary-base);
 
   & section {
+    flex: 1;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,6 +21,11 @@ export const Container = styled.header`
     gap: var(--spacing-s4);
 
     transition: margin-left var(--animation-normal) ease-out;
+  }
+
+  & section.resize {
+    display: flex;
+    justify-content: flex-start;
   }
 
   & section.fold {
@@ -34,6 +41,11 @@ export const Container = styled.header`
     font-weight: var(--font-weight-bold);
 
     color: var(--color-primary-base);
+  }
+
+  & section.buttons {
+    display: flex;
+    justify-content: flex-end;
   }
 
   & section button {

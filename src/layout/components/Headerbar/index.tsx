@@ -11,7 +11,7 @@ export default function Headerbar() {
 
   return (
     <Container>
-      <section className={fold ? "fold" : "unfold"}>
+      <section className={`resize ${fold ? "fold" : "unfold"}`}>
         <button type="button" onClick={() => toogleFull()}>
           <Icon.Root icon="fullscreen" />
         </button>
@@ -19,7 +19,7 @@ export default function Headerbar() {
       <section className="company">
         <p>Empresa 1</p>
       </section>
-      <section>
+      <section className="buttons">
         <button type="button" onClick={() => alert("Botao apertado")}>
           <Icon.Root icon="notification" />
         </button>
