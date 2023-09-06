@@ -52,6 +52,7 @@ import {
   IconPassword,
   IconProfile,
   IconProfileGroup,
+  IconQueue,
   IconQueues,
   IconReport,
   IconRequest,
@@ -60,6 +61,7 @@ import {
   IconSend,
   IconSuccess,
   IconSuport,
+  IconTag,
   IconTags,
   IconTelegram,
   IconUsers,
@@ -232,6 +234,9 @@ export default function IconRoot({
     case "profilegroup":
       return <IconProfileGroup datatestid={datatestid} {...rest} />;
 
+    case "queue":
+      return <IconQueue datatestid={datatestid} {...rest} />;
+
     case "queues":
       return <IconQueues datatestid={datatestid} {...rest} />;
 
@@ -255,6 +260,9 @@ export default function IconRoot({
 
     case "suport":
       return <IconSuport datatestid={datatestid} {...rest} />;
+
+    case "tag":
+      return <IconTag datatestid={datatestid} {...rest} />;
 
     case "tags":
       return <IconTags datatestid={datatestid} {...rest} />;
@@ -338,6 +346,7 @@ export {
   IconPassword,
   IconProfile,
   IconProfileGroup,
+  IconQueue,
   IconQueues,
   IconReport,
   IconRequest,
@@ -346,6 +355,7 @@ export {
   IconSend,
   IconSuccess,
   IconSuport,
+  IconTag,
   IconTags,
   IconTelegram,
   IconUsers,

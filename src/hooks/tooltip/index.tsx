@@ -16,7 +16,7 @@ interface ITooltipContextData {
   tooltipRef: RefObject<HTMLDivElement>;
   pastShow: () => void;
   handleOnMouseOut: () => void;
-  handleOnMouseOver: ({ el, text }: IHandleOnMouseOver) => void;
+  handleOnMouseOver: ({ el, container }: IHandleOnMouseOver) => void;
 }
 
 interface ITooltipProps {
@@ -25,7 +25,7 @@ interface ITooltipProps {
 
 interface IHandleOnMouseOver {
   el: Element;
-  text: string;
+  container: ReactNode;
 }
 
 const TooltipContext = createContext<ITooltipContextData>(
@@ -39,7 +39,7 @@ export function TooltipProvider({ children }: ITooltipProps) {
   const [x, setX] = useState<number>(0);
   const [y, setY] = useState<number>(0);
   const [type, setType] = useState<string>("none");
-  const [label, setLabel] = useState<string>("");
+  const [child, setChild] = useState<ReactNode | null>(null);
 
   const style = useMemo(() => {
     return {
@@ -120,14 +120,17 @@ export function TooltipProvider({ children }: ITooltipProps) {
     setRect(null);
   }, []);
 
-  const handleOnMouseOver = useCallback(({ el, text }: IHandleOnMouseOver) => {
-    if (el != null) {
-      const rectUpdated = el.getBoundingClientRect();
+  const handleOnMouseOver = useCallback(
+    ({ el, container }: IHandleOnMouseOver) => {
+      if (el != null) {
+        const rectUpdated = el.getBoundingClientRect();
 
-      setLabel(text);
-      setRect(rectUpdated);
-    }
-  }, []);
+        setChild(container);
+        setRect(rectUpdated);
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     if (rect) {
@@ -149,11 +152,12 @@ export function TooltipProvider({ children }: ITooltipProps) {
       {children}
       <Tooltip.Root
         elRef={tooltipRef}
-        label={label}
         visible={!!rect}
         style={style}
         type={type}
-      />
+      >
+        {child}
+      </Tooltip.Root>
     </TooltipContext.Provider>
   );
 }

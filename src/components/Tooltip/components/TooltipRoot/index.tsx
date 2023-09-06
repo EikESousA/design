@@ -1,21 +1,21 @@
-import { RefObject, CSSProperties } from "react";
+import { RefObject, CSSProperties, ReactNode } from "react";
 
 import { Container } from "./styles";
 
 interface ITooltipRootProps {
   elRef: RefObject<HTMLDivElement>;
-  label: string;
   visible: boolean;
   type: string;
   style: CSSProperties;
+  children: ReactNode;
 }
 
 export default function TooltipRoot({
   elRef,
-  label,
   visible,
   type,
   style,
+  children,
 }: ITooltipRootProps) {
   return (
     <Container
@@ -24,7 +24,7 @@ export default function TooltipRoot({
       style={style}
     >
       <div className="arrow" />
-      <p className="inner">{label}</p>
+      <p className="inner">{children}</p>
     </Container>
   );
 }

@@ -60,7 +60,7 @@ export default function ButtonIconRoot({
             ? (event) =>
                 handleOnMouseOver({
                   el: event.currentTarget,
-                  text: tooltip,
+                  container: tooltip,
                 })
             : undefined
         }
@@ -72,7 +72,7 @@ export default function ButtonIconRoot({
             ? (event) =>
                 handleOnMouseOver({
                   el: event.currentTarget,
-                  text: tooltip,
+                  container: tooltip,
                 })
             : undefined
         }

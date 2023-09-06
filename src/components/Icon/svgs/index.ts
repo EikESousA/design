@@ -50,6 +50,7 @@ import IconPainting from "./Painting";
 import IconPassword from "./Password";
 import IconProfile from "./Profile";
 import IconProfileGroup from "./ProfileGroup";
+import IconQueue from "./Queue";
 import IconQueues from "./Queues";
 import IconReport from "./Report";
 import IconRequest from "./Request";
@@ -58,6 +59,7 @@ import IconSearch from "./Search";
 import IconSend from "./Send";
 import IconSuccess from "./Success";
 import IconSuport from "./Suport";
+import IconTag from "./Tag";
 import IconTags from "./Tags";
 import IconTelegram from "./Telegram";
 import IconUsers from "./Users";
@@ -120,6 +122,7 @@ export {
   IconPassword,
   IconProfile,
   IconProfileGroup,
+  IconQueue,
   IconQueues,
   IconReport,
   IconRequest,
@@ -128,6 +131,7 @@ export {
   IconSend,
   IconSuccess,
   IconSuport,
+  IconTag,
   IconTags,
   IconTelegram,
   IconUsers,

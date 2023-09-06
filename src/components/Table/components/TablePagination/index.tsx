@@ -1,4 +1,5 @@
-import { useMemo, HtmlHTMLAttributes } from "react";
+/* eslint-disable no-constant-condition */
+import { useMemo, HtmlHTMLAttributes, useEffect } from "react";
 
 import { Icon, Skeleton } from "@/components";
 
@@ -21,17 +22,30 @@ export default function TablePagination({
   const pagesShow = useMemo(() => {
     let count = 1;
 
-    const pagesShowUpdated = [page];
+    const pagesShowUpdated = [page < pages ? page : pages];
 
-    while (
-      pagesShowUpdated.length < 5 ||
-      (page - count <= 0 && page + count > pages)
-    ) {
-      if (page - count > 0 && pagesShowUpdated.length < 5) {
+    while (true) {
+      if (pagesShowUpdated.length >= 5) {
+        break;
+      }
+
+      if (page - count <= 0 && page + count > pages) {
+        break;
+      }
+
+      if (
+        page - count > 0 &&
+        pagesShowUpdated.length < 5 &&
+        !pagesShowUpdated.includes(page - count)
+      ) {
         pagesShowUpdated.unshift(page - count);
       }
 
-      if (page + count <= pages && pagesShowUpdated.length < 5) {
+      if (
+        page + count <= pages &&
+        pagesShowUpdated.length < 5 &&
+        !pagesShowUpdated.includes(page + count)
+      ) {
         pagesShowUpdated.push(page + count);
       }
 
@@ -44,6 +58,16 @@ export default function TablePagination({
       hasRight: page + count <= pages,
     };
   }, [page, pages]);
+
+  useEffect(() => {
+    if (page > pages) {
+      setPage(pages);
+    }
+
+    if (page <= 0) {
+      setPage(1);
+    }
+  }, [page, pages, setPage]);
 
   if (loading) {
     return (

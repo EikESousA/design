@@ -9,7 +9,7 @@ import { paginate, filter } from "./utils";
 import { FieldContainer, CardUser } from "../../styles";
 
 export default function FieldTable() {
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number>(3);
 
   const [name, setName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);

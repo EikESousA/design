@@ -12,10 +12,12 @@ import Loading from "./Loading";
 import Page from "./Page";
 import Password from "./Password";
 import Popover from "./Popover";
+import Queues from "./Queues";
 import Radio from "./Radio";
 import Skeleton from "./Skeleton";
 import Switch from "./Switch";
 import Table from "./Table";
+import Tags from "./Tags";
 
 export {
   Backdrop,
@@ -36,4 +38,6 @@ export {
   Table,
   Card,
   Skeleton,
+  Tags,
+  Queues,
 };

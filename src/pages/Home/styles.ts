@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+`;
 
-  & section.test {
-    background-color: #00000040;
-  }
+export const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 `;
