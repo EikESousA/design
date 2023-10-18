@@ -1,3 +1,5 @@
+import { Container } from "./styles";
+
 export interface IInputAlertErrorProps {
   error: string;
   datatestid?: string;
@@ -8,11 +10,11 @@ export default function InputAlertError({
   datatestid,
 }: IInputAlertErrorProps) {
   return (
-    <p
+    <Container
       className="error"
       data-testid={datatestid ? `${datatestid}-error` : null}
     >
       {error}
-    </p>
+    </Container>
   );
 }

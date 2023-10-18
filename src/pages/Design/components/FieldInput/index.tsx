@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { Input, Switch, Radio } from "@/components";
+import { Input, Radio, Switch } from "@/components";
 import { IInputVariantDTO } from "@/components/Input/components/InputRoot";
 
 import { FieldContainer, FieldContent, FieldInfo } from "../../styles";
@@ -31,11 +31,26 @@ export default function FieldInput() {
   const [leftIcon, setLeftIcon] = useState<boolean>(false);
   const [rightIcon, setRightIcon] = useState<boolean>(false);
 
+  const [error, setError] = useState<boolean>(true);
+  const [warning, setWarning] = useState<boolean>(false);
+
   const [button, setButton] = useState<boolean>(false);
   const [buttonIcon, setButtonIcon] = useState<boolean>(false);
   const [buttonLabel, setButtonLabel] = useState<string>("");
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(false);
   const [buttonLoading, setButtonLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (error) {
+      setWarning(false);
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (warning) {
+      setError(false);
+    }
+  }, [warning]);
 
   return (
     <FieldContainer>
@@ -71,6 +86,14 @@ export default function FieldInput() {
                 />
               ) : null}
             </Input.Field.Root>
+            {error || warning ? (
+              <Input.Alert.Root>
+                {error ? <Input.Alert.Error error="Mensagem de error" /> : null}
+                {warning ? (
+                  <Input.Alert.Warning warning="Mensagem de alerta" />
+                ) : null}
+              </Input.Alert.Root>
+            ) : null}
           </Input.Root>
         </div>
       </FieldContent>
@@ -111,6 +134,22 @@ export default function FieldInput() {
             label="Obrigatorio"
             checked={required}
             setChecked={(updateValue) => setRequired(updateValue)}
+          />
+        </section>
+        <section>
+          <Switch.Root
+            id="field-input-error"
+            label="Erro"
+            checked={error}
+            setChecked={(updateValue) => setError(updateValue)}
+          />
+        </section>
+        <section>
+          <Switch.Root
+            id="field-input-warning"
+            label="Alerta"
+            checked={warning}
+            setChecked={(updateValue) => setWarning(updateValue)}
           />
         </section>
         <section>

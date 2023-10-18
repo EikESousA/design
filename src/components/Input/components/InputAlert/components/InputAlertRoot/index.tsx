@@ -10,11 +10,6 @@ export default function InputAlertRoot({
   datatestid,
 }: IInputAlertRootProps) {
   return (
-    <p
-      className="warning"
-      data-testid={datatestid ? `${datatestid}-root` : null}
-    >
-      {children}
-    </p>
+    <div data-testid={datatestid ? `${datatestid}-root` : null}>{children}</div>
   );
 }

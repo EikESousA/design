@@ -1,3 +1,5 @@
+import { Container } from "./styles";
+
 export interface IInputAlertWarningProps {
   warning: string;
   datatestid?: string;
@@ -8,11 +10,11 @@ export default function InputAlertWarning({
   datatestid,
 }: IInputAlertWarningProps) {
   return (
-    <p
+    <Container
       className="warning"
       data-testid={datatestid ? `${datatestid}-warning` : null}
     >
       {warning}
-    </p>
+    </Container>
   );
 }
