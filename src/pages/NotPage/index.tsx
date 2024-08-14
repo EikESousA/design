@@ -1,9 +1,7 @@
-import { Container } from "./styles";
-
 export default function NotPage() {
   return (
-    <Container>
+    <main>
       <h1>NotPage</h1>
-    </Container>
+    </main>
   );
 }

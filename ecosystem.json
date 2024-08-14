@@ -1,9 +1,9 @@
 {
-  "apps" : [
+  "apps": [
     {
-      "name"      : "web-design",
-      "script"    : "yarn",
-      "interpreter"  : "node@18.16.1",
+      "name": "web-design",
+      "script": "yarn",
+      "interpreter": "node@18.16.1",
       "args": "serve",
       "env": {
         "PM2_SERVE_PORT": 3023,
